@@ -8,7 +8,7 @@ const outcomeStats = [
   {
     number: '$55K+',
     label: 'Starting salary',
-    detail: 'Gina's graduates in medical aesthetics, Ontario average',
+    detail: "Gina's graduates in medical aesthetics, Ontario average",
   },
   {
     number: '4 weeks',
