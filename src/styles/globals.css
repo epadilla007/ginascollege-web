@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Font Faces ─── */
+@font-face {
+  font-family: 'Nohemi';
+  src: url('/fonts/Nohemi-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ranade';
+  src: url('/fonts/Ranade-Variable.woff2') format('woff2');
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── CSS Custom Properties (design tokens) ─── */
+:root {
+  /* Colors */
+  --color-navy: #01426A;
+  --color-navy-dark: #012d4a;
+  --color-navy-light: #0a5a8a;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-soft-blue: #B1C6D9;
+  --color-blue-gray: #D4DDE5;
+  --color-light-gray: #E9E9E9;
+
+  /* Typography */
+  --font-display: 'Nohemi', system-ui, sans-serif;
+  --font-body: 'Ranade', system-ui, sans-serif;
+
+  /* Motion */
+  --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-snappy: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-micro: 200ms;
+  --duration-standard: 400ms;
+  --duration-dramatic: 800ms;
+  --duration-cinematic: 1200ms;
+
+  /* Spacing */
+  --section-padding: 120px;
+  --container-max: 1440px;
+  --container-gutter: 24px;
+}
+
+/* ─── Base Reset ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  overflow-x: hidden;
+}
+
+/* ─── Typography Base ─── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+/* ─── Container ─── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-gutter);
+  padding-right: var(--container-gutter);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --container-gutter: 48px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --container-gutter: 80px;
+  }
+}
+
+/* ─── Section Padding ─── */
+.section {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+  }
+}
+
+/* ─── Button Base ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 32px;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--duration-micro) var(--ease-luxury),
+              color var(--duration-micro) var(--ease-luxury),
+              transform var(--duration-micro) var(--ease-luxury);
+  border: 2px solid transparent;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-navy-dark);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+.btn-white {
+  background-color: var(--color-white);
+  color: var(--color-navy);
+}
+
+.btn-white:hover {
+  background-color: var(--color-soft-blue);
+}
+
+/* Inverted on dark backgrounds */
+.btn-outline-white {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-outline-white:hover {
+  border-color: var(--color-white);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ─── Label / Eyebrow ─── */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+/* ─── Animation utilities (GSAP will override these) ─── */
+.will-animate {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* ─── Lenis smooth scroll ─── */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* ─── Focus styles ─── */
+:focus-visible {
+  outline: 3px solid var(--color-soft-blue);
+  outline-offset: 3px;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background-color: var(--color-soft-blue);
+  color: var(--color-navy);
+}
