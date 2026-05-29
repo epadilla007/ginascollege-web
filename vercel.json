@@ -1,0 +1,83 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "redirects": [
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/index", "destination": "/", "permanent": true },
+    { "source": "/contact-us", "destination": "/contact", "permanent": true },
+    { "source": "/contact_us", "destination": "/contact", "permanent": true },
+    { "source": "/about-us", "destination": "/about", "permanent": true },
+    { "source": "/about_us", "destination": "/about", "permanent": true },
+    { "source": "/our-school", "destination": "/about", "permanent": true },
+
+    { "source": "/programs-overview", "destination": "/programs", "permanent": true },
+    { "source": "/all-programs", "destination": "/programs", "permanent": true },
+    { "source": "/diploma-programs", "destination": "/programs", "permanent": true },
+    { "source": "/certificate-programs", "destination": "/programs", "permanent": true },
+
+    { "source": "/medical-aesthetics", "destination": "/programs/medical-aesthetics", "permanent": true },
+    { "source": "/medical-aesthetics-diploma", "destination": "/programs/medical-aesthetics", "permanent": true },
+    { "source": "/advanced-aesthetics", "destination": "/programs/advanced-aesthetics", "permanent": true },
+    { "source": "/advanced-aesthetics-diploma", "destination": "/programs/advanced-aesthetics", "permanent": true },
+    { "source": "/hairstyling", "destination": "/programs/hairstyling", "permanent": true },
+    { "source": "/hairstyling-diploma", "destination": "/programs/hairstyling", "permanent": true },
+    { "source": "/electrolysis", "destination": "/programs/electrolysis-light-technology", "permanent": true },
+    { "source": "/electrolysis-light-technology", "destination": "/programs/electrolysis-light-technology", "permanent": true },
+    { "source": "/laser-technician", "destination": "/programs/electrolysis-light-technology", "permanent": true },
+
+    { "source": "/nail-technology", "destination": "/programs/nail-technology", "permanent": true },
+    { "source": "/nail-care", "destination": "/programs/nail-technology", "permanent": true },
+    { "source": "/makeup-artistry", "destination": "/programs/makeup-artistry", "permanent": true },
+    { "source": "/esthetics", "destination": "/programs/esthetics", "permanent": true },
+    { "source": "/skin-care", "destination": "/programs/advanced-aesthetics", "permanent": true },
+    { "source": "/waxing", "destination": "/programs/waxing", "permanent": true },
+    { "source": "/microneedling", "destination": "/programs/microneedling", "permanent": true },
+    { "source": "/chemical-peels", "destination": "/programs/chemical-peels", "permanent": true },
+
+    { "source": "/mississauga", "destination": "/campuses/mississauga", "permanent": true },
+    { "source": "/mississauga-campus", "destination": "/campuses/mississauga", "permanent": true },
+    { "source": "/waterloo", "destination": "/campuses/waterloo", "permanent": true },
+    { "source": "/waterloo-campus", "destination": "/campuses/waterloo", "permanent": true },
+    { "source": "/ottawa", "destination": "/campuses/ottawa", "permanent": true },
+    { "source": "/ottawa-campus", "destination": "/campuses/ottawa", "permanent": true },
+
+    { "source": "/student-clinic", "destination": "/clinic", "permanent": true },
+    { "source": "/clinic-services", "destination": "/clinic", "permanent": true },
+    { "source": "/spa", "destination": "/clinic", "permanent": true },
+    { "source": "/book-appointment", "destination": "/clinic#book", "permanent": true },
+
+    { "source": "/apply-now", "destination": "/apply", "permanent": true },
+    { "source": "/application", "destination": "/apply", "permanent": true },
+    { "source": "/enroll", "destination": "/apply", "permanent": true },
+    { "source": "/enrollment", "destination": "/apply", "permanent": true },
+    { "source": "/admissions", "destination": "/apply", "permanent": true },
+    { "source": "/free-consultation", "destination": "/consultation", "permanent": true },
+    { "source": "/career-consultation", "destination": "/consultation", "permanent": true },
+    { "source": "/book-consultation", "destination": "/consultation", "permanent": true },
+
+    { "source": "/financial-aid", "destination": "/financing", "permanent": true },
+    { "source": "/osap", "destination": "/financing", "permanent": true },
+    { "source": "/tuition", "destination": "/financing", "permanent": true },
+    { "source": "/funding", "destination": "/financing", "permanent": true },
+
+    { "source": "/gallery", "destination": "/about#gallery", "permanent": true },
+    { "source": "/photo-gallery", "destination": "/about#gallery", "permanent": true },
+
+    { "source": "/news", "destination": "/blog", "permanent": true },
+    { "source": "/blog-post/:slug", "destination": "/blog/:slug", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/_next/static/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}
