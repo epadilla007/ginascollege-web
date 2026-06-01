@@ -151,8 +151,8 @@ export function HeroSection() {
             ref={subRef}
             className="text-lg lg:text-xl text-white/75 leading-relaxed mb-10 max-w-[520px]"
           >
-            Ontario's most prestigious aesthetics school for 45 years. Graduate ready.
-            Get hired first.
+            45 years training aestheticians. CIDESCO-accredited. OSAP-eligible.
+            Graduate with real client hours and a credential employers recognize.
           </p>
 
           {/* CTA group */}
