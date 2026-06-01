@@ -7,7 +7,7 @@ import Link from 'next/link'
 const testimonials = [
   {
     quote:
-      'I am now employed as a laser specialist in one of the top medical spas in Ottawa. I would highly recommend Gina\'s College.',
+      "I'm now working as a laser specialist at one of the top medical spas in Ottawa. Gina's College gave me the training to get there.",
     name: 'Liz M.',
     credential: 'Laser Specialist',
     location: 'Ottawa',
@@ -15,7 +15,7 @@ const testimonials = [
   },
   {
     quote:
-      'I graduated at the top of my class — something I thought I would never achieve.',
+      "I graduated at the top of my class. I genuinely didn't think I had it in me when I started.",
     name: 'Jessica T.',
     credential: 'Advanced Aesthetics Graduate',
     location: 'Mississauga',
@@ -23,7 +23,7 @@ const testimonials = [
   },
   {
     quote:
-      'Our instructors went well above to make our experience exceptional. The real-client training made all the difference.',
+      "The instructors pushed us harder than I expected. Working on real clients from the start is what made me job-ready.",
     name: 'Dawn N.',
     credential: 'Certified Nail Technician',
     location: 'Waterloo',
@@ -122,7 +122,7 @@ export function ProofSection() {
             className="font-display text-white leading-[1.05] tracking-[-0.02em]"
             style={{ fontSize: 'clamp(36px, 4.5vw, 64px)' }}
           >
-            Students who weren't sure they could — graduated and built careers they love.
+            They came in uncertain. They graduated with careers they love.
           </h2>
         </div>
 
