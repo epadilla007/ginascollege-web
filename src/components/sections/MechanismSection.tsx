@@ -9,7 +9,7 @@ const differentiators = [
     title: 'Paying clients from week one.',
     body:
       'Our in-house student spa runs on real paying clients from your first weeks in the program. Employers ask for hands-on hours. You graduate with hundreds of them.',
-    image: 'https://images.unsplash.com/photo-1609709295948-17d77cb2a69b?w=600&q=80',
+    image: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/medical-skin-care-face-with-multiple-tools-without-needle-scaled-619w.jpg',
     imageAlt: 'Student performing a facial treatment on a real client in the Gina\'s College spa',
   },
   {
@@ -33,8 +33,8 @@ const differentiators = [
     title: '45 years. Still family-owned.',
     body:
       "Three generations of the same family. The owners are on the floor with students every single day. That kind of ownership is rare in any school at this level.",
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80',
-    imageAlt: 'Gina\'s College campus exterior',
+    image: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/GinasCollege_Exterior2-713w.jpg',
+    imageAlt: 'Gina\'s College campus exterior — family-owned for 45 years',
   },
 ]
 
