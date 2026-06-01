@@ -84,6 +84,7 @@ export function ProgramsSection() {
           opacity: 0,
           duration: 0.7,
           ease,
+          immediateRender: false,
           scrollTrigger: {
             trigger: headerRef.current,
             start: 'top 85%',
@@ -99,6 +100,7 @@ export function ProgramsSection() {
             duration: 0.7,
             ease,
             stagger: 0.1,
+            immediateRender: false,
             scrollTrigger: {
               trigger: gridRef.current,
               start: 'top 80%',
