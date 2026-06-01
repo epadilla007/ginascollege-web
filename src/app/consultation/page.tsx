@@ -18,11 +18,12 @@ export default function ConsultationPage() {
             className="font-display text-[#01426A] leading-[1.05] tracking-[-0.02em] mb-6"
             style={{ fontSize: 'clamp(40px, 5vw, 72px)' }}
           >
-            Let's talk about your future.
+            Get your questions answered. Free.
           </h1>
           <p className="text-[#000000]/60 text-lg leading-relaxed max-w-[540px]">
-            A free 15-minute call with an admissions advisor. Ask anything — programs, OSAP,
-            start dates, campus locations, or what a career in aesthetics actually looks like.
+            A 15-minute call with an admissions advisor who knows every program inside out.
+            Ask about OSAP, start dates, campus options, or what a career in aesthetics
+            actually pays.
           </p>
         </div>
 
