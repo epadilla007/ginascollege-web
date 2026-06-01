@@ -33,12 +33,13 @@ export function Navbar() {
     >
       <nav className="container" aria-label="Main navigation">
         <div className="flex items-center justify-between h-20 lg:h-24">
-          {/* Logo */}
+          {/* Logo — invert to white when over dark hero */}
           <Link href="/" className="flex items-center shrink-0">
             <img
               src="/images/logo.svg"
               alt="Gina's College of Advanced Aesthetics"
-              className="h-10 lg:h-12 w-auto"
+              className="h-10 lg:h-12 w-auto transition-all duration-300"
+              style={scrolled ? {} : { filter: 'brightness(0) invert(1)' }}
             />
           </Link>
 
