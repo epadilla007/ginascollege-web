@@ -262,7 +262,7 @@ export function Navbar() {
               </div>
 
               <NavLink href="/campuses" scrolled={scrolled}>Campuses</NavLink>
-              <NavLink href="/clinic" scrolled={scrolled}>Student Clinic</NavLink>
+              <NavLink href="/clinic" scrolled={scrolled}>Campus Clinic</NavLink>
               <NavLink href="/about" scrolled={scrolled}>About</NavLink>
             </div>
 
@@ -355,7 +355,7 @@ export function Navbar() {
               )}
 
               <MobileLink href="/campuses" onClick={() => setMenuOpen(false)}>Campuses</MobileLink>
-              <MobileLink href="/clinic" onClick={() => setMenuOpen(false)}>Student Clinic</MobileLink>
+              <MobileLink href="/clinic" onClick={() => setMenuOpen(false)}>Campus Clinic</MobileLink>
               <MobileLink href="/about" onClick={() => setMenuOpen(false)}>About</MobileLink>
               <MobileLink href="/contact" onClick={() => setMenuOpen(false)}>Contact</MobileLink>
 
