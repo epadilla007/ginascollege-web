@@ -48,10 +48,14 @@ export function Footer() {
         <div className="py-16 grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <img src="/images/logo-white.svg" alt="Gina's College" className="h-10 w-auto mb-6" />
+            <img src="/images/logo.png" alt="Gina's College of Advanced Aesthetics" className="h-10 w-auto mb-6" />
             <p className="text-sm text-white/60 leading-relaxed max-w-[220px]">
-              Ontario's most prestigious aesthetics school. Training industry professionals since 1979.
+              Training aesthetics professionals since 1979. 3 campuses across Ontario.
             </p>
+            <p className="text-xs text-white/40 mt-3">Mon–Fri, 9am–4:30pm</p>
+            <a href="tel:18888862998" className="text-xs text-white/40 hover:text-white/70 transition-colors block mt-1">
+              Toll-free: 1-888-886-2998
+            </a>
             <div className="mt-6 flex items-center gap-3">
               <a href="https://instagram.com/ginascollege" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-white/50 hover:text-white transition-colors">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" /><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>
