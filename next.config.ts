@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images.pexels.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'lirp.cdn-website.com',
+      },
     ],
   },
   // Preserve trailing slashes to match Duda URL structure during transition
