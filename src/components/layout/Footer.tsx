@@ -16,7 +16,8 @@ const campuses = [
 
 const company = [
   { name: 'About', href: '/about' },
-  { name: 'Student Clinic', href: '/clinic' },
+  { name: 'Campus Clinic', href: '/clinic' },
+  { name: 'Financial Aid & OSAP', href: '/financing' },
   { name: 'Blog', href: '/blog' },
   { name: 'Apply', href: '/apply' },
   { name: 'Contact', href: '/contact' },
