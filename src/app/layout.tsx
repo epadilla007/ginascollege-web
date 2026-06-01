@@ -8,23 +8,59 @@ import { SmoothScroll } from '@/components/providers/SmoothScroll'
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': ['EducationalOrganization', 'LocalBusiness'],
+  '@id': 'https://ginascollege.com/#organization',
   name: "Gina's College of Advanced Aesthetics",
+  alternateName: ["Gina's College", "Gina's College of Advanced Aesthetics Corporation"],
   url: 'https://ginascollege.com',
   logo: 'https://ginascollege.com/images/logo.png',
   foundingDate: '1979',
   description:
-    "Ontario's only CIDESCO-accredited career college offering diploma and certificate programs in medical aesthetics, hairstyling, and aesthetics. OSAP-eligible. 3 campuses.",
+    "Ontario's only CIDESCO-accredited career college offering diploma and certificate programs in medical aesthetics, hairstyling, and aesthetics. OSAP-eligible. 3 campuses in Mississauga, Waterloo, and Ottawa.",
   telephone: '1-888-886-2998',
   email: 'admissions@ginascollege.com',
-  sameAs: [
-    'https://www.facebook.com/ginascollege',
-    'https://www.instagram.com/ginascollege',
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '16:30',
+  },
+  knowsAbout: [
+    'Medical Aesthetics',
+    'Advanced Aesthetics',
+    'Hairstyling',
+    'Electrolysis',
+    'Laser Technology',
+    'CIDESCO',
+    'OSAP',
+    'Aesthetician Training',
+    'Beauty School Ontario',
   ],
+  award: 'CIDESCO International Accreditation — Ontario\'s only accredited career college',
   hasCredential: {
     '@type': 'EducationalOccupationalCredential',
     name: 'CIDESCO International Diploma',
     credentialCategory: 'International Accreditation',
+    recognizedBy: {
+      '@type': 'Organization',
+      name: 'CIDESCO International',
+      url: 'https://www.cidesco.com',
+    },
   },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Aesthetics Diploma and Certificate Programs',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Medical Aesthetics Diploma', url: 'https://ginascollege.com/programs/medical-aesthetics' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Advanced Aesthetics Diploma', url: 'https://ginascollege.com/programs/advanced-aesthetics' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Hairstyling Diploma', url: 'https://ginascollege.com/programs/hairstyling' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Course', name: 'Electrolysis & Light Technology Diploma', url: 'https://ginascollege.com/programs/electrolysis-light-technology' } },
+    ],
+  },
+  sameAs: [
+    'https://www.facebook.com/ginascollege',
+    'https://www.instagram.com/ginascollege',
+    'https://www.ginascollege.com',
+  ],
   location: [
     {
       '@type': 'Place',
