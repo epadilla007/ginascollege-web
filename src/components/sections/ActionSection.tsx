@@ -55,18 +55,18 @@ export function ActionSection() {
       className="section bg-[#000000] relative overflow-hidden"
       aria-labelledby="action-heading"
     >
-      {/* Subtle texture */}
-      <div
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 20% 50%, #01426A 0%, transparent 50%), radial-gradient(circle at 80% 20%, #B1C6D9 0%, transparent 40%)',
-        }}
-        aria-hidden="true"
-      />
+      {/* Background image */}
+      <div className="absolute inset-0" aria-hidden="true">
+        <img
+          src="https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/ginas-img13-700w.png"
+          alt=""
+          className="w-full h-full object-cover object-center opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/80" />
+      </div>
 
       <div className="container relative z-10 text-center">
-        <p className="eyebrow text-white/40 mb-6">One step</p>
+        <p className="eyebrow text-white/75 mb-6">One step</p>
 
         <h2
           ref={headlineRef}
@@ -107,7 +107,7 @@ export function ActionSection() {
         {/* Trust signals */}
         <div
           ref={trustRef}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white/35"
+          className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white/65"
         >
           <span className="flex items-center gap-2">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -125,7 +125,7 @@ export function ActionSection() {
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M2 7l3.5 3.5L12 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            Admissions advisor responds within 24h
+            Free campus tour included
           </span>
         </div>
 
