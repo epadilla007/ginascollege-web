@@ -87,7 +87,8 @@ export function ActionSection() {
           ref={subRef}
           className="text-white/55 text-lg lg:text-xl leading-relaxed mb-12 max-w-[480px] mx-auto"
         >
-          Free career consultation. No pressure. Campus tours available at all three locations.
+          A free 15-minute call with an admissions advisor. Get your questions answered on
+          programs, OSAP, start dates, and campus options. Tours available at all three locations.
         </p>
 
         {/* CTA buttons */}
