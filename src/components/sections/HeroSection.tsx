@@ -120,9 +120,12 @@ export function HeroSection() {
       <div className="relative z-10 container flex flex-col justify-center flex-1 pt-32 pb-20 lg:pt-40 lg:pb-32">
         <div className="max-w-[700px]">
           {/* Badge row */}
-          <div ref={badgeRef} className="flex items-center gap-4 mb-8">
+          <div ref={badgeRef} className="flex flex-wrap items-center gap-3 mb-8">
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
-              <img src="/images/cidesco-badge.svg" alt="CIDESCO" className="h-5 w-auto" />
+              <span className="w-2 h-2 rounded-full bg-[#B1C6D9] shrink-0" />
+              <span className="text-xs font-semibold text-white tracking-widest uppercase">Mississauga · Waterloo · Ottawa</span>
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
               <span className="text-xs font-semibold text-white tracking-widest uppercase">CIDESCO Accredited</span>
             </div>
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
@@ -134,14 +137,14 @@ export function HeroSection() {
           <h1
             ref={headlineRef}
             id="hero-heading"
-            className="font-display text-white leading-[1.0] tracking-[-0.03em] mb-6"
-            style={{ fontSize: 'clamp(56px, 8vw, 120px)' }}
+            className="font-display text-white leading-[1.05] tracking-[-0.03em] mb-6 max-w-[720px]"
+            style={{ fontSize: 'clamp(44px, 5.5vw, 84px)' }}
             aria-label="Train Where the Industry Recruits"
           >
             <span className="word inline-block overflow-hidden">Train</span>{' '}
             <span className="word inline-block overflow-hidden">Where</span>{' '}
             <span className="word inline-block overflow-hidden">the</span>{' '}
-            <br className="hidden md:block" />
+            <br />
             <span className="word inline-block overflow-hidden text-[#B1C6D9]">Industry</span>{' '}
             <span className="word inline-block overflow-hidden">Recruits.</span>
           </h1>
