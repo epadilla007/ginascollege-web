@@ -108,11 +108,12 @@ export function TensionSection() {
                 className="font-display text-[#01426A] leading-[1.05] tracking-[-0.02em] mb-6"
                 style={{ fontSize: 'clamp(36px, 4.5vw, 64px)' }}
               >
-                Your career starts the day you graduate.
+                Top med spas recruit from our campuses directly.
               </h2>
               <p className="text-[#000000]/65 text-lg leading-relaxed mb-8 max-w-[480px]">
-                Gina's graduates are hired first. Top med spas across Ontario recruit directly
-                from our campuses because they know what our training produces.
+                Employers like Clarity MedSpa and Dermapure come to Gina's because our graduates
+                arrive with real client hours, not just classroom certificates. The average graduate
+                is employed within 4 weeks of finishing.
               </p>
 
               {/* Where graduates work */}
