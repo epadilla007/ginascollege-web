@@ -104,8 +104,8 @@ export function HeroSection() {
         aria-hidden="true"
       >
         <Image
-          src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1920&q=85"
-          alt="Aesthetics student performing a facial treatment in a professional clinical setting"
+          src="https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/banner1-590eafd6-1920w.png"
+          alt="Aesthetics student performing a facial treatment at Gina's College student clinic"
           fill
           priority
           className="object-cover object-center"
