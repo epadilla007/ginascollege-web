@@ -14,7 +14,7 @@ const diplomaPrograms = [
     duration: '12 months',
     salary: '$55,000–$90,000+',
     href: '/programs/medical-aesthetics',
-    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80',
+    image: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/medical-skin-care-face-with-multiple-tools-without-needle-scaled-619w.jpg',
     description: 'Laser, chemical peels, microneedling. Full medical aesthetics curriculum, all included.',
   },
   {
@@ -30,7 +30,7 @@ const diplomaPrograms = [
     duration: '12 months',
     salary: '$35,000–$70,000+',
     href: '/programs/hairstyling',
-    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80',
+    image: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/9-21-619w.jpg',
     description: 'Cut, colour, texture, and styling in a professional salon environment.',
   },
   {
@@ -38,7 +38,7 @@ const diplomaPrograms = [
     duration: '8 months',
     salary: '$50,000–$80,000',
     href: '/programs/electrolysis-light-technology',
-    image: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80',
+    image: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/laserlight-619w.jpg',
     description: 'Permanent hair removal via electrolysis, laser, and IPL. A high-earning specialization.',
   },
 ]
