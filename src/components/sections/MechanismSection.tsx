@@ -117,7 +117,7 @@ export function MechanismSection() {
               className="diff-card group bg-white rounded-[8px] overflow-hidden border border-white hover:border-[#B1C6D9] transition-colors duration-300"
             >
               {/* Image */}
-              <div className="relative h-52 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <Image
                   src={d.image}
                   alt={d.imageAlt}
