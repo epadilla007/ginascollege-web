@@ -6,9 +6,9 @@ import Image from 'next/image'
 const differentiators = [
   {
     number: '01',
-    title: 'Real clients. Not classmates.',
+    title: 'Paying clients from week one.',
     body:
-      'Our in-house student spa operates with real paying clients from day one. The hands-on experience employers are actually hiring for.',
+      'Our in-house student spa runs on real paying clients from your first weeks in the program. Employers ask for hands-on hours. You graduate with hundreds of them.',
     image: 'https://images.unsplash.com/photo-1609709295948-17d77cb2a69b?w=600&q=80',
     imageAlt: 'Student performing a facial treatment on a real client in the Gina\'s College spa',
   },
@@ -16,7 +16,7 @@ const differentiators = [
     number: '02',
     title: 'CIDESCO certification.',
     body:
-      "The world's most recognized aesthetics credential. Ontario's only career college with CIDESCO accreditation. This changes what you can charge and where you can work.",
+      "The most recognized aesthetics credential in the world. Ontario's only career college with CIDESCO accreditation. It affects what you can charge and where in the world you can work.",
     image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80',
     imageAlt: 'CIDESCO certified graduate holding diploma',
   },
@@ -24,15 +24,15 @@ const differentiators = [
     number: '03',
     title: 'OSAP-eligible.',
     body:
-      "Government-backed financial support. You can use OSAP for your full diploma program. Most aesthetics schools can't say that.",
+      "Government-backed financial support. Your full diploma program qualifies for OSAP funding. Gina's is a registered private career college — most aesthetics schools in Ontario are not.",
     image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80',
     imageAlt: 'Student reviewing financial aid options at a desk',
   },
   {
     number: '04',
-    title: '45 years. Still privately owned.',
+    title: '45 years. Still family-owned.',
     body:
-      "Three generations of the same family. The owners are still on the floor with students every single day. You don't find that anymore.",
+      "Three generations of the same family. The owners are on the floor with students every single day. That kind of ownership is rare in any school at this level.",
     image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80',
     imageAlt: 'Gina\'s College campus exterior',
   },
