@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import Script from 'next/script'
 import { notFound } from 'next/navigation'
 
 const programs: Record<string, {
@@ -371,8 +372,50 @@ export default async function ProgramPage({
 
   const isOSAP = program.type === 'diploma'
 
+  const courseSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    '@id': `https://ginascollege.com/programs/${slug}#course`,
+    name: `${program.title} ${program.type === 'diploma' ? 'Diploma' : 'Certificate'}`,
+    description: program.description,
+    url: `https://ginascollege.com/programs/${slug}`,
+    timeRequired: program.duration,
+    provider: {
+      '@type': 'EducationalOrganization',
+      '@id': 'https://ginascollege.com/#organization',
+      name: "Gina's College of Advanced Aesthetics",
+      url: 'https://ginascollege.com',
+    },
+    educationalCredentialAwarded: program.type === 'diploma'
+      ? `${program.title} Diploma — OSAP-eligible`
+      : `${program.title} Certificate`,
+    occupationalCategory: program.careers.join(', '),
+    ...(program.salary && {
+      salaryUponCompletion: {
+        '@type': 'MonetaryAmountDistribution',
+        name: 'Average starting salary',
+        currency: 'CAD',
+        description: program.salary,
+      },
+    }),
+    hasCourseInstance: {
+      '@type': 'CourseInstance',
+      courseMode: 'In person',
+      location: [
+        { '@type': 'Place', name: "Gina's College — Mississauga", address: { '@type': 'PostalAddress', addressLocality: 'Mississauga', addressRegion: 'ON', addressCountry: 'CA' } },
+        { '@type': 'Place', name: "Gina's College — Waterloo", address: { '@type': 'PostalAddress', addressLocality: 'Waterloo', addressRegion: 'ON', addressCountry: 'CA' } },
+        { '@type': 'Place', name: "Gina's College — Ottawa", address: { '@type': 'PostalAddress', addressLocality: 'Ottawa', addressRegion: 'ON', addressCountry: 'CA' } },
+      ],
+    },
+  }
+
   return (
     <div className="min-h-screen bg-white">
+      <Script
+        id={`course-schema-${slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
+      />
       {/* Hero */}
       <div className="relative h-[420px] lg:h-[520px] overflow-hidden">
         <Image
