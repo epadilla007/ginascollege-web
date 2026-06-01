@@ -122,7 +122,7 @@ export function ProofSection() {
             className="font-display text-white leading-[1.05] tracking-[-0.02em]"
             style={{ fontSize: 'clamp(36px, 4.5vw, 64px)' }}
           >
-            They came in uncertain. They graduated with careers they love.
+            Real students. Real client hours. Careers they are proud of.
           </h2>
         </div>
 
