@@ -163,14 +163,19 @@ export function TensionSection() {
             </div>
 
             {/* Image */}
-            <div ref={imageRef} className="relative h-48 rounded-[8px] overflow-hidden">
+            <div ref={imageRef} className="relative h-56 rounded-[8px] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1607008829749-c0f284a49fc4?w=800&q=80"
-                alt="Aesthetics graduates at a top Ontario med spa"
+                src="https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/GinasCollege_Exterior2-713w.jpg"
+                alt="Gina's College campus — Mississauga, Waterloo, and Ottawa"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
+              <div className="absolute inset-0 bg-[#01426A]/30" />
+              <div className="absolute bottom-4 left-4">
+                <p className="text-white font-semibold text-sm">3 campuses across Ontario</p>
+                <p className="text-white/60 text-xs">Mississauga · Waterloo · Ottawa</p>
+              </div>
             </div>
           </div>
         </div>
