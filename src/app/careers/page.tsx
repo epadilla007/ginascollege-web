@@ -14,7 +14,7 @@ const reasons = [
   },
   {
     title: 'Purpose-driven work.',
-    body: 'Every role here — instructor, advisor, or clinic staff — connects directly to a student's future. You are not supporting a product. You are part of someone's career launch.',
+    body: "Every role here — instructor, advisor, or clinic staff — connects directly to a student's future. You are not supporting a product. You are part of someone's career launch.",
   },
   {
     title: 'A real student clinic.',
