@@ -1,8 +1,17 @@
 'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { cn } from '@/lib/cn'
+
+/**
+ * DARK HERO ROUTES
+ * List every route whose top section has a dark (navy) background.
+ * All other routes default to the solid/scrolled navbar state immediately.
+ * Rule: when adding a new page, ask "does it have a dark hero?" — if yes, add its path here.
+ */
+const DARK_HERO_ROUTES = ['/']
 
 const diplomaPrograms = [
   {
@@ -48,6 +57,9 @@ const aboutLinks = [
 ]
 
 export function Navbar() {
+  const pathname = usePathname()
+  const hasDarkHero = DARK_HERO_ROUTES.includes(pathname)
+
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [programsOpen, setProgramsOpen] = useState(false)
@@ -62,6 +74,10 @@ export function Navbar() {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // solid = true whenever the navbar needs dark text + solid bg.
+  // On dark-hero pages: only after scroll. On all other pages: always.
+  const solid = scrolled || !hasDarkHero
 
   // Close dropdowns on outside click
   useEffect(() => {
@@ -123,7 +139,7 @@ export function Navbar() {
       <header
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-          scrolled
+          solid
             ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-[#E9E9E9]'
             : 'bg-transparent'
         )}
@@ -153,7 +169,7 @@ export function Navbar() {
                 <button
                   className={cn(
                     'flex items-center gap-1.5 text-sm font-medium tracking-wide transition-colors duration-200',
-                    scrolled ? 'text-[#01426A]' : 'text-white',
+                    solid ? 'text-[#01426A]' : 'text-white',
                     'hover:opacity-75'
                   )}
                   aria-expanded={programsOpen}
@@ -297,7 +313,7 @@ export function Navbar() {
                 <button
                   className={cn(
                     'flex items-center gap-1.5 text-sm font-medium tracking-wide transition-colors duration-200',
-                    scrolled ? 'text-[#01426A]' : 'text-white',
+                    solid ? 'text-[#01426A]' : 'text-white',
                     'hover:opacity-75'
                   )}
                   aria-expanded={aboutOpen}
@@ -343,9 +359,9 @@ export function Navbar() {
                 </div>
               </div>
 
-              <NavLink href="/campuses" scrolled={scrolled}>Campuses</NavLink>
-              <NavLink href="/clinic" scrolled={scrolled}>Beauty Clinic</NavLink>
-              <NavLink href="/blog" scrolled={scrolled}>Blog</NavLink>
+              <NavLink href="/campuses" scrolled={solid}>Campuses</NavLink>
+              <NavLink href="/clinic" scrolled={solid}>Beauty Clinic</NavLink>
+              <NavLink href="/blog" scrolled={solid}>Blog</NavLink>
             </div>
 
             {/* Desktop CTA */}
@@ -354,7 +370,7 @@ export function Navbar() {
                 href="/consultation"
                 className={cn(
                   'text-sm font-medium transition-colors duration-200',
-                  scrolled ? 'text-[#01426A] hover:text-[#01426A]/70' : 'text-white/80 hover:text-white'
+                  solid ? 'text-[#01426A] hover:text-[#01426A]/70' : 'text-white/80 hover:text-white'
                 )}
               >
                 Free Consultation
@@ -368,7 +384,7 @@ export function Navbar() {
             <button
               className={cn(
                 'lg:hidden p-2 rounded-md transition-colors',
-                scrolled ? 'text-[#01426A]' : 'text-white'
+                solid ? 'text-[#01426A]' : 'text-white'
               )}
               onClick={() => setMenuOpen((o) => !o)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
