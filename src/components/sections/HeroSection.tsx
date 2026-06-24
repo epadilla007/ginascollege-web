@@ -4,194 +4,101 @@ import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-// GSAP loaded client-side only to avoid SSR issues
-let gsap: typeof import('gsap').gsap
-let ScrollTrigger: typeof import('gsap/ScrollTrigger').ScrollTrigger
-let SplitText: any
-
 export function HeroSection() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const headlineRef = useRef<HTMLHeadingElement>(null)
-  const subRef = useRef<HTMLParagraphElement>(null)
+  const headingRef = useRef<HTMLHeadingElement>(null)
+  const bodyRef = useRef<HTMLParagraphElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
   const badgeRef = useRef<HTMLDivElement>(null)
-  const statBarRef = useRef<HTMLDivElement>(null)
-  const imageRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    let ctx: any
-
-    async function initGSAP() {
-      const { gsap: g } = await import('gsap')
-      const { ScrollTrigger: ST } = await import('gsap/ScrollTrigger')
-      g.registerPlugin(ST)
-      gsap = g
-      ScrollTrigger = ST
-
-      ctx = gsap.context(() => {
-        const tl = gsap.timeline({ defaults: { ease: 'cubic-bezier(0.22, 1, 0.36, 1)' } })
-
-        // Group A: Badge → Headline (character stagger via SplitText fallback)
-        tl.from(badgeRef.current, {
-          y: 20,
-          opacity: 0,
-          duration: 0.5,
+    let ctx: { revert?: () => void } = {}
+    import('gsap').then(({ gsap }) =>
+      import('gsap/ScrollTrigger').then(({ ScrollTrigger }) => {
+        gsap.registerPlugin(ScrollTrigger)
+        ctx = gsap.context(() => {
+          const tl = gsap.timeline({ defaults: { ease: 'cubic-bezier(0.22, 1, 0.36, 1)' } })
+          tl.fromTo(badgeRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, delay: 0.1 })
+            .fromTo(headingRef.current, { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: 0.8 }, '-=0.3')
+            .fromTo(bodyRef.current, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.7 }, '-=0.4')
+            .fromTo(ctaRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.4')
         })
-
-        // Headline word-by-word reveal
-        if (headlineRef.current) {
-          const words = headlineRef.current.querySelectorAll('.word')
-          if (words.length) {
-            tl.from(words, { y: 60, opacity: 0, duration: 0.6, stagger: 0.06 }, '-=0.2')
-          } else {
-            tl.from(headlineRef.current, { y: 40, opacity: 0, duration: 0.7 }, '-=0.2')
-          }
-        }
-
-        // Group B: Subheadline + CTA
-        tl.from(subRef.current, { y: 30, opacity: 0, duration: 0.5 }, '-=0.3')
-        tl.from(ctaRef.current, { y: 20, opacity: 0, duration: 0.4 }, '-=0.2')
-
-        // Hero image parallax
-        if (imageRef.current) {
-          gsap.to(imageRef.current.querySelector('img'), {
-            yPercent: 15,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: 'top top',
-              end: 'bottom top',
-              scrub: 1,
-            },
-          })
-        }
-
-        // Stat bar slides up as hero scrolls out (scroll-linked)
-        if (statBarRef.current) {
-          gsap.fromTo(
-            statBarRef.current,
-            { opacity: 0, y: 30 },
-            {
-              opacity: 1,
-              y: 0,
-              ease: 'cubic-bezier(0.22, 1, 0.36, 1)',
-              scrollTrigger: {
-                trigger: sectionRef.current,
-                start: 'center top',
-                end: 'bottom top',
-                scrub: 0.5,
-              },
-            }
-          )
-        }
-      }, sectionRef)
-    }
-
-    initGSAP()
-    return () => ctx?.revert()
+      })
+    )
+    return () => ctx.revert?.()
   }, [])
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative min-h-screen flex flex-col bg-[#01426A] overflow-hidden"
-      aria-labelledby="hero-heading"
-    >
-      {/* Background image with parallax wrapper */}
-      <div
-        ref={imageRef}
-        className="absolute inset-0 will-change-transform"
-        aria-hidden="true"
-      >
+    <section className="relative overflow-hidden" aria-label="Hero">
+      {/* Background image */}
+      <div className="absolute inset-0">
         <Image
           src="https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/banner1-590eafd6-1920w.png"
-          alt="Aesthetics student performing a facial treatment at Gina's College student clinic"
+          alt="Gina's College of Advanced Aesthetics"
           fill
           priority
           className="object-cover object-center"
           sizes="100vw"
         />
-        {/* Overlay gradient: navy left, transparent right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#01426A]/95 via-[#01426A]/70 to-[#01426A]/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#01426A]/80 via-transparent to-transparent" />
+        {/* Gradient overlay — navy at bottom, semi-transparent at top */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#01426A]/60 via-[#01426A]/55 to-[#01426A]/85" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container flex flex-col justify-center flex-1 pt-32 pb-20 lg:pt-40 lg:pb-32">
-        <div className="max-w-[700px]">
-          {/* Badge row */}
-          <div ref={badgeRef} className="flex flex-wrap items-center gap-3 mb-8">
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
-              <span className="w-2 h-2 rounded-full bg-[#B1C6D9] shrink-0" />
-              <span className="text-xs font-semibold text-white tracking-widest uppercase">Mississauga · Waterloo · Ottawa</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
-              <span className="text-xs font-semibold text-white tracking-widest uppercase">CIDESCO Accredited</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
-              <span className="text-xs font-semibold text-white tracking-widest uppercase">OSAP Eligible</span>
-            </div>
-          </div>
+      <div className="relative container py-24 md:py-32 lg:py-40 flex flex-col items-start justify-end min-h-[520px] md:min-h-[620px] lg:min-h-[700px]">
 
-          {/* Headline — split into word spans for GSAP */}
-          <h1
-            ref={headlineRef}
-            id="hero-heading"
-            className="font-display text-white leading-[1.05] tracking-[-0.03em] mb-6 max-w-[720px]"
-            style={{ fontSize: 'clamp(44px, 5.5vw, 84px)' }}
-            aria-label="Train Where the Industry Recruits"
-          >
-            <span className="word inline-block overflow-hidden">Train</span>{' '}
-            <span className="word inline-block overflow-hidden">Where</span>{' '}
-            <span className="word inline-block overflow-hidden">the</span>{' '}
-            <br />
-            <span className="word inline-block overflow-hidden text-[#B1C6D9]">Industry</span>{' '}
-            <span className="word inline-block overflow-hidden">Recruits.</span>
-          </h1>
-
-          {/* Subheadline */}
-          <p
-            ref={subRef}
-            className="text-lg lg:text-xl text-white/75 leading-relaxed mb-10 max-w-[520px]"
-          >
-            45 years training aestheticians. CIDESCO-accredited. OSAP-eligible.
-            Graduate with real client hours and a credential employers recognize.
-          </p>
-
-          {/* CTA group */}
-          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4">
-            <Link href="/apply" className="btn btn-white">
-              Start Your Application
-            </Link>
-            <Link href="/consultation" className="btn btn-outline-white">
-              Book a Free Consultation
-            </Link>
-          </div>
+        {/* CIDESCO badge */}
+        <div ref={badgeRef} className="opacity-0 mb-6 flex items-center gap-2">
+          <Image
+            src="https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/ginas-img3-132w.png"
+            alt="CIDESCO International"
+            width={40}
+            height={40}
+            className="w-9 h-9 object-contain rounded-full bg-white/10 p-1"
+          />
+          <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-white/80">
+            CIDESCO World-Standard School
+          </span>
         </div>
-      </div>
 
-      {/* Stat bar — scrolls into view as hero exits */}
-      <div
-        ref={statBarRef}
-        className="relative z-10 border-t border-white/10 bg-[#01426A]/80 backdrop-blur-sm"
-        style={{ opacity: 0 }}
-      >
-        <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10 py-6">
-            {[
-              { number: '45', label: 'Years training the industry' },
-              { number: '3', label: 'Campuses across Ontario' },
-              { number: 'CIDESCO', label: 'World standard accreditation' },
-              { number: 'OSAP', label: 'Government funding eligible' },
-            ].map((stat) => (
-              <div key={stat.label} className="px-6 py-2 first:pl-0 last:pr-0">
-                <p className="font-display text-white text-2xl lg:text-3xl font-semibold mb-1">
-                  {stat.number}
-                </p>
-                <p className="text-xs text-white/50 leading-snug">{stat.label}</p>
-              </div>
-            ))}
-          </div>
+        {/* Heading */}
+        <h1
+          ref={headingRef}
+          className="opacity-0 font-display text-[clamp(38px,6vw,88px)] leading-[1.0] font-semibold text-white mb-6 max-w-[700px]"
+        >
+          Follow your passion<br className="hidden sm:block" /> for beauty!
+        </h1>
+
+        {/* Body */}
+        <p
+          ref={bodyRef}
+          className="opacity-0 text-[16px] md:text-[18px] text-white/85 leading-relaxed max-w-[560px] mb-8 font-body"
+        >
+          Start your career in beauty with Gina&apos;s College of Advanced Aesthetics, the top beauty
+          school in Ottawa, Mississauga, and Waterloo. With over 40 years of experience training top
+          beauty professionals, we offer industry-leading courses to help you succeed.
+        </p>
+
+        {/* CTA buttons */}
+        <div ref={ctaRef} className="opacity-0 flex flex-col sm:flex-row gap-3">
+          <Link href="/contact" className="btn btn-white text-[14px] px-7 py-4">
+            Contact Us
+          </Link>
+          <Link href="/programs" className="btn btn-outline-white text-[14px] px-7 py-4">
+            Browse Programs
+          </Link>
+        </div>
+
+        {/* Quick campus row */}
+        <div className="mt-10 pt-8 border-t border-white/15 flex flex-wrap gap-x-6 gap-y-2">
+          {['Mississauga', 'Waterloo', 'Ottawa'].map((campus) => (
+            <span key={campus} className="flex items-center gap-1.5 text-[13px] text-white/60">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M7 1C4.79 1 3 2.79 3 5c0 3.5 4 8 4 8s4-4.5 4-8c0-2.21-1.79-4-4-4z" stroke="currentColor" strokeWidth="1.2" />
+                <circle cx="7" cy="5" r="1.2" fill="currentColor" />
+              </svg>
+              {campus}
+            </span>
+          ))}
         </div>
       </div>
     </section>

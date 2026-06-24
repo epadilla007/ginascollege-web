@@ -21,7 +21,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['Ranade', 'system-ui', 'sans-serif'],
-        display: ['Nohemi', 'system-ui', 'sans-serif'],
+        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         // Custom scale matching creative-direction.md

@@ -166,17 +166,10 @@ export default function RootLayout({
   return (
     <html lang="en-CA" className="lenis">
       <head>
-        {/* Preload critical fonts */}
+        {/* Preload critical body font — Ranade Regular */}
         <link
           rel="preload"
-          href="/fonts/Nohemi-SemiBold.woff"
-          as="font"
-          type="font/woff"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/Ranade-Variable.woff2"
+          href="/fonts/Ranade-Regular.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"

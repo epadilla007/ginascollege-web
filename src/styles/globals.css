@@ -2,58 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Font Faces ─── */
-@font-face {
-  font-family: 'Nohemi';
-  src: url('/fonts/Nohemi-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+/* ─── Display Font — Space Grotesk (neo-grotesque placeholder for Nohemi) ───
+   TO ACTIVATE NOHEMI: drop Nohemi-Variable.woff2 into public/fonts/ and
+   replace the @import below with the @font-face block that follows it.
+   Everything else in this file stays the same.
+─────────────────────────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
-@font-face {
-  font-family: 'Nohemi';
-  src: url('/fonts/Nohemi-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
+/*
+  Nohemi activation block — uncomment when font file is in public/fonts/:
 
-@font-face {
-  font-family: 'Nohemi';
-  src: url('/fonts/Nohemi-SemiBold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
+  @font-face {
+    font-family: 'Nohemi';
+    src: url('/fonts/Nohemi-Variable.woff2') format('woff2 supports variations'),
+         url('/fonts/Nohemi-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+  }
+*/
 
+/* ─── Body Font — Ranade (self-hosted WOFF2 from FontShare) ─────────────── */
 @font-face {
-  font-family: 'Nohemi';
-  src: url('/fonts/Nohemi-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Nohemi';
-  src: url('/fonts/Nohemi-ExtraBold.woff') format('woff');
-  font-weight: 800;
+  font-family: 'Ranade';
+  src: url('/fonts/Ranade-Light.woff2') format('woff2');
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Ranade';
-  src: url('/fonts/Ranade-Variable.woff2') format('woff2');
-  font-weight: 100 700;
+  src: url('/fonts/Ranade-Regular.woff2') format('woff2');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
-/* ─── CSS Custom Properties (design tokens) ─── */
+@font-face {
+  font-family: 'Ranade';
+  src: url('/fonts/Ranade-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ranade';
+  src: url('/fonts/Ranade-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── CSS Custom Properties (design tokens) ─────────────────────────────── */
 :root {
-  /* Colors */
+  /* Brand palette */
   --color-navy: #01426A;
   --color-navy-dark: #012d4a;
   --color-navy-light: #0a5a8a;
@@ -63,11 +67,12 @@
   --color-blue-gray: #D4DDE5;
   --color-light-gray: #E9E9E9;
 
-  /* Typography */
-  --font-display: 'Nohemi', system-ui, sans-serif;
+  /* Typography
+     --font-display: 'Nohemi' once font files are added; Space Grotesk is the stand-in */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'Ranade', system-ui, sans-serif;
 
-  /* Motion */
+  /* Motion — luxury deceleration throughout */
   --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-snappy: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-micro: 200ms;
@@ -75,13 +80,13 @@
   --duration-dramatic: 800ms;
   --duration-cinematic: 1200ms;
 
-  /* Spacing */
+  /* Layout */
   --section-padding: 120px;
   --container-max: 1440px;
   --container-gutter: 24px;
 }
 
-/* ─── Base Reset ─── */
+/* ─── Base Reset ─────────────────────────────────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -92,6 +97,7 @@ html {
   scroll-behavior: auto; /* Lenis handles smooth scroll */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
@@ -103,14 +109,18 @@ body {
   overflow-x: hidden;
 }
 
-/* ─── Typography Base ─── */
+/* ─── Typography Base ────────────────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   line-height: 1.05;
   letter-spacing: -0.02em;
 }
 
-/* ─── Container ─── */
+p {
+  font-family: var(--font-body);
+}
+
+/* ─── Container ──────────────────────────────────────────────────────────── */
 .container {
   width: 100%;
   max-width: var(--container-max);
@@ -121,18 +131,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 768px) {
-  :root {
-    --container-gutter: 48px;
-  }
+  :root { --container-gutter: 48px; }
 }
-
 @media (min-width: 1280px) {
-  :root {
-    --container-gutter: 80px;
-  }
+  :root { --container-gutter: 80px; }
 }
 
-/* ─── Section Padding ─── */
+/* ─── Section Padding ────────────────────────────────────────────────────── */
 .section {
   padding-top: 72px;
   padding-bottom: 72px;
@@ -145,45 +150,55 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* ─── Button Base ─── */
+/* ─── 12-Column Grid ─────────────────────────────────────────────────────── */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+/* ─── Buttons ────────────────────────────────────────────────────────────── */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 16px 32px;
-  border-radius: 4px;
+  border-radius: 4px; /* editorial — tight, not playful */
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.02em;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color var(--duration-micro) var(--ease-luxury),
-              color var(--duration-micro) var(--ease-luxury),
-              transform var(--duration-micro) var(--ease-luxury);
+  transition:
+    background-color var(--duration-micro) var(--ease-luxury),
+    color var(--duration-micro) var(--ease-luxury),
+    border-color var(--duration-micro) var(--ease-luxury),
+    transform var(--duration-micro) var(--ease-luxury);
   border: 2px solid transparent;
+  white-space: nowrap;
 }
 
 .btn:hover {
   transform: translateY(-1px);
 }
 
+.btn:active {
+  transform: translateY(0);
+}
+
 .btn-primary {
   background-color: var(--color-navy);
   color: var(--color-white);
 }
-
-.btn-primary:hover {
-  background-color: var(--color-navy-dark);
-}
+.btn-primary:hover { background-color: var(--color-navy-dark); }
 
 .btn-secondary {
   background-color: transparent;
   color: var(--color-navy);
   border-color: var(--color-navy);
 }
-
 .btn-secondary:hover {
   background-color: var(--color-navy);
   color: var(--color-white);
@@ -193,60 +208,68 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-white);
   color: var(--color-navy);
 }
+.btn-white:hover { background-color: var(--color-soft-blue); }
 
-.btn-white:hover {
-  background-color: var(--color-soft-blue);
-}
-
-/* Inverted on dark backgrounds */
 .btn-outline-white {
   background-color: transparent;
   color: var(--color-white);
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.35);
 }
-
 .btn-outline-white:hover {
   border-color: var(--color-white);
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* ─── Label / Eyebrow ─── */
+/* ─── Eyebrow / Label ────────────────────────────────────────────────────── */
 .eyebrow {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  opacity: 0.6;
+  opacity: 0.55;
 }
 
-/* ─── Animation utilities (GSAP will override these) ─── */
+/* ─── Decorative rule ────────────────────────────────────────────────────── */
+.rule {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0.25;
+}
+
+/* ─── Animation init state (GSAP will take over) ─────────────────────────── */
 .will-animate {
   opacity: 0;
   transform: translateY(40px);
 }
 
-/* ─── Lenis smooth scroll ─── */
+/* ─── Lenis smooth scroll ─────────────────────────────────────────────────── */
 html.lenis {
   height: auto;
 }
-
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
-
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
 }
 
-/* ─── Focus styles ─── */
+/* ─── Focus styles ───────────────────────────────────────────────────────── */
 :focus-visible {
   outline: 3px solid var(--color-soft-blue);
   outline-offset: 3px;
 }
 
-/* ─── Selection ─── */
+/* ─── Text selection ─────────────────────────────────────────────────────── */
 ::selection {
   background-color: var(--color-soft-blue);
   color: var(--color-navy);
+}
+
+/* ─── Image base ─────────────────────────────────────────────────────────── */
+img, video {
+  max-width: 100%;
+  height: auto;
 }
