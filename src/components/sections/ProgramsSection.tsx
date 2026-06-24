@@ -38,7 +38,7 @@ export function ProgramsSection() {
         gsap.registerPlugin(ScrollTrigger)
         ctx = gsap.context(() => {
           gsap.fromTo(
-            sectionRef.current?.querySelectorAll('.prog-card'),
+            '.prog-card',
             { opacity: 0, y: 40 },
             {
               opacity: 1,
@@ -49,7 +49,7 @@ export function ProgramsSection() {
               scrollTrigger: { trigger: sectionRef.current, start: 'top 70%' },
             }
           )
-        })
+        }, sectionRef)
       })
     )
     return () => ctx.revert?.()

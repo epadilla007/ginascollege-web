@@ -50,7 +50,7 @@ export function WhyGinasSection() {
         gsap.registerPlugin(ScrollTrigger)
         ctx = gsap.context(() => {
           gsap.fromTo(
-            sectionRef.current?.querySelectorAll('.reason-item'),
+            '.reason-item',
             { opacity: 0, x: -20 },
             {
               opacity: 1,
@@ -61,7 +61,7 @@ export function WhyGinasSection() {
               scrollTrigger: { trigger: sectionRef.current, start: 'top 70%' },
             }
           )
-        })
+        }, sectionRef)
       })
     )
     return () => ctx.revert?.()

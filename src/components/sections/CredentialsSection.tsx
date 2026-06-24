@@ -65,7 +65,7 @@ export function CredentialsSection() {
         gsap.registerPlugin(ScrollTrigger)
         ctx = gsap.context(() => {
           gsap.fromTo(
-            sectionRef.current?.querySelectorAll('.cred-card'),
+            '.cred-card',
             { opacity: 0, y: 32 },
             {
               opacity: 1,
@@ -79,7 +79,7 @@ export function CredentialsSection() {
               },
             }
           )
-        })
+        }, sectionRef)
       })
     )
     return () => ctx.revert?.()

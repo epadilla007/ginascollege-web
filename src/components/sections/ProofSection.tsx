@@ -57,7 +57,7 @@ export function ProofSection() {
         gsap.registerPlugin(ScrollTrigger)
         ctx = gsap.context(() => {
           gsap.fromTo(
-            sectionRef.current?.querySelectorAll('.testimonial-card'),
+            '.testimonial-card',
             { opacity: 0, y: 30 },
             {
               opacity: 1,
@@ -68,7 +68,7 @@ export function ProofSection() {
               scrollTrigger: { trigger: sectionRef.current, start: 'top 70%' },
             }
           )
-        })
+        }, sectionRef)
       })
     )
     return () => ctx.revert?.()
