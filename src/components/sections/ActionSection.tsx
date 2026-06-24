@@ -13,7 +13,7 @@ export function ActionSection() {
         gsap.registerPlugin(ScrollTrigger)
         ctx = gsap.context(() => {
           gsap.fromTo(
-            sectionRef.current?.querySelectorAll('.cta-animate'),
+            '.cta-animate',
             { opacity: 0, y: 24 },
             {
               opacity: 1,
@@ -24,7 +24,7 @@ export function ActionSection() {
               scrollTrigger: { trigger: sectionRef.current, start: 'top 75%' },
             }
           )
-        })
+        }, sectionRef)
       })
     )
     return () => ctx.revert?.()
