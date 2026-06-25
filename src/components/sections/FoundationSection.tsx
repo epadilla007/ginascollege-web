@@ -8,30 +8,32 @@ export function FoundationSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    let ctx: { revert?: () => void } = {}
-    import('gsap').then(({ gsap }) =>
-      import('gsap/ScrollTrigger').then(({ ScrollTrigger }) => {
-        gsap.registerPlugin(ScrollTrigger)
-        ctx = gsap.context(() => {
-          gsap.fromTo(
-            [
-              sectionRef.current?.querySelector('.foundation-text'),
-              sectionRef.current?.querySelector('.foundation-image'),
-            ],
-            { opacity: 0, y: 30 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.8,
-              stagger: 0.2,
-              ease: 'cubic-bezier(0.22, 1, 0.36, 1)',
-              scrollTrigger: { trigger: sectionRef.current, start: 'top 70%' },
-            }
-          )
-        })
-      })
+    const section = sectionRef.current
+    if (!section) return
+
+    const textEl = section.querySelector('.foundation-text') as HTMLElement | null
+    const imgEl = section.querySelector('.foundation-image') as HTMLElement | null
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return
+        if (textEl) {
+          textEl.style.opacity = '1'
+          textEl.style.transform = 'translateY(0)'
+        }
+        if (imgEl) {
+          setTimeout(() => {
+            imgEl.style.opacity = '1'
+            imgEl.style.transform = 'translateX(0)'
+          }, 180)
+        }
+        observer.disconnect()
+      },
+      { threshold: 0.1 }
     )
-    return () => ctx.revert?.()
+
+    observer.observe(section)
+    return () => observer.disconnect()
   }, [])
 
   return (
@@ -39,7 +41,14 @@ export function FoundationSection() {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Text column */}
-          <div className="foundation-text opacity-0">
+          <div
+            className="foundation-text"
+            style={{
+              opacity: 0,
+              transform: 'translateY(28px)',
+              transition: 'opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1)',
+            }}
+          >
             <p className="eyebrow text-[#01426A] mb-4">Our Approach</p>
             <h2 className="font-display text-[clamp(26px,3vw,44px)] font-semibold text-[#01426A] leading-tight mb-6">
               Building a Foundation for Success in Beauty and Aesthetics
@@ -55,12 +64,12 @@ export function FoundationSection() {
 
             {/* Stats */}
             <div className="grid grid-cols-2 gap-5 mb-8">
-              <div className="bg-white rounded-[8px] border border-[#E9E9E9] p-5">
-                <p className="font-display text-[36px] font-bold text-[#01426A] leading-none mb-1">70%</p>
+              <div className="bg-white rounded-[10px] border border-[#E9E9E9] p-5 hover:shadow-md hover:border-[#B1C6D9] transition-all duration-300">
+                <p className="font-display text-[38px] font-bold text-[#01426A] leading-none mb-1">70%</p>
                 <p className="text-[13px] text-[#666]">Practical training time on real clients</p>
               </div>
-              <div className="bg-white rounded-[8px] border border-[#E9E9E9] p-5">
-                <p className="font-display text-[36px] font-bold text-[#01426A] leading-none mb-1">40+</p>
+              <div className="bg-white rounded-[10px] border border-[#E9E9E9] p-5 hover:shadow-md hover:border-[#B1C6D9] transition-all duration-300">
+                <p className="font-display text-[38px] font-bold text-[#01426A] leading-none mb-1">40+</p>
                 <p className="text-[13px] text-[#666]">Years graduating beauty professionals</p>
               </div>
             </div>
@@ -71,17 +80,41 @@ export function FoundationSection() {
           </div>
 
           {/* Image column */}
-          <div className="foundation-image opacity-0">
-            <div className="relative rounded-[12px] overflow-hidden aspect-[4/3] shadow-xl">
+          <div
+            className="foundation-image relative"
+            style={{
+              opacity: 0,
+              transform: 'translateX(28px)',
+              transition: 'opacity 0.8s cubic-bezier(0.22,1,0.36,1) 0.18s, transform 0.8s cubic-bezier(0.22,1,0.36,1) 0.18s',
+            }}
+          >
+            <div className="relative rounded-[14px] overflow-hidden shadow-2xl" style={{ aspectRatio: '4/3' }}>
               <Image
-                src="https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/GinasCollege_Exterior2-713w.jpg"
+                src="/images/campus/exterior-2.jpg"
                 alt="Gina's College campus exterior"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
+              {/* Subtle colour grade */}
+              <div className="absolute inset-0 bg-[#01426A]/10" />
+            </div>
+
+            {/* Floating badge — outside overflow:hidden */}
+            <div className="absolute -bottom-4 -left-4 bg-white rounded-[10px] shadow-xl border border-[#E9E9E9] px-5 py-4 flex items-center gap-3 z-10">
+              <div className="w-10 h-10 rounded-full bg-[#01426A]/10 flex items-center justify-center flex-shrink-0">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <circle cx="9" cy="9" r="8" stroke="#01426A" strokeWidth="1.4" />
+                  <path d="M5.5 9l2.5 2.5 4.5-5" stroke="#01426A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-[13px] font-semibold text-[#01426A] leading-tight">CIDESCO Certified</p>
+                <p className="text-[11px] text-[#999]">World-standard school</p>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>

@@ -31,20 +31,22 @@ function FAQItem({ question, answer, isOpen, onClick }: {
   isOpen: boolean
   onClick: () => void
 }) {
-  const bodyRef = useRef<HTMLDivElement>(null)
-
   return (
     <div className="border-b border-[#E9E9E9] last:border-0">
       <button
         onClick={onClick}
-        className="w-full flex items-start justify-between gap-6 py-5 text-left"
+        className="w-full flex items-start justify-between gap-6 py-5 text-left group"
         aria-expanded={isOpen}
       >
-        <span className="font-display text-[17px] font-semibold text-[#01426A] leading-snug">
+        <span className="font-display text-[17px] font-semibold text-[#01426A] leading-snug group-hover:text-[#0a5a8a] transition-colors duration-200">
           {question}
         </span>
         <span
-          className={`flex-shrink-0 w-7 h-7 rounded-full border border-[#01426A]/20 flex items-center justify-center transition-transform duration-300 mt-[1px] ${isOpen ? 'bg-[#01426A] rotate-45' : 'bg-transparent'}`}
+          className={`flex-shrink-0 w-7 h-7 rounded-full border flex items-center justify-center transition-all duration-300 mt-[2px] ${
+            isOpen
+              ? 'bg-[#01426A] border-[#01426A] rotate-45'
+              : 'bg-transparent border-[#01426A]/25 group-hover:border-[#01426A]/50'
+          }`}
         >
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
             <path d="M6 1v10M1 6h10" stroke={isOpen ? '#fff' : '#01426A'} strokeWidth="1.5" strokeLinecap="round" />
@@ -52,11 +54,10 @@ function FAQItem({ question, answer, isOpen, onClick }: {
         </span>
       </button>
       <div
-        ref={bodyRef}
         className="overflow-hidden transition-all duration-300"
         style={{ maxHeight: isOpen ? '500px' : '0px', opacity: isOpen ? 1 : 0 }}
       >
-        <p className="text-[15px] text-[#555] leading-relaxed pb-5">{answer}</p>
+        <p className="text-[15px] text-[#555] leading-relaxed pb-5 pr-10">{answer}</p>
       </div>
     </div>
   )
@@ -67,42 +68,49 @@ export function FAQSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    let ctx: { revert?: () => void } = {}
-    import('gsap').then(({ gsap }) =>
-      import('gsap/ScrollTrigger').then(({ ScrollTrigger }) => {
-        gsap.registerPlugin(ScrollTrigger)
-        ctx = gsap.context(() => {
-          gsap.fromTo(
-            sectionRef.current,
-            { opacity: 0, y: 24 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.7,
-              ease: 'cubic-bezier(0.22, 1, 0.36, 1)',
-              scrollTrigger: { trigger: sectionRef.current, start: 'top 75%' },
-            }
-          )
-        })
-      })
+    const section = sectionRef.current
+    if (!section) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return
+        section.style.opacity = '1'
+        section.style.transform = 'translateY(0)'
+        observer.disconnect()
+      },
+      { threshold: 0.08 }
     )
-    return () => ctx.revert?.()
+
+    observer.observe(section)
+    return () => observer.disconnect()
   }, [])
 
   return (
-    <section ref={sectionRef} className="opacity-0 section bg-[#F6F8FA]" aria-label="Frequently asked questions">
+    <section
+      ref={sectionRef}
+      className="section bg-[#F6F8FA]"
+      style={{
+        opacity: 0,
+        transform: 'translateY(20px)',
+        transition: 'opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1)',
+      }}
+      aria-label="Frequently asked questions"
+    >
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           {/* Left heading */}
           <div className="lg:col-span-4">
             <p className="eyebrow text-[#01426A] mb-4">FAQ</p>
-            <h2 className="font-display text-[clamp(26px,3vw,42px)] font-semibold text-[#01426A] leading-tight">
+            <h2 className="font-display text-[clamp(26px,3vw,42px)] font-semibold text-[#01426A] leading-tight mb-4">
               Questions we hear from students
             </h2>
+            <p className="text-[14px] text-[#666] leading-relaxed">
+              Can&apos;t find your answer here? Contact us — we&apos;re happy to help you find the right program.
+            </p>
           </div>
 
           {/* Right accordion */}
-          <div className="lg:col-span-8 bg-white rounded-[10px] border border-[#E9E9E9] px-6 py-2">
+          <div className="lg:col-span-8 bg-white rounded-[12px] border border-[#E9E9E9] px-6 py-2 shadow-sm">
             {faqs.map((faq, i) => (
               <FAQItem
                 key={i}

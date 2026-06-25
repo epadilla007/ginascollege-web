@@ -77,7 +77,8 @@ export function Navbar() {
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const pathname = usePathname()
-  const transparent = pathname === '/' && !scrolled
+  // Always frosted-white glass — readability on all pages/scroll positions
+  const transparent = false
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80)
@@ -107,9 +108,9 @@ export function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          transparent
-            ? 'bg-transparent'
-            : 'bg-white/96 backdrop-blur-md shadow-[0_1px_12px_rgba(0,0,0,0.07)] border-b border-[#E9E9E9]'
+          scrolled || pathname !== '/'
+            ? 'bg-white/95 backdrop-blur-2xl shadow-[0_1px_20px_rgba(0,0,0,0.08)] border-b border-[#E9E9E9]/80'
+            : 'bg-white/[0.55] backdrop-blur-2xl border-b border-white/30 shadow-[0_1px_16px_rgba(0,0,0,0.04)]'
         }`}
       >
         <div className="container">
