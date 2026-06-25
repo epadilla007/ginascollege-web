@@ -117,10 +117,10 @@ export function Navbar() {
             {/* Logo */}
             <Link href="/" aria-label="Gina's College — Home" className="flex-shrink-0">
               <Image
-                src="/images/logo.svg"
+                src="/images/logo.png"
                 alt="Gina's College of Advanced Aesthetics"
-                width={148}
-                height={50}
+                width={188}
+                height={67}
                 priority
                 className={`h-[42px] w-auto transition-all duration-300 ${transparent ? 'brightness-0 invert' : ''}`}
               />
@@ -247,7 +247,7 @@ export function Navbar() {
           {/* Drawer header */}
           <div className="flex items-center justify-between px-5 h-[70px] border-b border-[#E9E9E9] flex-shrink-0">
             <Link href="/" onClick={() => setMobileOpen(false)}>
-              <Image src="/images/logo.svg" alt="Gina's College" width={110} height={36} className="h-8 w-auto" />
+              <Image src="/images/logo.png" alt="Gina's College" width={188} height={67} className="h-8 w-auto" />
             </Link>
             <button onClick={() => setMobileOpen(false)} className="w-8 h-8 flex items-center justify-center text-[#01426A]" aria-label="Close">
               <svg width="18" height="18" viewBox="0 0 18 18" fill="none">

@@ -4,12 +4,12 @@ import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 
 const brands = [
-  { name: 'OPI', src: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/OPI-logo.png' },
-  { name: 'Diego dalla Palma', src: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/diego-dalla-palma-logo.png' },
-  { name: 'RVB LAB', src: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/rvb-lab-logo.png' },
-  { name: 'Naturmed', src: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/naturmed-logo.png' },
-  { name: 'Footlogix', src: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/footlogix-logo.png' },
-  { name: 'Bold Lashes', src: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/bold-lashes-logo.png' },
+  { name: 'OPI', src: 'https://irp.cdn-website.com/ae4ce602/dms3rep/multi/ginas-img15.png' },
+  { name: 'Diego dalla Palma', src: 'https://irp.cdn-website.com/ae4ce602/dms3rep/multi/DDP_Logo_new2018-copy_12.png' },
+  { name: 'RVB LAB', src: 'https://irp.cdn-website.com/ae4ce602/dms3rep/multi/ginas-img18.png' },
+  { name: 'Naturmed', src: 'https://irp.cdn-website.com/ae4ce602/dms3rep/multi/ginas-img16.png' },
+  { name: 'Footlogix', src: 'https://irp.cdn-website.com/ae4ce602/dms3rep/multi/ginas-img17.png' },
+  { name: 'Bold Lashes', src: 'https://irp.cdn-website.com/ae4ce602/dms3rep/multi/ginas-img19.png' },
 ]
 
 export function BrandsSection() {
