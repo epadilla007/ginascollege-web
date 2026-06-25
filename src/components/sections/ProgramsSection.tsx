@@ -8,21 +8,24 @@ const programs = [
   {
     title: 'Medical Aesthetics',
     href: '/programs/medical-aesthetics',
-    image: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/medical-skin-care-face-with-multiple-tools-without-needle-scaled-619w.jpg',
+    // Upgraded from 619w CDN — Pexels spa facial treatment, full HD
+    image: 'https://images.pexels.com/photos/5659056/pexels-photo-5659056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     alt: 'Medical Aesthetics program at Gina\'s College',
     description: 'Advanced skin treatments, laser technology, and medical-grade procedures.',
   },
   {
     title: 'Hairstyling',
     href: '/programs/hairstyling',
-    image: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/9-21-619w.jpg',
+    // Upgraded from 619w CDN — Pexels salon hairstyle, full HD
+    image: 'https://images.pexels.com/photos/3065208/pexels-photo-3065208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     alt: 'Hairstyling program at Gina\'s College',
     description: 'Cutting, colouring, styling, and the business of running a successful salon.',
   },
   {
     title: 'Electrolysis & Light Technology',
     href: '/programs/electrolysis-light-technology',
-    image: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/laserlight-619w.jpg',
+    // Upgraded from 619w CDN — Pexels LED light therapy facial, full HD
+    image: 'https://images.pexels.com/photos/19242408/pexels-photo-19242408.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     alt: 'Electrolysis and Light Technology program at Gina\'s College',
     description: 'Permanent hair removal, laser, and light-based skin treatments.',
   },

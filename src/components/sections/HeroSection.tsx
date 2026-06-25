@@ -28,7 +28,7 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="relative overflow-hidden" aria-label="Hero">
+    <section className="relative overflow-hidden -mt-[70px]" aria-label="Hero">
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
@@ -44,7 +44,7 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative container py-24 md:py-32 lg:py-40 flex flex-col items-start justify-end min-h-[520px] md:min-h-[620px] lg:min-h-[700px]">
+      <div className="relative container pt-[94px] pb-24 md:py-32 lg:py-40 flex flex-col items-start justify-end min-h-[590px] md:min-h-[690px] lg:min-h-[770px]">
 
         {/* CIDESCO badge */}
         <div ref={badgeRef} className="opacity-0 mb-6 flex items-center gap-2">

@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 type DropdownItem = { label: string; href: string }
 type NavGroup = { label: string; items: DropdownItem[]; wide?: boolean }
@@ -74,9 +75,11 @@ export function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const pathname = usePathname()
+  const transparent = pathname === '/' && !scrolled
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16)
+    const onScroll = () => setScrolled(window.scrollY > 80)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -85,6 +88,10 @@ export function Navbar() {
     document.body.style.overflow = mobileOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [mobileOpen])
+
+  const linkCls = transparent
+    ? 'text-white/90 hover:text-white'
+    : 'text-[#1a1a1a] hover:text-[#01426A]'
 
   const openMenu = (label: string) => {
     if (closeTimer.current) clearTimeout(closeTimer.current)
@@ -99,9 +106,9 @@ export function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'bg-white/96 backdrop-blur-md shadow-[0_1px_12px_rgba(0,0,0,0.07)] border-b border-[#E9E9E9]'
-            : 'bg-white border-b border-[#E9E9E9]/70'
+          transparent
+            ? 'bg-transparent'
+            : 'bg-white/96 backdrop-blur-md shadow-[0_1px_12px_rgba(0,0,0,0.07)] border-b border-[#E9E9E9]'
         }`}
       >
         <div className="container">
@@ -115,7 +122,7 @@ export function Navbar() {
                 width={148}
                 height={50}
                 priority
-                className="h-[42px] w-auto"
+                className={`h-[42px] w-auto transition-all duration-300 ${transparent ? 'brightness-0 invert' : ''}`}
               />
             </Link>
 
@@ -127,7 +134,7 @@ export function Navbar() {
                     <Link
                       key={item.label}
                       href={item.href}
-                      className="px-3.5 py-2 text-[12.5px] font-semibold tracking-[0.06em] uppercase text-[#1a1a1a] hover:text-[#01426A] transition-colors duration-150 whitespace-nowrap"
+                      className={`px-3.5 py-2 text-[12.5px] font-semibold tracking-[0.06em] uppercase transition-colors duration-150 whitespace-nowrap ${linkCls}`}
                     >
                       {item.label}
                     </Link>
@@ -142,7 +149,7 @@ export function Navbar() {
                     onMouseLeave={scheduleClose}
                   >
                     <button
-                      className="flex items-center gap-1.5 px-3.5 py-2 text-[12.5px] font-semibold tracking-[0.06em] uppercase text-[#1a1a1a] hover:text-[#01426A] transition-colors duration-150 whitespace-nowrap"
+                      className={`flex items-center gap-1.5 px-3.5 py-2 text-[12.5px] font-semibold tracking-[0.06em] uppercase transition-colors duration-150 whitespace-nowrap ${linkCls}`}
                       aria-haspopup="true"
                       aria-expanded={openDropdown === item.label}
                     >
@@ -204,7 +211,10 @@ export function Navbar() {
 
             {/* Desktop CTA */}
             <div className="hidden xl:block ml-4 flex-shrink-0">
-              <Link href="/apply" className="btn btn-primary text-[12.5px] px-5 py-[11px]">
+              <Link
+                href="/apply"
+                className={`btn text-[12.5px] px-5 py-[11px] ${transparent ? 'btn-outline-white' : 'btn-primary'}`}
+              >
                 Request More Info
               </Link>
             </div>
@@ -216,9 +226,9 @@ export function Navbar() {
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
             >
-              <span className={`block w-[22px] h-[1.5px] bg-[#01426A] transition-all duration-300 origin-center ${mobileOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
-              <span className={`block w-[22px] h-[1.5px] bg-[#01426A] transition-all duration-200 ${mobileOpen ? 'opacity-0' : ''}`} />
-              <span className={`block w-[22px] h-[1.5px] bg-[#01426A] transition-all duration-300 origin-center ${mobileOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
+              <span className={`block w-[22px] h-[1.5px] transition-all duration-300 origin-center ${transparent ? 'bg-white' : 'bg-[#01426A]'} ${mobileOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
+              <span className={`block w-[22px] h-[1.5px] transition-all duration-200 ${transparent ? 'bg-white' : 'bg-[#01426A]'} ${mobileOpen ? 'opacity-0' : ''}`} />
+              <span className={`block w-[22px] h-[1.5px] transition-all duration-300 origin-center ${transparent ? 'bg-white' : 'bg-[#01426A]'} ${mobileOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
             </button>
 
           </div>

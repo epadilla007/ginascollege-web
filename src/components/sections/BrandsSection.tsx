@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 
 const brands = [
   { name: 'OPI', src: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/OPI-logo.png' },
@@ -44,11 +45,14 @@ export function BrandsSection() {
         </p>
         <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
           {brands.map((brand) => (
-            <div key={brand.name} className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-200">
-              {/* Fallback text logo in case CDN images 404 for brand logos */}
-              <span className="font-display text-[16px] font-bold text-[#888] tracking-wide">
-                {brand.name}
-              </span>
+            <div key={brand.name} className="flex items-center justify-center opacity-50 hover:opacity-90 transition-opacity duration-200 h-10">
+              <Image
+                src={brand.src}
+                alt={brand.name}
+                width={120}
+                height={40}
+                className="object-contain w-auto h-full grayscale hover:grayscale-0 transition-all duration-300"
+              />
             </div>
           ))}
         </div>
