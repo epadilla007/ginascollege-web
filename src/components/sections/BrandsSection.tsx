@@ -16,29 +16,29 @@ export function BrandsSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    let ctx: { revert?: () => void } = {}
-    import('gsap').then(({ gsap }) =>
-      import('gsap/ScrollTrigger').then(({ ScrollTrigger }) => {
-        gsap.registerPlugin(ScrollTrigger)
-        ctx = gsap.context(() => {
-          gsap.fromTo(
-            sectionRef.current,
-            { opacity: 0 },
-            {
-              opacity: 1,
-              duration: 0.8,
-              ease: 'cubic-bezier(0.22, 1, 0.36, 1)',
-              scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' },
-            }
-          )
-        })
-      })
+    const el = sectionRef.current
+    if (!el) return
+    // IntersectionObserver — works regardless of Lenis / ScrollTrigger proxy
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.style.opacity = '1'
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
     )
-    return () => ctx.revert?.()
+    observer.observe(el)
+    return () => observer.disconnect()
   }, [])
 
   return (
-    <section ref={sectionRef} className="opacity-0 py-14 bg-white border-y border-[#E9E9E9]" aria-label="Brand partners">
+    <section
+      ref={sectionRef}
+      style={{ opacity: 0, transition: 'opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1)' }}
+      className="py-14 bg-white border-y border-[#E9E9E9]"
+      aria-label="Brand partners"
+    >
       <div className="container">
         <p className="text-center text-[11px] font-semibold uppercase tracking-widest text-[#999] mb-8">
           Our Brand Partners
