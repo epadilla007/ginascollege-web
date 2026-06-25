@@ -13,8 +13,6 @@
 
     { "source": "/programs-overview", "destination": "/programs", "permanent": true },
     { "source": "/all-programs", "destination": "/programs", "permanent": true },
-    { "source": "/diploma-programs", "destination": "/programs", "permanent": true },
-    { "source": "/certificate-programs", "destination": "/programs", "permanent": true },
     { "source": "/certificate-program/:slug*", "destination": "/programs", "permanent": true },
     { "source": "/cidesco-international-program", "destination": "/programs", "permanent": true },
 
@@ -44,22 +42,18 @@
 
     { "source": "/mississauga", "destination": "/campuses/mississauga", "permanent": true },
     { "source": "/mississauga-campus", "destination": "/campuses/mississauga", "permanent": true },
-    { "source": "/mississauga-spa-beauty-services", "destination": "/campuses/mississauga", "permanent": true },
-    { "source": "/mississauga-spa-beauty-servicesf1e3ff33", "destination": "/campuses/mississauga", "permanent": true },
+    { "source": "/mississauga-spa-beauty-servicesf1e3ff33", "destination": "/mississauga-spa-beauty-services", "permanent": true },
     { "source": "/waterloo", "destination": "/campuses/waterloo", "permanent": true },
     { "source": "/waterloo-campus", "destination": "/campuses/waterloo", "permanent": true },
-    { "source": "/waterloo-spa-beauty-services", "destination": "/campuses/waterloo", "permanent": true },
-    { "source": "/waterloo-hair-design-services", "destination": "/campuses/waterloo", "permanent": true },
     { "source": "/ottawa", "destination": "/campuses/ottawa", "permanent": true },
     { "source": "/ottawa-campus", "destination": "/campuses/ottawa", "permanent": true },
-    { "source": "/service/ottawa-beauty-spa-and-service", "destination": "/campuses/ottawa", "permanent": true },
+    { "source": "/service/ottawa-beauty-spa-and-service", "destination": "/ottawa-spa-beauty-services", "permanent": true },
     { "source": "/ginas-campus-tour", "destination": "/campuses", "permanent": true },
 
-    { "source": "/student-clinic", "destination": "/clinic", "permanent": true },
-    { "source": "/clinic-services", "destination": "/clinic", "permanent": true },
-    { "source": "/spa", "destination": "/clinic", "permanent": true },
-    { "source": "/book-appointment", "destination": "/clinic#book", "permanent": true },
-    { "source": "/beauty-clinic", "destination": "/clinic", "permanent": true },
+    { "source": "/student-clinic", "destination": "/beauty-clinic", "permanent": true },
+    { "source": "/clinic-services", "destination": "/beauty-clinic", "permanent": true },
+    { "source": "/spa", "destination": "/beauty-clinic", "permanent": true },
+    { "source": "/book-appointment", "destination": "/beauty-clinic#book", "permanent": true },
 
     { "source": "/apply-now", "destination": "/apply", "permanent": true },
     { "source": "/application", "destination": "/apply", "permanent": true },
@@ -72,10 +66,9 @@
     { "source": "/career-consultation", "destination": "/consultation", "permanent": true },
     { "source": "/book-consultation", "destination": "/consultation", "permanent": true },
 
-    { "source": "/financial-aid", "destination": "/financing", "permanent": true },
-    { "source": "/osap", "destination": "/financing", "permanent": true },
-    { "source": "/tuition", "destination": "/financing", "permanent": true },
-    { "source": "/funding", "destination": "/financing", "permanent": true },
+    { "source": "/osap", "destination": "/financial-aid", "permanent": true },
+    { "source": "/tuition", "destination": "/financial-aid", "permanent": true },
+    { "source": "/funding", "destination": "/financial-aid", "permanent": true },
     { "source": "/manicure-course", "destination": "/programs/nail-technology", "permanent": true },
     { "source": "/permanent-makeup--pmu-powdered-eyebrows-and-hairstroke-level-2-practical-training", "destination": "/programs", "permanent": true },
 
@@ -84,10 +77,6 @@
     { "source": "/ligia-t", "destination": "/success-stories", "permanent": true },
     { "source": "/quiz", "destination": "/apply", "permanent": true },
 
-    { "source": "/building-a-foundation-for-success", "destination": "/about", "permanent": true },
-    { "source": "/videos", "destination": "/about", "permanent": true },
-    { "source": "/ontario-career-colleges-act", "destination": "/about", "permanent": true },
-    { "source": "/sexual-violence-and-harassment-policy", "destination": "/privacy", "permanent": true },
 
     { "source": "/gallery", "destination": "/about#gallery", "permanent": true },
     { "source": "/photo-gallery", "destination": "/about#gallery", "permanent": true },

@@ -4,13 +4,12 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: "Mississauga Campus — Gina's College of Advanced Aesthetics",
   description:
-    "Gina's College Mississauga. 7-3045 Southcreek Rd., Mississauga ON L4X 2E9. Diploma programs in medical aesthetics, hairstyling, electrolysis, and more.",
+    "Gina's College Mississauga. 7-3045 Southcreek Rd., Mississauga ON L4X 2E9. Diploma programs in medical aesthetics, electrolysis, and more. OSAP-eligible.",
 }
 
 const programs = [
   { name: 'Medical Aesthetics Diploma', href: '/programs/medical-aesthetics', tag: 'Diploma' },
   { name: 'Advanced Aesthetics Diploma', href: '/programs/advanced-aesthetics', tag: 'Diploma' },
-  { name: 'Hairstyling Diploma', href: '/programs/hairstyling', tag: 'Diploma' },
   { name: 'Electrolysis & Light Technology Diploma', href: '/programs/electrolysis-light-technology', tag: 'Diploma' },
   { name: 'Nail Technology', href: '/programs/nail-technology', tag: 'Certificate' },
   { name: 'Makeup Artistry', href: '/programs/makeup-artistry', tag: 'Certificate' },
@@ -42,8 +41,8 @@ export default function MississaugaCampusPage() {
             Mississauga Campus
           </h1>
           <p className="text-[#000000]/60 text-lg leading-relaxed max-w-[560px]">
-            Our flagship location. Full program lineup, a working student spa, and licensed
-            instructors who have been in the industry for years.
+            Our GTA campus. Medical aesthetics, advanced aesthetics, electrolysis, and certificate
+            programs — with licensed instructors who have been in the industry for years.
           </p>
         </div>
 
