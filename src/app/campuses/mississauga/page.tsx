@@ -31,7 +31,7 @@ export default function MississaugaCampusPage() {
             <span>/</span>
             <span className="text-[#000000]/60">Mississauga</span>
           </nav>
-          <p className="eyebrow text-[#01426A]/50 mb-5">Campus</p>
+          <p className="eyebrow text-[#01426A]/80 mb-5">Campus</p>
           <h1
             className="font-serif italic text-[#01426A] leading-[1.0] mb-6"
             style={{ fontSize: 'clamp(44px, 5vw, 72px)' }}
@@ -143,7 +143,7 @@ export default function MississaugaCampusPage() {
         <div className="container max-w-[860px] py-16 lg:py-20">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
             <div className="max-w-[560px]">
-              <p className="eyebrow text-white/35 mb-5">Get Started</p>
+              <p className="eyebrow text-white/60 mb-5">Get Started</p>
               <h2
                 className="font-serif italic text-white leading-[1.0]"
                 style={{ fontSize: 'clamp(30px, 3.5vw, 48px)' }}

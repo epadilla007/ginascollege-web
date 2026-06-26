@@ -128,7 +128,7 @@ export function ProofSection() {
               <cite className="not-italic text-[14px] font-bold text-[#01426A] tracking-[0.04em]">
                 {pullQuote.author}
               </cite>
-              <p className="text-[12px] text-[#01426A]/50 tracking-[0.04em] mt-0.5">{pullQuote.credential}</p>
+              <p className="text-[12px] text-[#01426A]/70 tracking-[0.04em] mt-0.5">{pullQuote.credential}</p>
             </div>
           </footer>
         </blockquote>
@@ -141,7 +141,7 @@ export function ProofSection() {
 
       {/* Editorial testimonial grid */}
       <section ref={sectionRef} className="container" style={{ paddingTop: '60px', paddingBottom: 'clamp(72px, 9vw, 120px)' }}>
-        <p className="eyebrow text-[#01426A]/40 mb-10">More Success Stories</p>
+        <p className="eyebrow text-[#01426A]/70 mb-10">More Success Stories</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: 'rgba(196, 133, 106, 0.15)' }}>
           {testimonials.map((t, i) => (
             <div

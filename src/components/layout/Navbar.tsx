@@ -180,7 +180,7 @@ export function Navbar() {
                         {/* Our Courses gets a diploma section header */}
                         {item.label === 'Our Courses' && (
                           <div className="px-1.5 pb-1 mb-1 border-b border-[#E9E9E9]">
-                            <p className="px-3 pt-2 pb-1 text-[10px] font-bold uppercase tracking-widest text-[#01426A]/50">
+                            <p className="px-3 pt-2 pb-1 text-xs font-semibold uppercase tracking-wider text-[#01426A]/70">
                               Diploma Programs
                             </p>
                             {diplomaPrograms.map((prog) => (
@@ -292,7 +292,7 @@ export function Navbar() {
                     <div className="bg-[#E9E9E9]/20 border-y border-[#E9E9E9]">
                       {item.label === 'Our Courses' && (
                         <>
-                          <p className="pl-7 pt-2.5 pb-1 text-[10px] font-bold uppercase tracking-widest text-[#01426A]/50">Diploma Programs</p>
+                          <p className="pl-7 pt-2.5 pb-1 text-xs font-semibold uppercase tracking-wider text-[#01426A]/70">Diploma Programs</p>
                           {diplomaPrograms.map((prog) => (
                             <Link key={prog.label} href={prog.href} onClick={() => setMobileOpen(false)}
                               className="block pl-7 pr-5 py-2 text-[13px] text-[#444] hover:text-[#01426A] transition-colors">

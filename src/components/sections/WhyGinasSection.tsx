@@ -117,7 +117,7 @@ export function WhyGinasSection() {
           className="flex-1 px-8 md:px-12 lg:px-16 xl:px-20 py-16 lg:py-24"
         >
           {/* Heading */}
-          <p className="eyebrow text-white/35 mb-5">Why Choose Us</p>
+          <p className="eyebrow text-white/60 mb-5">Why Choose Us</p>
           <h2
             className="font-serif italic font-light text-white leading-[0.95] mb-4"
             style={{ fontSize: 'clamp(34px, 4vw, 60px)' }}

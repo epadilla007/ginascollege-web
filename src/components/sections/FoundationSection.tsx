@@ -62,7 +62,7 @@ export function FoundationSection() {
               transition: 'opacity 0.85s cubic-bezier(0.22,1,0.36,1), transform 0.85s cubic-bezier(0.22,1,0.36,1)',
             }}
           >
-            <p className="eyebrow text-[#01426A]/50 mb-5">Our Approach</p>
+            <p className="eyebrow text-[#01426A]/80 mb-5">Our Approach</p>
             <h2
               className="font-serif font-medium text-[#01426A] leading-[0.97] mb-7"
               style={{ fontSize: 'clamp(32px, 3.8vw, 58px)' }}

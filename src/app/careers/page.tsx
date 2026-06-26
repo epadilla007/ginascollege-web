@@ -41,7 +41,7 @@ export default function CareersPage() {
             <span>/</span>
             <span>Careers</span>
           </div>
-          <p className="eyebrow text-[#01426A]/50 mb-5">Join the Team</p>
+          <p className="eyebrow text-[#01426A]/80 mb-5">Join the Team</p>
           <h1
             className="font-serif italic text-[#01426A] leading-[1.0] mb-6"
             style={{ fontSize: 'clamp(44px, 5vw, 72px)' }}
@@ -92,7 +92,7 @@ export default function CareersPage() {
                 style={{ borderColor: 'var(--color-cream-deep)' }}
               >
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-[#01426A]/50 mb-1">Roles we hire for</p>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-[#01426A]/70 mb-1">Roles we hire for</p>
                   <p className="text-sm text-[#000000]/60">Aesthetics Instructors &bull; Hairstyling Instructors &bull; Admissions Advisors &bull; Student Clinic Coordinators &bull; Administrative Staff</p>
                 </div>
               </div>
@@ -130,7 +130,7 @@ export default function CareersPage() {
         <div className="container py-16 lg:py-20">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
             <div className="max-w-[560px]">
-              <p className="eyebrow text-white/35 mb-5">Careers</p>
+              <p className="eyebrow text-white/60 mb-5">Careers</p>
               <h2
                 className="font-serif italic text-white leading-[1.0]"
                 style={{ fontSize: 'clamp(30px, 3.5vw, 48px)' }}

@@ -54,7 +54,7 @@ export default function FinancialAid() {
       {/* Cream Hero */}
       <div style={{ backgroundColor: 'var(--color-cream)' }} className="pt-32 lg:pt-40 pb-16 lg:pb-20">
         <div className="container max-w-[860px]">
-          <p className="eyebrow text-[#01426A]/50 mb-5">Financial Aid</p>
+          <p className="eyebrow text-[#01426A]/80 mb-5">Financial Aid</p>
           <h1
             className="font-serif italic text-[#01426A] leading-[1.0] mb-6"
             style={{ fontSize: 'clamp(44px, 5vw, 72px)' }}
@@ -135,7 +135,7 @@ export default function FinancialAid() {
         <div className="container py-16 lg:py-20">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
             <div className="max-w-[560px]">
-              <p className="eyebrow text-white/35 mb-5">Financial Aid</p>
+              <p className="eyebrow text-white/60 mb-5">Financial Aid</p>
               <h2
                 className="font-serif italic text-white leading-[1.0]"
                 style={{ fontSize: 'clamp(30px, 3.5vw, 48px)' }}

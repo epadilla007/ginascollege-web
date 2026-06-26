@@ -56,7 +56,7 @@ export default function HowToApplyPage() {
       {/* Cream hero */}
       <div style={{ backgroundColor: 'var(--color-cream)' }} className="pt-32 lg:pt-40 pb-16 lg:pb-20">
         <div className="container max-w-[860px]">
-          <p className="eyebrow text-[#01426A]/50 mb-5">Admissions</p>
+          <p className="eyebrow text-[#01426A]/80 mb-5">Admissions</p>
           <h1
             className="font-serif italic text-[#01426A] leading-[1.0] mb-6"
             style={{ fontSize: 'clamp(44px, 5vw, 72px)' }}
@@ -131,7 +131,7 @@ export default function HowToApplyPage() {
                 className="p-5 border"
                 style={{ backgroundColor: 'var(--color-cream)', borderColor: 'var(--color-cream-deep)' }}
               >
-                <p className="text-sm font-medium text-[#01426A]/50 mb-1.5">
+                <p className="text-sm font-medium text-[#01426A]/70 mb-1.5">
                   {req.label}
                 </p>
                 <p className="text-sm text-[#000000]/65 leading-relaxed">{req.detail}</p>
@@ -150,7 +150,7 @@ export default function HowToApplyPage() {
         <div className="container py-16 lg:py-20">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
             <div className="max-w-[560px]">
-              <p className="eyebrow text-white/35 mb-5">Get Started</p>
+              <p className="eyebrow text-white/60 mb-5">Get Started</p>
               <h2
                 className="font-serif italic text-white leading-[1.0]"
                 style={{ fontSize: 'clamp(30px, 3.5vw, 48px)' }}

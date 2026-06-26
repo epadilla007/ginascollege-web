@@ -78,7 +78,7 @@ export function ProgramsSection() {
           style={{ opacity: 0, transform: 'translateY(20px)', transition: 'opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1)' }}
         >
           <div>
-            <p className="eyebrow text-[#01426A]/50 mb-4">Our Courses</p>
+            <p className="eyebrow text-[#01426A]/80 mb-4">Our Courses</p>
             <h2
               className="font-serif font-medium text-[#01426A] leading-[0.97]"
               style={{ fontSize: 'clamp(36px, 4.5vw, 68px)' }}
@@ -118,7 +118,7 @@ export function ProgramsSection() {
             {/* Dark overlay from bottom */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#01426A]/90 via-[#01426A]/30 to-transparent" />
             {/* Tag */}
-            <span className="absolute top-5 left-5 bg-[#B08450] text-white text-[10px] font-bold uppercase tracking-[0.15em] px-3 py-1.5 rounded-sm">
+            <span className="absolute top-5 left-5 bg-[#B08450] text-[#000000] text-xs font-bold uppercase tracking-[0.12em] px-3 py-1.5 rounded-sm">
               {feature.tag}
             </span>
             {/* Text — anchored to bottom */}
@@ -163,7 +163,7 @@ export function ProgramsSection() {
                   sizes="(max-width: 1024px) 100vw, 42vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#01426A]/85 via-[#01426A]/25 to-transparent" />
-                <span className="absolute top-4 left-4 bg-white/15 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-[0.12em] px-2.5 py-1 rounded-sm border border-white/20">
+                <span className="absolute top-4 left-4 bg-white/25 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-[0.10em] px-2.5 py-1 rounded-sm border border-white/30">
                   {prog.tag}
                 </span>
                 <div className="absolute bottom-0 left-0 right-0 p-6">

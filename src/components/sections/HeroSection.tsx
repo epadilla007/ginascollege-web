@@ -109,11 +109,11 @@ export function HeroSection() {
                 <circle cx="6" cy="5" r="1.5" fill="white" />
               </svg>
               <span className="text-[13px] text-white/60 font-medium">{campus.label}</span>
-              <span className="text-[12px] text-white/35">{campus.detail}</span>
+              <span className="text-[12px] text-white/55">{campus.detail}</span>
             </div>
           ))}
           <span className="hidden sm:block w-[1px] h-4 bg-white/15" />
-          <span className="text-[12px] text-white/35 tracking-[0.08em] uppercase">5,000+ Graduates</span>
+          <span className="text-[12px] text-white/55 tracking-[0.08em] uppercase">5,000+ Graduates</span>
         </div>
       </div>
     </section>

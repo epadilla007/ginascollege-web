@@ -29,7 +29,7 @@ export default function ApplyPage() {
         <div className="container max-w-[1100px]">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-end">
             <div className="pb-12 lg:pb-16">
-              <p className="eyebrow text-[#01426A]/50 mb-5">Admissions</p>
+              <p className="eyebrow text-[#01426A]/80 mb-5">Admissions</p>
               <h1
                 className="font-serif italic text-[#01426A] leading-[1.0] mb-6"
                 style={{ fontSize: 'clamp(44px, 5vw, 72px)' }}

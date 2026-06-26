@@ -65,7 +65,7 @@ export default function ProgramsPage() {
       {/* Hero — cream bg */}
       <div style={{ backgroundColor: 'var(--color-cream)' }} className="pt-32 lg:pt-40 pb-16 lg:pb-20">
         <div className="container max-w-[960px]">
-          <p className="eyebrow text-[#01426A]/50 mb-5">Programs</p>
+          <p className="eyebrow text-[#01426A]/80 mb-5">Programs</p>
           <h1
             className="font-serif italic text-[#01426A] leading-[1.0] mb-6"
             style={{ fontSize: 'clamp(52px, 6vw, 88px)' }}
@@ -92,7 +92,7 @@ export default function ProgramsPage() {
             >
               Diploma Programs
             </h2>
-            <span className="text-[10px] font-bold uppercase tracking-widest text-[#C4856A] border border-[#C4856A] px-3 py-1">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#01426A] border border-[#01426A]/30 px-3 py-1">
               OSAP Eligible
             </span>
           </div>
@@ -113,7 +113,7 @@ export default function ProgramsPage() {
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   {p.title === 'Medical Aesthetics' && (
-                    <span className="absolute top-3 right-3 bg-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-[#C4856A] border border-[#C4856A]">
+                    <span className="absolute top-3 right-3 bg-white px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-[#01426A] border border-[#01426A]/30">
                       CIDESCO
                     </span>
                   )}
@@ -190,7 +190,7 @@ export default function ProgramsPage() {
         <div className="container py-16 lg:py-24">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
             <div className="max-w-[560px]">
-              <p className="eyebrow text-white/35 mb-5">Ready to begin?</p>
+              <p className="eyebrow text-white/60 mb-5">Ready to begin?</p>
               <h2
                 className="font-serif italic text-white leading-[1.0]"
                 style={{ fontSize: 'clamp(30px, 3.5vw, 48px)' }}

@@ -462,7 +462,7 @@ export default async function ProgramPage({
               { label: 'Funding', value: isOSAP ? 'OSAP eligible' : 'Flexible options' },
             ].map((stat) => (
               <div key={stat.label} className="py-8 px-6" style={{ backgroundColor: 'var(--color-cream)' }}>
-                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#01426A]/50 mb-1">{stat.label}</p>
+                <p className="text-sm font-medium text-[#01426A]/65 mb-1">{stat.label}</p>
                 <p className="font-serif italic text-[#01426A] font-semibold leading-snug" style={{ fontSize: 'clamp(18px, 2vw, 26px)' }}>{stat.value}</p>
               </div>
             ))}
@@ -620,7 +620,7 @@ export default async function ProgramPage({
       {/* Bottom CTA — full-bleed navy, no rounded corners */}
       <div className="bg-[#01426A]">
         <div className="container py-16 text-center">
-          <p className="eyebrow text-white/35 mb-5 mx-auto" style={{ textAlign: 'center' }}>Ready to begin?</p>
+          <p className="eyebrow text-white/60 mb-5 mx-auto" style={{ textAlign: 'center' }}>Ready to begin?</p>
           <h2 className="font-serif italic text-white mb-3" style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}>
             Ready to start?
           </h2>

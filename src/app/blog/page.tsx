@@ -86,7 +86,7 @@ export default function BlogPage() {
       {/* Cream hero */}
       <div style={{ backgroundColor: 'var(--color-cream)' }} className="pt-32 lg:pt-40 pb-16 lg:pb-20">
         <div className="container max-w-[720px]">
-          <p className="eyebrow text-[#01426A]/50 mb-5">Blog</p>
+          <p className="eyebrow text-[#01426A]/80 mb-5">Blog</p>
           <h1
             className="font-serif italic text-[#01426A] leading-[1.0] mb-6"
             style={{ fontSize: 'clamp(44px, 5vw, 72px)' }}

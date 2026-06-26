@@ -128,7 +128,7 @@ export function ActionSection() {
           </div>
 
           <p
-            className="cta-animate mt-5 text-[12px] text-white/35"
+            className="cta-animate mt-5 text-[12px] text-white/55"
             style={{ opacity: 0, transform: 'translateY(16px)', transition: 'opacity 0.6s cubic-bezier(0.22,1,0.36,1) 0.44s, transform 0.6s cubic-bezier(0.22,1,0.36,1) 0.44s' }}
           >
             Mon–Fri, 9am–4:30pm &nbsp;·&nbsp; Toll-free: 1-888-886-2998

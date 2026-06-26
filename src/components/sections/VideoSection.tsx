@@ -40,7 +40,7 @@ export function VideoSection() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           <div>
             <p
-              className="vid-animate eyebrow text-[#01426A]/50 mb-4"
+              className="vid-animate eyebrow text-[#01426A]/80 mb-4"
               style={{ opacity: 0, transform: 'translateY(18px)', transition: 'opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1)' }}
             >
               Student Life
