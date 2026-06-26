@@ -274,24 +274,13 @@ p {
 
 /* ─── Eyebrow / Label ────────────────────────────────────────────────────── */
 .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+  display: inline-block;
   font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   line-height: 1;
-}
-.eyebrow::before {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 1px;
-  background-color: currentColor;
-  flex-shrink: 0;
-  opacity: 0.65;
 }
 
 /* ─── Decorative rule ────────────────────────────────────────────────────── */

@@ -52,13 +52,13 @@ export default function WaterlooCampusPage() {
           {/* Contact + hours grid */}
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             <div className="p-5 border" style={{ backgroundColor: 'var(--color-cream)', borderColor: 'var(--color-cream-deep)' }}>
-              <p className="text-xs font-semibold text-[#000000]/40 uppercase tracking-wider mb-2">Address</p>
+              <p className="text-sm font-medium text-[#000000]/45 mb-1.5">Address</p>
               <p className="text-sm text-[#000000]/70 leading-snug">
                 385 Weber St. N.<br />Waterloo ON N2J 3J2
               </p>
             </div>
             <div className="p-5 border" style={{ backgroundColor: 'var(--color-cream)', borderColor: 'var(--color-cream-deep)' }}>
-              <p className="text-xs font-semibold text-[#000000]/40 uppercase tracking-wider mb-2">Phone</p>
+              <p className="text-sm font-medium text-[#000000]/45 mb-1.5">Phone</p>
               <a
                 href="tel:+15198862998"
                 className="text-sm text-[#01426A] font-semibold hover:underline"
@@ -67,7 +67,7 @@ export default function WaterlooCampusPage() {
               </a>
             </div>
             <div className="p-5 border" style={{ backgroundColor: 'var(--color-cream)', borderColor: 'var(--color-cream-deep)' }}>
-              <p className="text-xs font-semibold text-[#000000]/40 uppercase tracking-wider mb-2">Email</p>
+              <p className="text-sm font-medium text-[#000000]/45 mb-1.5">Email</p>
               <a
                 href="mailto:waterloo@ginascollege.com"
                 className="text-sm text-[#01426A] font-semibold hover:underline break-all"
@@ -76,7 +76,7 @@ export default function WaterlooCampusPage() {
               </a>
             </div>
             <div className="p-5 border" style={{ backgroundColor: 'var(--color-cream)', borderColor: 'var(--color-cream-deep)' }}>
-              <p className="text-xs font-semibold text-[#000000]/40 uppercase tracking-wider mb-2">Hours</p>
+              <p className="text-sm font-medium text-[#000000]/45 mb-1.5">Hours</p>
               <p className="text-sm text-[#000000]/70 leading-snug">
                 Monday to Friday<br />9:00am to 4:30pm
               </p>

@@ -131,7 +131,7 @@ export default function HowToApplyPage() {
                 className="p-5 border"
                 style={{ backgroundColor: 'var(--color-cream)', borderColor: 'var(--color-cream-deep)' }}
               >
-                <p className="text-xs font-semibold uppercase tracking-widest text-[#01426A]/50 mb-1.5">
+                <p className="text-sm font-medium text-[#01426A]/50 mb-1.5">
                   {req.label}
                 </p>
                 <p className="text-sm text-[#000000]/65 leading-relaxed">{req.detail}</p>

@@ -6,6 +6,23 @@ export const metadata: Metadata = {
   description: 'Book affordable beauty treatments at Gina\'s College student clinics in Mississauga, Waterloo, and Ottawa. All services performed under instructor supervision.',
 }
 
+function ServiceList({ items }: { items: { service: string; price: string }[] }) {
+  return (
+    <div className="space-y-0">
+      {items.map((item) => (
+        <div
+          key={item.service}
+          className="flex items-baseline justify-between py-4 border-b"
+          style={{ borderColor: 'var(--color-cream-deep)' }}
+        >
+          <span className="text-base text-[#000000]/70">{item.service}</span>
+          <span className="font-semibold text-[#01426A] ml-6 shrink-0">{item.price}</span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 export default function BeautyClinicPage() {
   return (
     <main className="min-h-screen bg-white">
@@ -13,7 +30,6 @@ export default function BeautyClinicPage() {
       {/* Cream hero */}
       <div style={{ backgroundColor: 'var(--color-cream)' }} className="pt-32 lg:pt-40 pb-16 lg:pb-20">
         <div className="container max-w-[900px]">
-          <p className="eyebrow text-[#01426A]/50 mb-5">Student Clinic</p>
           <h1
             className="font-serif italic text-[#01426A] leading-[1.0] mb-6"
             style={{ fontSize: 'clamp(44px, 5vw, 72px)' }}
@@ -31,24 +47,24 @@ export default function BeautyClinicPage() {
 
       {/* Services + Pricing by Campus */}
       <section className="bg-white py-20">
-        <div className="container max-w-[960px]">
+        <div className="container max-w-[820px]">
           <h2
-            className="font-serif italic text-[#01426A] mb-14"
+            className="font-serif italic text-[#01426A] mb-16"
             style={{ fontSize: 'clamp(28px, 3vw, 42px)' }}
           >
             Services &amp; Pricing by Campus
           </h2>
 
           {/* Mississauga */}
-          <div className="mb-16">
-            <div className="flex items-baseline gap-4 mb-6 flex-wrap">
+          <div className="mb-20">
+            <div className="mb-2">
               <h3 className="font-serif italic text-[#01426A]" style={{ fontSize: 'clamp(22px, 2.5vw, 30px)' }}>
                 Mississauga Clinic
               </h3>
-              <p className="text-xs text-[#000000]/40 font-medium">7-3045 Southcreek Rd., Mississauga ON</p>
+              <p className="text-sm text-[#000000]/45 mt-1">7-3045 Southcreek Rd., Mississauga ON</p>
             </div>
-            <div className="grid sm:grid-cols-2 gap-px" style={{ background: 'rgba(196,133,106,0.15)' }}>
-              {([
+            <div className="mt-6">
+              <ServiceList items={[
                 { service: 'Basic Facial', price: '$35' },
                 { service: 'Deep Cleansing Facial', price: '$45' },
                 { service: 'Anti-Aging Facial', price: '$55' },
@@ -61,76 +77,23 @@ export default function BeautyClinicPage() {
                 { service: 'Pedicure', price: '$30' },
                 { service: 'Gel Manicure', price: '$32' },
                 { service: 'Lash Extensions — Classic', price: '$55' },
-              ] as { service: string; price: string }[]).map((item) => (
-                <div key={item.service} className="flex items-center justify-between px-5 py-3.5 bg-white">
-                  <span className="text-sm text-[#000000]/70">{item.service}</span>
-                  <span className="text-sm font-semibold text-[#01426A]">{item.price}</span>
-                </div>
-              ))}
+              ]} />
             </div>
-            <p className="mt-3 text-xs text-[#000000]/40">Prices are approximate student clinic rates and may vary by session.</p>
+            <p className="mt-4 text-sm text-[#000000]/40">Prices are approximate student clinic rates and may vary by session.</p>
           </div>
 
           {/* Waterloo */}
-          <div className="mb-16">
-            <div className="flex items-baseline gap-4 mb-6 flex-wrap">
+          <div className="mb-20">
+            <div className="mb-2">
               <h3 className="font-serif italic text-[#01426A]" style={{ fontSize: 'clamp(22px, 2.5vw, 30px)' }}>
                 Waterloo Spa &amp; Clinic
               </h3>
-              <p className="text-xs text-[#000000]/40 font-medium">385 Weber St. N., Waterloo ON</p>
+              <p className="text-sm text-[#000000]/45 mt-1">385 Weber St. N., Waterloo ON</p>
             </div>
-            <div className="mb-3">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#01426A]/50 mb-2">Spa &amp; Beauty</p>
-              <div className="grid sm:grid-cols-2 gap-px" style={{ background: 'rgba(196,133,106,0.15)' }}>
-                {([
-                  { service: 'Basic Facial', price: '$35' },
-                  { service: 'Deep Cleansing Facial', price: '$45' },
-                  { service: 'Anti-Aging Facial', price: '$55' },
-                  { service: 'Chemical Peel', price: '$50' },
-                  { service: 'Eyebrow Wax', price: '$10' },
-                  { service: 'Full Leg Wax', price: '$35' },
-                  { service: 'Manicure', price: '$20' },
-                  { service: 'Pedicure', price: '$30' },
-                  { service: 'Lash Extensions — Classic', price: '$55' },
-                ] as { service: string; price: string }[]).map((item) => (
-                  <div key={item.service} className="flex items-center justify-between px-5 py-3.5 bg-white">
-                    <span className="text-sm text-[#000000]/70">{item.service}</span>
-                    <span className="text-sm font-semibold text-[#01426A]">{item.price}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#01426A]/50 mb-2 mt-4">Hair Design</p>
-              <div className="grid sm:grid-cols-2 gap-px" style={{ background: 'rgba(196,133,106,0.15)' }}>
-                {([
-                  { service: "Women's Haircut & Style", price: '$30' },
-                  { service: "Men's Haircut", price: '$20' },
-                  { service: 'Colour — Single Process', price: '$55' },
-                  { service: 'Highlights — Partial', price: '$65' },
-                  { service: 'Blowout', price: '$30' },
-                  { service: 'Updo / Special Occasion', price: '$40' },
-                ] as { service: string; price: string }[]).map((item) => (
-                  <div key={item.service} className="flex items-center justify-between px-5 py-3.5 bg-white">
-                    <span className="text-sm text-[#000000]/70">{item.service}</span>
-                    <span className="text-sm font-semibold text-[#01426A]">{item.price}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <p className="mt-3 text-xs text-[#000000]/40">Hair design services available at Waterloo campus only. Prices are approximate student clinic rates.</p>
-          </div>
 
-          {/* Ottawa */}
-          <div>
-            <div className="flex items-baseline gap-4 mb-6 flex-wrap">
-              <h3 className="font-serif italic text-[#01426A]" style={{ fontSize: 'clamp(22px, 2.5vw, 30px)' }}>
-                Ottawa Clinic
-              </h3>
-              <p className="text-xs text-[#000000]/40 font-medium">215 Dalhousie St., Ottawa ON</p>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-px" style={{ background: 'rgba(196,133,106,0.15)' }}>
-              {([
+            <div className="mt-8">
+              <p className="font-semibold text-[#01426A]/70 mb-3">Spa &amp; Beauty</p>
+              <ServiceList items={[
                 { service: 'Basic Facial', price: '$35' },
                 { service: 'Deep Cleansing Facial', price: '$45' },
                 { service: 'Anti-Aging Facial', price: '$55' },
@@ -140,14 +103,45 @@ export default function BeautyClinicPage() {
                 { service: 'Manicure', price: '$20' },
                 { service: 'Pedicure', price: '$30' },
                 { service: 'Lash Extensions — Classic', price: '$55' },
-              ] as { service: string; price: string }[]).map((item) => (
-                <div key={item.service} className="flex items-center justify-between px-5 py-3.5 bg-white">
-                  <span className="text-sm text-[#000000]/70">{item.service}</span>
-                  <span className="text-sm font-semibold text-[#01426A]">{item.price}</span>
-                </div>
-              ))}
+              ]} />
             </div>
-            <p className="mt-3 text-xs text-[#000000]/40">Prices are approximate student clinic rates and may vary by session.</p>
+
+            <div className="mt-10">
+              <p className="font-semibold text-[#01426A]/70 mb-3">Hair Design</p>
+              <ServiceList items={[
+                { service: "Women's Haircut & Style", price: '$30' },
+                { service: "Men's Haircut", price: '$20' },
+                { service: 'Colour — Single Process', price: '$55' },
+                { service: 'Highlights — Partial', price: '$65' },
+                { service: 'Blowout', price: '$30' },
+                { service: 'Updo / Special Occasion', price: '$40' },
+              ]} />
+            </div>
+            <p className="mt-4 text-sm text-[#000000]/40">Hair design services available at Waterloo campus only. Prices are approximate student clinic rates.</p>
+          </div>
+
+          {/* Ottawa */}
+          <div>
+            <div className="mb-2">
+              <h3 className="font-serif italic text-[#01426A]" style={{ fontSize: 'clamp(22px, 2.5vw, 30px)' }}>
+                Ottawa Clinic
+              </h3>
+              <p className="text-sm text-[#000000]/45 mt-1">215 Dalhousie St., Ottawa ON</p>
+            </div>
+            <div className="mt-6">
+              <ServiceList items={[
+                { service: 'Basic Facial', price: '$35' },
+                { service: 'Deep Cleansing Facial', price: '$45' },
+                { service: 'Anti-Aging Facial', price: '$55' },
+                { service: 'Chemical Peel', price: '$50' },
+                { service: 'Eyebrow Wax', price: '$10' },
+                { service: 'Full Leg Wax', price: '$35' },
+                { service: 'Manicure', price: '$20' },
+                { service: 'Pedicure', price: '$30' },
+                { service: 'Lash Extensions — Classic', price: '$55' },
+              ]} />
+            </div>
+            <p className="mt-4 text-sm text-[#000000]/40">Prices are approximate student clinic rates and may vary by session.</p>
           </div>
 
         </div>
@@ -206,7 +200,6 @@ export default function BeautyClinicPage() {
         <div className="container py-16 lg:py-20">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
             <div className="max-w-[560px]">
-              <p className="eyebrow text-white/35 mb-5">Student Clinic</p>
               <h2
                 className="font-serif italic text-white leading-[1.0]"
                 style={{ fontSize: 'clamp(30px, 3.5vw, 48px)' }}

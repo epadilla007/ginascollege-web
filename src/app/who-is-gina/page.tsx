@@ -33,11 +33,20 @@ export default function WhoIsGinaPage() {
         </div>
       </div>
 
-      {/* Her Story */}
-      <div className="bg-white py-20">
-        <div className="container max-w-[860px]">
+      {/* Featured portrait — editorial full-width */}
+      <div className="relative overflow-hidden" style={{ height: 'clamp(300px, 45vw, 600px)' }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/FullSizeRender-3-1920w.jpg"
+          alt="Gina DeCicco, founder of Gina's College"
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
 
-          <div className="mb-16">
+      {/* Her Story */}
+      <div className="bg-white pt-20 pb-10">
+        <div className="container max-w-[860px]">
+          <div className="mb-10">
             <h2
               className="font-serif italic text-[#01426A] mb-6"
               style={{ fontSize: 'clamp(28px, 3vw, 42px)' }}
@@ -62,10 +71,38 @@ export default function WhoIsGinaPage() {
               </p>
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* Her Passion — cream info box */}
+      {/* Two-image editorial break */}
+      <div className="bg-white pb-20">
+        <div className="container max-w-[1060px]">
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="relative overflow-hidden" style={{ height: 'clamp(240px, 28vw, 420px)' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/wig-about-img122-1920w.png"
+                alt="Gina's College ribbon cutting ceremony"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative overflow-hidden" style={{ height: 'clamp(240px, 28vw, 420px)' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/wig-about-img2-1920w.png"
+                alt="Gina DeCicco in her early career"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Her Passion — cream info box */}
+      <div className="bg-white pb-20">
+        <div className="container max-w-[860px]">
           <div
-            className="p-8 border mb-16"
+            className="p-8 lg:p-12 border"
             style={{ backgroundColor: 'var(--color-cream)', borderColor: 'var(--color-cream-deep)' }}
           >
             <h2
@@ -93,37 +130,50 @@ export default function WhoIsGinaPage() {
               </p>
             </div>
           </div>
-
-          {/* Her Legacy */}
-          <div className="mb-16">
-            <h2
-              className="font-serif italic text-[#01426A] mb-6"
-              style={{ fontSize: 'clamp(28px, 3vw, 42px)' }}
-            >
-              Her legacy in Canada.
-            </h2>
-            <div className="space-y-5 text-[#000000]/60 leading-relaxed" style={{ fontSize: 'clamp(16px, 1.4vw, 18px)' }}>
-              <p>
-                What Gina built has now outlasted a generation of competitors. Three campuses across
-                Ontario. CIDESCO international accreditation — one of the most rigorous credentials
-                an aesthetics school can hold. Thousands of graduates working in some of the most
-                respected clinics, spas, and medical practices in the country.
-              </p>
-              <p>
-                The school is still family-owned. The people who run it today are still on the floor
-                with students. The owners are visible, present, and accountable — exactly the way
-                Gina intended.
-              </p>
-              <p>
-                Her name is on the door because her values are still inside it.
-              </p>
-            </div>
-          </div>
-
         </div>
       </div>
 
-      {/* Stats band — gap-px */}
+      {/* Her Legacy — split: text left, newspaper image right */}
+      <div className="bg-white pb-20">
+        <div className="container max-w-[1060px]">
+          <div className="grid lg:grid-cols-[1fr_380px] gap-12 lg:gap-20 items-start">
+            <div>
+              <h2
+                className="font-serif italic text-[#01426A] mb-6"
+                style={{ fontSize: 'clamp(28px, 3vw, 42px)' }}
+              >
+                Her legacy in Canada.
+              </h2>
+              <div className="space-y-5 text-[#000000]/60 leading-relaxed" style={{ fontSize: 'clamp(16px, 1.4vw, 18px)' }}>
+                <p>
+                  What Gina built has now outlasted a generation of competitors. Three campuses across
+                  Ontario. CIDESCO international accreditation — one of the most rigorous credentials
+                  an aesthetics school can hold. Thousands of graduates working in some of the most
+                  respected clinics, spas, and medical practices in the country.
+                </p>
+                <p>
+                  The school is still family-owned. The people who run it today are still on the floor
+                  with students. The owners are visible, present, and accountable — exactly the way
+                  Gina intended.
+                </p>
+                <p>
+                  Her name is on the door because her values are still inside it.
+                </p>
+              </div>
+            </div>
+            <div className="relative overflow-hidden mt-2 lg:mt-10" style={{ height: 'clamp(280px, 30vw, 460px)' }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/wig-about-img3-1920w.png"
+                alt="Newspaper clipping about Gina's College"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Stats band */}
       <div style={{ backgroundColor: 'var(--color-cream)' }}>
         <div className="container py-0">
           <div
@@ -143,7 +193,7 @@ export default function WhoIsGinaPage() {
                 >
                   {stat.value}
                 </span>
-                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#01426A]/60 mt-2">
+                <p className="text-sm font-medium text-[#000000]/50 mt-2">
                   {stat.label}
                 </p>
               </div>
