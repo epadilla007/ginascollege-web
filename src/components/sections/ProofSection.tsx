@@ -79,9 +79,9 @@ export function ProofSection() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
           <div className="max-w-[460px]">
-            <p className="eyebrow text-[#01426A] mb-3">Success Stories</p>
-            <h2 className="font-display text-[clamp(28px,3.5vw,48px)] font-semibold text-[#01426A] leading-tight">
-              What people say about Us.
+            <p className="eyebrow text-[#01426A]/60 mb-4">Success Stories</p>
+            <h2 className="font-serif italic text-[clamp(34px,4vw,56px)] font-light text-[#01426A] leading-[1.0]">
+              What our graduates say.
             </h2>
           </div>
           {/* Decorative quote mark */}
@@ -111,7 +111,7 @@ export function ProofSection() {
                 ))}
               </div>
               {/* Quote */}
-              <p className="text-[13.5px] text-[#444] leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
+              <p className="font-serif text-[16px] text-[#333] leading-relaxed italic">&ldquo;{t.quote}&rdquo;</p>
               {/* Author */}
               <div className="border-t border-[#E9E9E9] pt-4 mt-auto">
                 <p className="text-[13px] font-semibold text-[#01426A]">{t.author}</p>

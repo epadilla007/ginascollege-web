@@ -118,10 +118,10 @@ export function CredentialsSection() {
                   transition: 'opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1)',
                 }}
               >
-                <span className="font-display text-[clamp(26px,3vw,38px)] font-semibold text-white leading-none mb-1">
+                <span className="font-serif italic text-[clamp(34px,4vw,52px)] font-light text-white leading-none mb-1.5">
                   {stat.value}
                 </span>
-                <span className="text-[12px] font-medium uppercase tracking-[0.1em] text-white/50">
+                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/45">
                   {stat.label}
                 </span>
               </div>
@@ -148,7 +148,7 @@ export function CredentialsSection() {
                   {cred.icon}
                 </div>
                 <div>
-                  <h3 className="font-display text-[17px] font-semibold text-[#01426A] mb-2 leading-tight">
+                  <h3 className="font-serif text-[22px] font-medium text-[#01426A] mb-2 leading-[1.1]">
                     {cred.title}
                   </h3>
                   <p className="text-[14px] text-[#555] leading-relaxed">{cred.description}</p>

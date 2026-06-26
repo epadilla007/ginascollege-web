@@ -38,7 +38,7 @@ function FAQItem({ question, answer, isOpen, onClick }: {
         className="w-full flex items-start justify-between gap-6 py-5 text-left group"
         aria-expanded={isOpen}
       >
-        <span className="font-display text-[17px] font-semibold text-[#01426A] leading-snug group-hover:text-[#0a5a8a] transition-colors duration-200">
+        <span className="font-serif text-[20px] font-medium text-[#01426A] leading-snug group-hover:text-[#0a5a8a] transition-colors duration-200">
           {question}
         </span>
         <span
@@ -100,8 +100,8 @@ export function FAQSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           {/* Left heading */}
           <div className="lg:col-span-4">
-            <p className="eyebrow text-[#01426A] mb-4">FAQ</p>
-            <h2 className="font-display text-[clamp(26px,3vw,42px)] font-semibold text-[#01426A] leading-tight mb-4">
+            <p className="eyebrow text-[#01426A]/60 mb-5">FAQ</p>
+            <h2 className="font-serif text-[clamp(32px,3.5vw,52px)] font-medium text-[#01426A] leading-[1.0] mb-5">
               Questions we hear from students
             </h2>
             <p className="text-[14px] text-[#666] leading-relaxed">

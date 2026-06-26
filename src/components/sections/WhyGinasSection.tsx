@@ -93,11 +93,14 @@ export function WhyGinasSection() {
 
           {/* Left: heading + image */}
           <div className="lg:col-span-4 py-16 lg:py-24 lg:pr-12 flex flex-col">
-            <p className="eyebrow text-white/40 mb-4">Why Choose Us</p>
-            <h2 className="font-display text-[clamp(28px,3.5vw,48px)] font-semibold text-white leading-[1.05] mb-6">
-              Why Gina&apos;s College of Advanced Aesthetics Corporation
+            <p className="eyebrow text-white/40 mb-5">Why Choose Us</p>
+            <h2 className="font-serif italic text-[clamp(34px,4vw,58px)] font-light text-white leading-[1.0] mb-4">
+              Why Gina&apos;s College
             </h2>
-            <div className="w-10 h-[2px] bg-[#B1C6D9]/40 mb-8" />
+            <p className="text-[15px] text-white/50 leading-relaxed mb-8">
+              of Advanced Aesthetics Corporation
+            </p>
+            <div className="w-8 h-[1px] bg-[#B1C6D9]/30 mb-8" />
 
             {/* Campus photo — reveal left */}
             <div
@@ -126,21 +129,25 @@ export function WhyGinasSection() {
               {reasons.map((reason, i) => (
                 <div
                   key={reason.number}
-                  className={`reason-item flex gap-6 py-6 ${i < reasons.length - 1 ? 'border-b border-white/8' : ''}`}
+                  className={`reason-item relative flex gap-5 py-6 ${i < reasons.length - 1 ? 'border-b border-white/[0.07]' : ''}`}
                   style={{
                     opacity: 0,
                     transform: 'translateX(20px)',
                     transition: `opacity 0.6s cubic-bezier(0.22,1,0.36,1) ${i * 0.05}s, transform 0.6s cubic-bezier(0.22,1,0.36,1) ${i * 0.05}s`,
                   }}
                 >
-                  <span className="font-display text-[12px] font-semibold text-[#B1C6D9]/40 tracking-wider flex-shrink-0 mt-[4px] w-7">
+                  {/* Decorative large number watermark */}
+                  <span className="absolute right-0 top-1/2 -translate-y-1/2 font-serif italic text-[80px] font-light text-white/[0.04] leading-none select-none pointer-events-none">
                     {reason.number}
                   </span>
-                  <div className="group">
-                    <h3 className="font-display text-[16px] font-semibold text-white mb-1.5 leading-tight group-hover:text-[#B1C6D9] transition-colors duration-200">
+                  <span className="font-serif italic text-[22px] font-light text-[#B1C6D9]/35 flex-shrink-0 mt-[2px] w-8 leading-none">
+                    {reason.number}
+                  </span>
+                  <div className="group relative z-10">
+                    <h3 className="font-serif text-[18px] font-medium text-white mb-1.5 leading-tight group-hover:text-[#B1C6D9] transition-colors duration-200">
                       {reason.title}
                     </h3>
-                    <p className="text-[13.5px] text-white/55 leading-relaxed">{reason.body}</p>
+                    <p className="text-[13px] text-white/50 leading-relaxed">{reason.body}</p>
                   </div>
                 </div>
               ))}

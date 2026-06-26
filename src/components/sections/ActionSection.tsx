@@ -54,7 +54,7 @@ export function ActionSection() {
             Take the Next Step
           </p>
           <h2
-            className="cta-animate font-display text-[clamp(28px,4vw,54px)] font-semibold text-white leading-tight mb-5"
+            className="cta-animate font-serif italic text-[clamp(34px,4.5vw,64px)] font-light text-white leading-[0.97] mb-5"
             style={{ opacity: 0, transform: 'translateY(20px)', transition: 'opacity 0.7s cubic-bezier(0.22,1,0.36,1) 0.1s, transform 0.7s cubic-bezier(0.22,1,0.36,1) 0.1s' }}
           >
             Contact us to book a free tour and personal career consultation!

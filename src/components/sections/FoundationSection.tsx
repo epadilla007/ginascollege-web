@@ -49,8 +49,8 @@ export function FoundationSection() {
               transition: 'opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1)',
             }}
           >
-            <p className="eyebrow text-[#01426A] mb-4">Our Approach</p>
-            <h2 className="font-display text-[clamp(26px,3vw,44px)] font-semibold text-[#01426A] leading-tight mb-6">
+            <p className="eyebrow text-[#01426A]/60 mb-5">Our Approach</p>
+            <h2 className="font-serif text-[clamp(32px,3.5vw,54px)] font-medium text-[#01426A] leading-[1.0] mb-6">
               Building a Foundation for Success in Beauty and Aesthetics
             </h2>
             <p className="text-[16px] text-[#555] leading-relaxed mb-4">
@@ -65,11 +65,11 @@ export function FoundationSection() {
             {/* Stats */}
             <div className="grid grid-cols-2 gap-5 mb-8">
               <div className="bg-white rounded-[10px] border border-[#E9E9E9] p-5 hover:shadow-md hover:border-[#B1C6D9] transition-all duration-300">
-                <p className="font-display text-[38px] font-bold text-[#01426A] leading-none mb-1">70%</p>
+                <p className="font-serif italic text-[48px] font-light text-[#01426A] leading-none mb-1">70%</p>
                 <p className="text-[13px] text-[#666]">Practical training time on real clients</p>
               </div>
               <div className="bg-white rounded-[10px] border border-[#E9E9E9] p-5 hover:shadow-md hover:border-[#B1C6D9] transition-all duration-300">
-                <p className="font-display text-[38px] font-bold text-[#01426A] leading-none mb-1">40+</p>
+                <p className="font-serif italic text-[48px] font-light text-[#01426A] leading-none mb-1">40+</p>
                 <p className="text-[13px] text-[#666]">Years graduating beauty professionals</p>
               </div>
             </div>

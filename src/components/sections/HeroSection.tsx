@@ -47,31 +47,33 @@ export function HeroSection() {
       <div className="relative container pt-[94px] pb-24 md:py-32 lg:py-40 flex flex-col items-start justify-end min-h-[590px] md:min-h-[690px] lg:min-h-[770px]">
 
         {/* CIDESCO badge */}
-        <div ref={badgeRef} className="opacity-0 mb-6 flex items-center gap-2">
-          <Image
-            src="https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/ginas-img3-132w.png"
-            alt="CIDESCO International"
-            width={40}
-            height={40}
-            className="w-9 h-9 object-contain rounded-full bg-white/10 p-1"
-          />
-          <span className="text-[11px] font-semibold uppercase tracking-[0.12em] text-white/80">
-            CIDESCO World-Standard School
+        <div ref={badgeRef} className="opacity-0 mb-8 flex items-center gap-3">
+          <span className="inline-flex items-center gap-2 bg-white/12 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="text-white/90">
+              <circle cx="7" cy="7" r="6.5" stroke="currentColor" strokeWidth="1.2"/>
+              <path d="M4 7l2 2 4-4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/90">
+              CIDESCO World-Standard School
+            </span>
           </span>
         </div>
 
-        {/* Heading */}
+        {/* Heading — editorial italic serif */}
         <h1
           ref={headingRef}
-          className="opacity-0 font-display text-[clamp(38px,6vw,88px)] leading-[1.0] font-semibold text-white mb-6 max-w-[700px]"
+          className="opacity-0 font-serif italic text-[clamp(52px,7.5vw,108px)] leading-[0.93] font-light text-white mb-7 max-w-[820px]"
         >
-          Follow your passion<br className="hidden sm:block" /> for beauty!
+          Follow your passion<br className="hidden sm:block" /> for beauty.
         </h1>
+
+        {/* Thin rule — Swiss editorial detail */}
+        <div className="w-12 h-[1px] bg-white/30 mb-6" />
 
         {/* Body */}
         <p
           ref={bodyRef}
-          className="opacity-0 text-[16px] md:text-[18px] text-white/85 leading-relaxed max-w-[560px] mb-8 font-body"
+          className="opacity-0 text-[16px] md:text-[17px] text-white/80 leading-relaxed max-w-[520px] mb-9 font-body tracking-[0.01em]"
         >
           Start your career in beauty with Gina&apos;s College of Advanced Aesthetics, the top beauty
           school in Ottawa, Mississauga, and Waterloo. With over 40 years of experience training top

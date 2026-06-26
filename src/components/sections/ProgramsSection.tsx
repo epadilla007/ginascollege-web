@@ -8,7 +8,7 @@ const programs = [
   {
     title: 'Medical Aesthetics',
     href: '/programs/medical-aesthetics',
-    image: 'https://images.pexels.com/photos/5659056/pexels-photo-5659056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: 'https://images.pexels.com/photos/3985299/pexels-photo-3985299.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     alt: 'Medical Aesthetics program at Gina\'s College',
     description: 'Advanced skin treatments, laser technology, and medical-grade procedures.',
     tag: 'Diploma',
@@ -16,7 +16,7 @@ const programs = [
   {
     title: 'Hairstyling',
     href: '/programs/hairstyling',
-    image: 'https://images.pexels.com/photos/3065208/pexels-photo-3065208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: 'https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     alt: 'Hairstyling program at Gina\'s College',
     description: 'Cutting, colouring, styling, and the business of running a successful salon.',
     tag: 'Diploma',
@@ -24,7 +24,7 @@ const programs = [
   {
     title: 'Electrolysis & Light Technology',
     href: '/programs/electrolysis-light-technology',
-    image: 'https://images.pexels.com/photos/19242408/pexels-photo-19242408.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: 'https://images.pexels.com/photos/7578516/pexels-photo-7578516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     alt: 'Electrolysis and Light Technology program at Gina\'s College',
     description: 'Permanent hair removal, laser, and light-based skin treatments.',
     tag: 'Diploma',
@@ -75,8 +75,8 @@ export function ProgramsSection() {
             transition: 'opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1)',
           }}
         >
-          <p className="eyebrow text-[#01426A] mb-3">Our Courses</p>
-          <h2 className="font-display text-[clamp(30px,4vw,52px)] font-semibold text-[#01426A] leading-tight">
+          <p className="eyebrow text-[#01426A]/60 mb-4">Our Courses</p>
+          <h2 className="font-serif text-[clamp(36px,4.5vw,62px)] font-medium text-[#01426A] leading-[1.0]">
             The Top Courses at Our Esthetician School
           </h2>
         </div>
@@ -113,7 +113,7 @@ export function ProgramsSection() {
 
               {/* Body */}
               <div className="p-6">
-                <h3 className="font-display text-[19px] font-semibold text-[#01426A] mb-2 group-hover:text-[#0a5a8a] transition-colors leading-tight">
+                <h3 className="font-serif text-[24px] font-medium text-[#01426A] mb-2 group-hover:text-[#0a5a8a] transition-colors leading-tight">
                   {prog.title}
                 </h3>
                 <p className="text-[13.5px] text-[#666] leading-relaxed mb-5">{prog.description}</p>

@@ -22,6 +22,7 @@ const config: Config = {
       fontFamily: {
         sans: ['Ranade', 'system-ui', 'sans-serif'],
         display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+        serif: ['Cormorant Garamond', 'Georgia', 'Times New Roman', 'serif'],
       },
       fontSize: {
         // Custom scale matching creative-direction.md

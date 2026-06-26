@@ -3,6 +3,7 @@ import { CredentialsSection } from '@/components/sections/CredentialsSection'
 import { ProgramsSection } from '@/components/sections/ProgramsSection'
 import { WhyGinasSection } from '@/components/sections/WhyGinasSection'
 import { ProofSection } from '@/components/sections/ProofSection'
+import { VideoSection } from '@/components/sections/VideoSection'
 import { FoundationSection } from '@/components/sections/FoundationSection'
 import { BrandsSection } from '@/components/sections/BrandsSection'
 import { FAQSection } from '@/components/sections/FAQSection'
@@ -16,6 +17,7 @@ export default function HomePage() {
       <ProgramsSection />
       <WhyGinasSection />
       <ProofSection />
+      <VideoSection />
       <FoundationSection />
       <BrandsSection />
       <FAQSection />

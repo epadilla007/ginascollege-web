@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 
 const brands = [
@@ -13,46 +12,50 @@ const brands = [
   { name: 'Bold Lashes', src: '/images/brands/bold-lashes.png' },
 ]
 
+// Double array for seamless loop: animation moves -50% (one full set)
+const doubled = [...brands, ...brands]
+
 export function BrandsSection() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const el = sectionRef.current
-    if (!el) return
-    // IntersectionObserver — works regardless of Lenis / ScrollTrigger proxy
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.style.opacity = '1'
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.1 }
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
-
   return (
     <section
-      ref={sectionRef}
-      style={{ opacity: 0, transition: 'opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1)' }}
-      className="py-14 bg-white border-y border-[#E9E9E9]"
+      className="py-12 bg-white border-y border-[#E9E9E9] overflow-hidden"
       aria-label="Brand partners"
     >
-      <div className="container">
-        <p className="text-center text-[11px] font-semibold uppercase tracking-widest text-[#999] mb-8">
+      <div className="container mb-7">
+        <p className="eyebrow text-[#01426A]/40 justify-center w-full text-center">
           Our Brand Partners
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
-          {brands.map((brand) => (
-            <div key={brand.name} className="flex items-center justify-center opacity-50 hover:opacity-90 transition-opacity duration-200 h-10">
+      </div>
+
+      {/* Edge fade mask */}
+      <div
+        style={{
+          maskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)',
+        }}
+      >
+        {/* Single track containing 2× logos; keyframe moves it -50% */}
+        <div
+          className="flex items-center gap-14"
+          style={{
+            width: 'max-content',
+            animation: 'marquee 32s linear infinite',
+          }}
+          onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.animationPlayState = 'paused' }}
+          onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.animationPlayState = 'running' }}
+        >
+          {doubled.map((brand, i) => (
+            <div
+              key={`${brand.name}-${i}`}
+              className="flex items-center justify-center h-9 w-[110px] flex-shrink-0 opacity-35 hover:opacity-70 transition-opacity duration-300"
+              aria-hidden={i >= brands.length ? 'true' : undefined}
+            >
               <Image
                 src={brand.src}
-                alt={brand.name}
-                width={120}
-                height={40}
-                className="object-contain w-auto h-full grayscale hover:grayscale-0 transition-all duration-300"
+                alt={i < brands.length ? brand.name : ''}
+                width={110}
+                height={36}
+                className="object-contain w-auto h-full grayscale"
               />
             </div>
           ))}

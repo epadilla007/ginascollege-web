@@ -31,7 +31,7 @@ export function Footer() {
         <div className="py-16 border-b border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
             <p className="eyebrow text-white/50 mb-2">Ready to start?</p>
-            <h2 className="font-display text-3xl lg:text-4xl font-semibold">
+            <h2 className="font-serif italic text-[clamp(30px,4vw,52px)] font-light leading-[1.0]">
               Your career starts with one step.
             </h2>
           </div>
