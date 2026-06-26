@@ -90,8 +90,8 @@ export function CredentialsSection() {
               <div
                 key={stat.value}
                 className={`stat-item py-8 lg:py-10 px-6 lg:px-10`}
-                style={{ backgroundColor: 'var(--color-cream)' }}
                 style={{
+                  backgroundColor: 'var(--color-cream)',
                   opacity: 0,
                   transform: 'translateY(24px)',
                   transition: `opacity 0.75s cubic-bezier(0.22,1,0.36,1) ${i * 0.07}s, transform 0.75s cubic-bezier(0.22,1,0.36,1) ${i * 0.07}s`,
