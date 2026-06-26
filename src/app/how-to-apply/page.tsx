@@ -28,7 +28,7 @@ const steps = [
     step: '03',
     title: 'Submit Your Application',
     body:
-      "Complete the program application form. It's straightforward — no entrance exam, no portfolio required. Your advisor will confirm receipt and next steps within one business day.",
+      "Complete the program application form online. No application fee. No entrance exam. No portfolio. No conditional acceptance. Your advisor confirms receipt and outlines next steps within one business day.",
     action: { label: 'Start Application', href: '/apply' },
     phone: null,
   },

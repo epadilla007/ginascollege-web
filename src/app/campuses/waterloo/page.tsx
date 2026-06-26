@@ -7,10 +7,10 @@ export const metadata: Metadata = {
     "Gina's College Waterloo. 385 Weber St. N., Waterloo ON N2J 3J2. Diploma programs in medical aesthetics, hairstyling, electrolysis, and more.",
 }
 
-const programs = [
+const programs: { name: string; href: string; tag: string; exclusive?: string }[] = [
   { name: 'Medical Aesthetics Diploma', href: '/programs/medical-aesthetics', tag: 'Diploma' },
   { name: 'Advanced Aesthetics Diploma', href: '/programs/advanced-aesthetics', tag: 'Diploma' },
-  { name: 'Hairstyling Diploma', href: '/programs/hairstyling', tag: 'Diploma' },
+  { name: 'Hairstyling Diploma', href: '/programs/hairstyling', tag: 'Diploma', exclusive: 'Only at Waterloo' },
   { name: 'Electrolysis & Light Technology Diploma', href: '/programs/electrolysis-light-technology', tag: 'Diploma' },
   { name: 'Nail Technology', href: '/programs/nail-technology', tag: 'Certificate' },
   { name: 'Makeup Artistry', href: '/programs/makeup-artistry', tag: 'Certificate' },
@@ -40,8 +40,7 @@ export default function WaterlooCampusPage() {
             Waterloo Campus
           </h1>
           <p className="text-[#000000]/60 leading-relaxed max-w-[560px]" style={{ fontSize: 'clamp(16px, 1.5vw, 19px)' }}>
-            Serving the Waterloo Region since our expansion into Ontario's tech corridor. Full diploma
-            programs, a working student spa, and the same curriculum standards as every Gina's campus.
+            Our Waterloo campus sits at the heart of Canada&#39;s tech corridor, drawing students from across Kitchener, Cambridge, and Guelph. It&#39;s the only campus in the Gina&#39;s network offering the full Hairstyling diploma, alongside Medical Aesthetics, Advanced Aesthetics, and Electrolysis programs. The student spa is open to the public at student prices.
           </p>
         </div>
       </div>
@@ -114,9 +113,9 @@ export default function WaterlooCampusPage() {
                   className="flex items-center justify-between p-4 border hover:border-[#C4856A] transition-colors duration-200 group"
                   style={{ borderColor: 'var(--color-cream-deep)' }}
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3 flex-wrap">
                     <span
-                      className={`text-xs font-semibold px-2 py-0.5 ${
+                      className={`text-xs font-semibold px-2 py-0.5 shrink-0 ${
                         program.tag === 'Diploma'
                           ? 'bg-[#01426A] text-white'
                           : 'border text-[#01426A]/60'
@@ -128,6 +127,11 @@ export default function WaterlooCampusPage() {
                     <span className="font-medium text-[#000000]/80 group-hover:text-[#01426A] transition-colors">
                       {program.name}
                     </span>
+                    {program.exclusive && (
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-[#C4856A] border border-[#C4856A] px-2 py-0.5 shrink-0">
+                        {program.exclusive}
+                      </span>
+                    )}
                   </div>
                   <span className="text-[#01426A] text-sm font-semibold group-hover:underline shrink-0 ml-4">
                     View →

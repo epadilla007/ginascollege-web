@@ -39,8 +39,7 @@ export default function MississaugaCampusPage() {
             Mississauga Campus
           </h1>
           <p className="text-[#000000]/60 leading-relaxed max-w-[560px]" style={{ fontSize: 'clamp(16px, 1.5vw, 19px)' }}>
-            Our GTA campus. Medical aesthetics, advanced aesthetics, electrolysis, and certificate
-            programs — with licensed instructors who have been in the industry for years.
+            Our GTA campus, located just off the 427 corridor with easy access from Toronto, Etobicoke, and Brampton. Medical Aesthetics, Advanced Aesthetics, Electrolysis, and a full suite of certificate programs, taught by licensed instructors with active industry careers. OSAP-eligible. Free parking on site.
           </p>
         </div>
       </div>

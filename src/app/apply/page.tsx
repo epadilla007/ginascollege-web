@@ -24,23 +24,35 @@ export default function ApplyPage() {
   return (
     <div className="min-h-screen bg-white">
 
-      {/* Cream hero */}
-      <div style={{ backgroundColor: 'var(--color-cream)' }} className="pt-32 lg:pt-40 pb-16 lg:pb-20">
-        <div className="container max-w-[860px]">
-          <p className="eyebrow text-[#01426A]/50 mb-5">Admissions</p>
-          <h1
-            className="font-serif italic text-[#01426A] leading-[1.0] mb-6"
-            style={{ fontSize: 'clamp(44px, 5vw, 72px)' }}
-          >
-            Start your application.
-          </h1>
-          <p
-            className="text-[#000000]/60 leading-relaxed max-w-[600px]"
-            style={{ fontSize: 'clamp(16px, 1.5vw, 19px)' }}
-          >
-            No application fee. An admissions advisor will respond within 24 hours to walk you
-            through the next steps.
-          </p>
+      {/* Hero — split layout with image */}
+      <div style={{ backgroundColor: 'var(--color-cream)' }} className="pt-28 lg:pt-36">
+        <div className="container max-w-[1100px]">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-end">
+            <div className="pb-12 lg:pb-16">
+              <p className="eyebrow text-[#01426A]/50 mb-5">Admissions</p>
+              <h1
+                className="font-serif italic text-[#01426A] leading-[1.0] mb-6"
+                style={{ fontSize: 'clamp(44px, 5vw, 72px)' }}
+              >
+                Start your application.
+              </h1>
+              <p
+                className="text-[#000000]/60 leading-relaxed max-w-[480px]"
+                style={{ fontSize: 'clamp(16px, 1.5vw, 19px)' }}
+              >
+                No application fee. An admissions advisor will respond within 24 hours to walk you
+                through the next steps.
+              </p>
+            </div>
+            <div className="relative h-[300px] lg:h-[400px] overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=900&q=80"
+                alt="Aesthetics student in professional clinic setting"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+          </div>
         </div>
       </div>
 

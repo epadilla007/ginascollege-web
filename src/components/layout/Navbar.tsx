@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
-type DropdownItem = { label: string; href: string }
+type DropdownItem = { label: string; href: string; description?: string }
 type NavGroup = { label: string; items: DropdownItem[]; wide?: boolean }
 type NavLink = { label: string; href: string }
 type NavItem = NavGroup | NavLink
@@ -15,10 +15,10 @@ function isGroup(item: NavItem): item is NavGroup {
 }
 
 const diplomaPrograms: DropdownItem[] = [
-  { label: 'Medical Aesthetics', href: '/programs/medical-aesthetics' },
-  { label: 'Hairstyling', href: '/programs/hairstyling' },
-  { label: 'Advanced Aesthetics', href: '/programs/advanced-aesthetics' },
-  { label: 'Electrolysis & Light Technology', href: '/programs/electrolysis-light-technology' },
+  { label: 'Medical Aesthetics', href: '/programs/medical-aesthetics', description: '12 months · CIDESCO pathway · OSAP' },
+  { label: 'Hairstyling', href: '/programs/hairstyling', description: '12 months · Waterloo only' },
+  { label: 'Advanced Aesthetics', href: '/programs/advanced-aesthetics', description: '10 months · OSAP eligible' },
+  { label: 'Electrolysis & Light Technology', href: '/programs/electrolysis-light-technology', description: '8 months · High-earning specialty' },
 ]
 
 const navItems: NavItem[] = [
@@ -36,7 +36,6 @@ const navItems: NavItem[] = [
     items: [
       { label: 'How to Apply', href: '/how-to-apply' },
       { label: 'Apply Online', href: '/apply' },
-      { label: 'Program Application', href: '/apply' },
       { label: 'Financial Aid', href: '/financial-aid' },
     ],
   },
@@ -44,9 +43,9 @@ const navItems: NavItem[] = [
     label: 'Our Courses',
     wide: true,
     items: [
-      { label: 'Diploma Programs', href: '/diploma-programs' },
-      { label: 'Certificate Programs (40+)', href: '/certificate-programs' },
-      { label: 'CIDESCO International Program', href: '/programs/medical-aesthetics' },
+      { label: 'All Programs', href: '/programs' },
+      { label: 'Certificate Programs', href: '/certificate-programs' },
+      { label: 'CIDESCO Pathway', href: '/programs/medical-aesthetics' },
     ],
   },
   {
@@ -177,7 +176,7 @@ export function Navbar() {
                           : 'opacity-0 -translate-y-2 pointer-events-none'
                       }`}
                     >
-                      <div className={`bg-white rounded-[6px] shadow-xl border border-[#E9E9E9] overflow-hidden py-1.5 ${item.wide ? 'min-w-[260px]' : 'min-w-[220px]'}`}>
+                      <div className={`bg-white rounded-[6px] shadow-xl border border-[#E9E9E9] overflow-hidden py-1.5 ${item.wide ? 'min-w-[300px]' : 'min-w-[220px]'}`}>
                         {/* Our Courses gets a diploma section header */}
                         {item.label === 'Our Courses' && (
                           <div className="px-1.5 pb-1 mb-1 border-b border-[#E9E9E9]">
@@ -188,9 +187,12 @@ export function Navbar() {
                               <Link
                                 key={prog.label}
                                 href={prog.href}
-                                className="block px-3 py-2 text-[13px] text-[#333] hover:text-[#01426A] hover:bg-[#E9E9E9]/40 rounded transition-colors duration-100"
+                                className="block px-3 py-2 hover:bg-[#E9E9E9]/40 rounded transition-colors duration-100"
                               >
-                                {prog.label}
+                                <span className="block text-[13px] text-[#333] group-hover:text-[#01426A]">{prog.label}</span>
+                                {prog.description && (
+                                  <span className="block text-[10px] text-[#000000]/35 mt-0.5">{prog.description}</span>
+                                )}
                               </Link>
                             ))}
                           </div>

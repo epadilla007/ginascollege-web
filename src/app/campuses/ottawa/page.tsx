@@ -38,8 +38,7 @@ export default function OttawaCampusPage() {
             Ottawa Campus
           </h1>
           <p className="text-[#000000]/60 leading-relaxed max-w-[560px]" style={{ fontSize: 'clamp(16px, 1.5vw, 19px)' }}>
-            Located in the Byward Market area. Medical aesthetics, electrolysis, and certificate
-            programs for students in the National Capital Region.
+            Located in the Byward Market, steps from the Rideau Centre and Ottawa&#39;s historic downtown core. Medical Aesthetics, Advanced Aesthetics, Electrolysis, and certificate programs for students across the National Capital Region. Transit-accessible and OSAP-eligible.
           </p>
         </div>
       </div>

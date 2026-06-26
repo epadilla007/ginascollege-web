@@ -112,6 +112,11 @@ export default function ProgramsPage() {
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
+                  {p.title === 'Medical Aesthetics' && (
+                    <span className="absolute top-3 right-3 bg-white px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-[#C4856A] border border-[#C4856A]">
+                      CIDESCO
+                    </span>
+                  )}
                 </div>
                 <div className="p-6 flex-1">
                   <div className="flex items-start justify-between gap-4 mb-3">
@@ -126,6 +131,31 @@ export default function ProgramsPage() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* CIDESCO callout — cream strip */}
+      <div style={{ backgroundColor: 'var(--color-cream)' }}>
+        <div className="container py-12">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
+            <div className="flex-1">
+              <p className="eyebrow text-[#C4856A] mb-2">International Accreditation</p>
+              <p
+                className="font-serif italic text-[#01426A] leading-snug mb-3"
+                style={{ fontSize: 'clamp(20px, 2.2vw, 28px)' }}
+              >
+                Ontario&#39;s only CIDESCO-accredited career college.
+              </p>
+              <p className="text-sm text-[#000000]/55 leading-relaxed max-w-[540px]">
+                CIDESCO is the world&#39;s most prestigious international beauty therapy qualification, recognized in over 40 countries. Graduates of our Medical Aesthetics diploma can apply directly for CIDESCO certification, opening doors to careers from Toronto to Tokyo.
+              </p>
+            </div>
+            <div className="shrink-0">
+              <span className="inline-flex items-center justify-center border-2 border-[#C4856A] text-[#C4856A] px-6 py-3 text-xs font-bold uppercase tracking-widest text-center">
+                CIDESCO<br />Certified
+              </span>
+            </div>
           </div>
         </div>
       </div>
