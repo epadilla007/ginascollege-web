@@ -548,7 +548,7 @@ Is Gina's College the only CIDESCO school in Ottawa?
 Yes. Gina's College is the only CIDESCO-accredited aesthetics school in Ontario, and it operates a campus in Ottawa. CIDESCO is the highest internationally recognized credential in aesthetics, and no other Ottawa school holds this accreditation.
 
 Can I use OSAP for an esthetics program in Ottawa?
-Yes, if the school is OSAP-eligible. Gina's College is registered under the Ontario Career Colleges Act, 2005, and qualifying students can apply for OSAP financial assistance at the Ottawa campus.
+Yes, if the school is OSAP-eligible. Gina's College is registered under the Ontario Career Colleges Act, 2025, and qualifying students can apply for OSAP financial assistance at the Ottawa campus.
 
 What's the difference between an esthetician and a medical aesthetician?
 Estheticians provide spa and skin care services including facials, waxing, body treatments, and nail care. Medical aestheticians work in clinical or medical spa settings and are trained to perform advanced procedures like laser treatments, chemical peels, and microneedling under qualified supervision. Medical aesthetics training is available at Gina's College as part of the medical aesthetics program.
@@ -581,7 +581,8 @@ function renderBody(body: string): React.ReactNode[] {
       return (
         <h2
           key={i}
-          className="font-display text-[#01426A] text-2xl font-semibold mt-10 mb-4"
+          className="font-serif italic text-[#01426A] mt-10 mb-4"
+          style={{ fontSize: 'clamp(20px, 2vw, 28px)' }}
         >
           {trimmed}
         </h2>
@@ -676,7 +677,7 @@ export default async function BlogPostPage({
       />
 
       <div className="min-h-screen bg-white">
-        {/* Hero */}
+        {/* Hero — navy background, keep as-is with updated font */}
         <section className="bg-[#01426A] pt-32 lg:pt-40 pb-14">
           <div className="container max-w-[720px]">
             <Link
@@ -687,7 +688,7 @@ export default async function BlogPostPage({
             </Link>
             <p className="eyebrow text-white/50 mb-4">Blog</p>
             <h1
-              className="font-display text-white leading-[1.05] tracking-[-0.02em] mb-5"
+              className="font-serif italic text-white leading-[1.05] mb-5"
               style={{ fontSize: 'clamp(32px, 4vw, 56px)' }}
             >
               {post.title}
@@ -705,10 +706,13 @@ export default async function BlogPostPage({
           </div>
         </article>
 
-        {/* Related CTA */}
+        {/* Related CTA — navy full-bleed, no rounded corners */}
         <section className="container max-w-[720px] pb-20">
-          <div className="bg-[#01426A] rounded-[8px] px-8 py-10 text-center">
-            <h2 className="font-display text-white text-2xl md:text-3xl font-semibold mb-3">
+          <div className="bg-[#01426A] px-8 py-10 text-center">
+            <h2
+              className="font-serif italic text-white mb-3"
+              style={{ fontSize: 'clamp(22px, 2.5vw, 32px)' }}
+            >
               Interested in our programs?
             </h2>
             <p className="text-white/70 mb-7 max-w-[400px] mx-auto">
@@ -716,10 +720,10 @@ export default async function BlogPostPage({
               Mississauga, Waterloo, and Ottawa.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/apply" className="btn btn-primary">
+              <Link href="/apply" className="btn btn-white">
                 Apply Now
               </Link>
-              <Link href="/consultation" className="btn btn-secondary border-white text-white">
+              <Link href="/consultation" className="btn btn-outline-white">
                 Free Consultation
               </Link>
             </div>

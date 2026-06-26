@@ -60,32 +60,49 @@ const certificatePrograms = [
 
 export default function ProgramsPage() {
   return (
-    <div className="min-h-screen bg-white pt-32 lg:pt-40 pb-24">
-      <div className="container">
-        {/* Header */}
-        <div className="max-w-[640px] mb-16">
-          <p className="eyebrow text-[#01426A] mb-4">Programs</p>
-          <h1 className="font-display text-[#01426A] leading-[1.05] tracking-[-0.02em] mb-6" style={{ fontSize: 'clamp(40px, 5vw, 72px)' }}>
+    <div className="min-h-screen">
+
+      {/* Hero — cream bg */}
+      <div style={{ backgroundColor: 'var(--color-cream)' }} className="pt-32 lg:pt-40 pb-16 lg:pb-20">
+        <div className="container max-w-[960px]">
+          <p className="eyebrow text-[#01426A]/50 mb-5">Programs</p>
+          <h1
+            className="font-serif italic text-[#01426A] leading-[1.0] mb-6"
+            style={{ fontSize: 'clamp(52px, 6vw, 88px)' }}
+          >
             Find your path.
           </h1>
-          <p className="text-[#000000]/60 text-lg leading-relaxed">
+          <p
+            className="text-[#000000]/60 leading-relaxed max-w-[580px]"
+            style={{ fontSize: 'clamp(16px, 1.5vw, 19px)' }}
+          >
             Diploma programs are full credentials that qualify you for OSAP and CIDESCO tracking.
             Certificate programs are shorter specializations — ideal for professionals adding skills.
           </p>
         </div>
+      </div>
 
-        {/* Diploma programs */}
-        <div className="mb-20">
-          <div className="flex items-center gap-4 mb-8">
-            <h2 className="font-display text-[#01426A] text-2xl font-semibold">Diploma Programs</h2>
-            <span className="px-3 py-1 bg-[#01426A] text-white text-xs font-semibold rounded-full">OSAP Eligible</span>
+      {/* Diploma programs — white section */}
+      <div className="bg-white">
+        <div className="container py-16 lg:py-24">
+          <div className="flex items-center gap-4 mb-10">
+            <h2
+              className="font-serif italic text-[#01426A]"
+              style={{ fontSize: 'clamp(30px, 3.5vw, 48px)' }}
+            >
+              Diploma Programs
+            </h2>
+            <span className="text-[10px] font-bold uppercase tracking-widest text-[#C4856A] border border-[#C4856A] px-3 py-1">
+              OSAP Eligible
+            </span>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {diplomaPrograms.map((p) => (
               <Link
                 key={p.href}
                 href={p.href}
-                className="group flex flex-col rounded-[8px] overflow-hidden border border-[#E9E9E9] hover:border-[#B1C6D9] hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                className="group flex flex-col border hover:border-[#C4856A] transition-colors duration-300"
+                style={{ borderColor: 'var(--color-cream-deep)' }}
               >
                 <div className="relative h-52 overflow-hidden">
                   <Image
@@ -98,7 +115,7 @@ export default function ProgramsPage() {
                 </div>
                 <div className="p-6 flex-1">
                   <div className="flex items-start justify-between gap-4 mb-3">
-                    <h3 className="font-display text-[#01426A] text-xl font-semibold leading-snug">{p.title}</h3>
+                    <h3 className="font-serif text-[#01426A] text-xl leading-snug">{p.title}</h3>
                     <span className="shrink-0 text-xs text-[#000000]/40 font-medium whitespace-nowrap">{p.duration}</span>
                   </div>
                   <p className="text-sm text-[#000000]/55 leading-relaxed mb-4">{p.description}</p>
@@ -111,37 +128,56 @@ export default function ProgramsPage() {
             ))}
           </div>
         </div>
+      </div>
 
-        {/* Certificate programs */}
-        <div>
-          <h2 className="font-display text-[#01426A] text-2xl font-semibold mb-8">Certificate Programs</h2>
+      {/* Certificate programs — white section */}
+      <div className="bg-white">
+        <div className="container pb-16 lg:pb-24">
+          <h2
+            className="font-serif italic text-[#01426A] mb-10"
+            style={{ fontSize: 'clamp(30px, 3.5vw, 48px)' }}
+          >
+            Certificate Programs
+          </h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {certificatePrograms.map((p) => (
               <Link
                 key={p.href}
                 href={p.href}
-                className="group p-5 rounded-[8px] border border-[#E9E9E9] hover:border-[#01426A] transition-colors duration-200"
+                className="group p-5 border hover:border-[#C4856A] transition-colors duration-300"
+                style={{ borderColor: 'var(--color-cream-deep)' }}
               >
-                <h3 className="font-semibold text-[#01426A] text-sm mb-1 group-hover:underline">{p.title}</h3>
+                <h3 className="font-serif text-[#01426A] text-sm mb-1 group-hover:underline">{p.title}</h3>
                 <p className="text-xs text-[#000000]/40">{p.duration}</p>
               </Link>
             ))}
           </div>
         </div>
+      </div>
 
-        {/* CTA strip */}
-        <div className="mt-20 bg-[#01426A] rounded-[8px] p-10 lg:p-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div>
-            <h2 className="font-display text-white text-2xl lg:text-3xl font-semibold mb-2">
-              Not sure which program is right for you?
-            </h2>
-            <p className="text-white/60 text-sm">A free 15-minute consultation with an admissions advisor covers everything.</p>
+      {/* Navy CTA strip — full bleed, no rounded corners */}
+      <div className="bg-[#01426A]">
+        <div className="container py-16 lg:py-24">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
+            <div className="max-w-[560px]">
+              <p className="eyebrow text-white/35 mb-5">Ready to begin?</p>
+              <h2
+                className="font-serif italic text-white leading-[1.0]"
+                style={{ fontSize: 'clamp(30px, 3.5vw, 48px)' }}
+              >
+                Not sure which program is right for you?
+              </h2>
+              <p className="text-white/60 text-sm mt-4">
+                A free 15-minute consultation with an admissions advisor covers everything.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+              <Link href="/consultation" className="btn btn-white">Book a Free Consultation</Link>
+            </div>
           </div>
-          <Link href="/consultation" className="btn btn-white text-sm shrink-0 whitespace-nowrap">
-            Book a Free Consultation
-          </Link>
         </div>
       </div>
+
     </div>
   )
 }

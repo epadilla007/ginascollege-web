@@ -82,53 +82,64 @@ const posts: BlogPost[] = [
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-white pt-32 lg:pt-40 pb-24">
-      {/* Header */}
-      <section className="container mb-16">
-        <p className="eyebrow text-[#01426A] mb-4">Blog</p>
-        <h1
-          className="font-display text-[#01426A] leading-[1.05] tracking-[-0.02em] mb-6"
-          style={{ fontSize: 'clamp(40px, 5vw, 72px)' }}
-        >
-          Beauty &amp; Aesthetics Insights.
-        </h1>
-        <p className="text-[#000000]/60 text-lg leading-relaxed max-w-[560px]">
-          Career advice, industry knowledge, and program guides from Gina&apos;s College.
-        </p>
-      </section>
+    <div className="min-h-screen bg-white">
+      {/* Cream hero */}
+      <div style={{ backgroundColor: 'var(--color-cream)' }} className="pt-32 lg:pt-40 pb-16 lg:pb-20">
+        <div className="container max-w-[720px]">
+          <p className="eyebrow text-[#01426A]/50 mb-5">Blog</p>
+          <h1
+            className="font-serif italic text-[#01426A] leading-[1.0] mb-6"
+            style={{ fontSize: 'clamp(44px, 5vw, 72px)' }}
+          >
+            Beauty &amp; Aesthetics Insights.
+          </h1>
+          <p className="text-[#000000]/60 leading-relaxed max-w-[560px]" style={{ fontSize: 'clamp(16px, 1.5vw, 19px)' }}>
+            Career advice, industry knowledge, and program guides from Gina&apos;s College.
+          </p>
+        </div>
+      </div>
 
       {/* Post grid */}
-      <section className="container">
+      <section className="container py-16 lg:py-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {posts.map((post) => (
             <article
               key={post.slug}
-              className="bg-white border border-[#E9E9E9] rounded-[8px] p-6 flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:shadow-md"
+              className="border flex flex-col hover:border-[#C4856A] transition-colors duration-200"
+              style={{ borderColor: 'var(--color-cream-deep)' }}
             >
-              <p className="text-sm text-[#000000]/40 mb-3">{post.date}</p>
-              <h2 className="font-display text-[#01426A] text-xl font-semibold leading-snug mb-3">
-                {post.title}
-              </h2>
-              <p className="text-[#000000]/60 text-sm leading-relaxed flex-1 mb-5">
-                {post.excerpt.length > 160
-                  ? post.excerpt.slice(0, 160) + '...'
-                  : post.excerpt}
-              </p>
-              <Link
-                href={`/blog/${post.slug}`}
-                className="text-sm font-semibold text-[#01426A] hover:underline self-start"
-              >
-                Read article &rarr;
-              </Link>
+              <div className="p-6 flex flex-col flex-1">
+                <p className="text-xs text-[#000000]/40 mb-3">{post.date}</p>
+                <h2
+                  className="font-serif italic text-[#01426A] leading-snug mb-3"
+                  style={{ fontSize: 'clamp(18px, 1.8vw, 22px)' }}
+                >
+                  {post.title}
+                </h2>
+                <p className="text-[#000000]/60 text-sm leading-relaxed flex-1 mb-5">
+                  {post.excerpt.length > 160
+                    ? post.excerpt.slice(0, 160) + '...'
+                    : post.excerpt}
+                </p>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="text-sm font-semibold text-[#01426A] hover:underline self-start"
+                >
+                  Read article &rarr;
+                </Link>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      {/* CTA strip */}
-      <section className="container mt-20">
-        <div className="bg-[#01426A] rounded-[8px] px-8 py-12 md:px-12 text-center">
-          <h2 className="font-display text-white text-3xl md:text-4xl font-semibold mb-4">
+      {/* Navy CTA strip — full bleed, no rounded corners */}
+      <div className="bg-[#01426A]">
+        <div className="container py-16 text-center">
+          <h2
+            className="font-serif italic text-white mb-4"
+            style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
+          >
             Ready to start your aesthetics career?
           </h2>
           <p className="text-white/70 text-lg mb-8 max-w-[480px] mx-auto">
@@ -136,15 +147,15 @@ export default function BlogPage() {
             Waterloo, and Ottawa.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/apply" className="btn btn-primary">
+            <Link href="/apply" className="btn btn-white">
               Apply Now
             </Link>
-            <Link href="/consultation" className="btn btn-secondary border-white text-white">
+            <Link href="/consultation" className="btn btn-outline-white">
               Free Consultation
             </Link>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   )
 }

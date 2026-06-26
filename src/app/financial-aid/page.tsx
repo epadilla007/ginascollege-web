@@ -49,68 +49,111 @@ const fundingOptions = [
 
 export default function FinancialAid() {
   return (
-    <main className="min-h-screen bg-white pt-32 lg:pt-40 pb-24">
-      <div className="container max-w-[900px]">
+    <main className="min-h-screen bg-white">
 
-        {/* Header */}
-        <p className="eyebrow text-[#01426A] mb-4">Financial Aid</p>
-        <h1
-          className="font-display text-[#01426A] leading-[1.05] tracking-[-0.02em] mb-6"
-          style={{ fontSize: 'clamp(36px, 4.5vw, 60px)' }}
-        >
-          There are more ways to fund your education than you think.
-        </h1>
-        <p className="text-[#000000]/60 text-lg leading-relaxed mb-12 max-w-[660px]">
-          Gina&apos;s College has helped students access government funding, employer programs, and
-          savings plans for over 45 years. Here is a breakdown of the main options available to
-          Ontario students.
-        </p>
-
-        {/* Funding Option Cards */}
-        <div className="grid gap-6 mb-12">
-          {fundingOptions.map((option) => (
-            <div
-              key={option.title}
-              className="p-6 rounded-[8px] border border-[#E9E9E9] bg-[#E9E9E9]/30"
-            >
-              <h2 className="font-display text-[#01426A] text-2xl font-semibold mb-3">
-                {option.title}
-              </h2>
-              <p className="text-[#000000]/60 text-base leading-relaxed mb-4">
-                {option.description}
-              </p>
-              <p className="text-sm text-[#000000]/60 mb-1">
-                <span className="font-semibold text-[#01426A]">Who qualifies: </span>
-                {option.who}
-              </p>
-              {option.note && (
-                <p className="text-sm text-[#000000]/50 mt-3 border-l-2 border-[#B1C6D9] pl-3">
-                  {option.note}
-                </p>
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* Blue Info Box */}
-        <div className="p-8 rounded-[8px] border border-[#B1C6D9] bg-[#B1C6D9]/10 mb-12">
-          <p className="text-[#01426A] text-base leading-relaxed">
-            The best way to understand your options is to talk to one of our admissions advisors.
-            We help students figure out their funding before they commit to anything.
+      {/* Cream Hero */}
+      <div style={{ backgroundColor: 'var(--color-cream)' }} className="pt-32 lg:pt-40 pb-16 lg:pb-20">
+        <div className="container max-w-[860px]">
+          <p className="eyebrow text-[#01426A]/50 mb-5">Financial Aid</p>
+          <h1
+            className="font-serif italic text-[#01426A] leading-[1.0] mb-6"
+            style={{ fontSize: 'clamp(44px, 5vw, 72px)' }}
+          >
+            There are more ways to fund your education than you think.
+          </h1>
+          <p
+            className="text-[#000000]/60 leading-relaxed max-w-[580px]"
+            style={{ fontSize: 'clamp(16px, 1.5vw, 19px)' }}
+          >
+            Gina&apos;s College has helped students access government funding, employer programs, and
+            savings plans for over 45 years. Here is a breakdown of the main options available to
+            Ontario students.
           </p>
         </div>
-
-        {/* CTA */}
-        <div className="flex flex-col sm:flex-row gap-4">
-          <Link href="/apply" className="btn btn-primary">
-            Speak with an Admissions Advisor
-          </Link>
-          <Link href="/diploma-programs" className="btn btn-secondary">
-            View Diploma Programs
-          </Link>
-        </div>
-
       </div>
+
+      {/* Funding Option Cards */}
+      <div className="bg-white py-16 lg:py-20">
+        <div className="container max-w-[860px]">
+          <div className="space-y-6 mb-14">
+            {fundingOptions.map((option) => (
+              <div
+                key={option.title}
+                className="p-7 border"
+                style={{ borderColor: 'var(--color-cream-deep)' }}
+              >
+                <h2
+                  className="font-serif italic text-[#01426A] mb-3"
+                  style={{ fontSize: 'clamp(20px, 2vw, 28px)' }}
+                >
+                  {option.title}
+                </h2>
+                <p className="text-[#000000]/60 text-base leading-relaxed mb-4">
+                  {option.description}
+                </p>
+                <p className="text-sm text-[#000000]/60 mb-1">
+                  <span className="font-semibold text-[#01426A]">Who qualifies: </span>
+                  {option.who}
+                </p>
+                {option.note && (
+                  <p className="text-sm text-[#000000]/50 mt-3 border-l-2 border-[#C4856A] pl-3">
+                    {option.note}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Cream Info Box */}
+          <div
+            className="p-8 border mb-12"
+            style={{
+              backgroundColor: 'var(--color-cream)',
+              borderColor: 'var(--color-cream-deep)',
+            }}
+          >
+            <p className="text-[#01426A] text-base leading-relaxed">
+              The best way to understand your options is to talk to one of our admissions advisors.
+              We help students figure out their funding before they commit to anything.
+            </p>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link href="/apply" className="btn btn-primary">
+              Apply Now
+            </Link>
+            <Link href="/diploma-programs" className="btn btn-secondary">
+              View Diploma Programs
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Navy CTA Strip */}
+      <div className="bg-[#01426A]">
+        <div className="container py-16 lg:py-20">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
+            <div className="max-w-[560px]">
+              <p className="eyebrow text-white/35 mb-5">Financial Aid</p>
+              <h2
+                className="font-serif italic text-white leading-[1.0]"
+                style={{ fontSize: 'clamp(30px, 3.5vw, 48px)' }}
+              >
+                Talk to a financial aid advisor.
+              </h2>
+              <p className="text-white/60 text-sm mt-4 leading-relaxed">
+                Our admissions advisors help students find the right funding path before they commit to anything.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+              <Link href="/apply" className="btn btn-white">Apply Now</Link>
+              <Link href="/consultation" className="btn btn-outline-white">Free Consultation</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </main>
   )
 }

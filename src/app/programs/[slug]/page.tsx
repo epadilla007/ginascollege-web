@@ -416,7 +416,8 @@ export default async function ProgramPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(courseSchema) }}
       />
-      {/* Hero */}
+
+      {/* Hero — image with gradient overlay, keep structure, update font + badges */}
       <div className="relative h-[420px] lg:h-[520px] overflow-hidden">
         <Image
           src={program.image}
@@ -430,17 +431,17 @@ export default async function ProgramPage({
         <div className="absolute inset-0 flex flex-col justify-end pb-12 container">
           <div className="max-w-[720px]">
             <div className="flex flex-wrap gap-2 mb-4">
-              <span className="px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-xs font-semibold text-white uppercase tracking-wider">
+              <span className="px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 text-xs font-semibold text-white uppercase tracking-wider">
                 {program.type === 'diploma' ? 'Diploma Program' : 'Certificate Program'}
               </span>
               {isOSAP && (
-                <span className="px-3 py-1 bg-[#01426A] border border-white/30 rounded-full text-xs font-semibold text-white uppercase tracking-wider">
+                <span className="px-3 py-1 bg-[#01426A] border border-white/30 text-xs font-semibold text-white uppercase tracking-wider">
                   OSAP Eligible
                 </span>
               )}
             </div>
             <h1
-              className="font-display text-white leading-[1.05] tracking-[-0.02em] mb-3"
+              className="font-serif italic text-white leading-[1.05] mb-3"
               style={{ fontSize: 'clamp(40px, 5.5vw, 80px)' }}
             >
               {program.title}
@@ -450,19 +451,19 @@ export default async function ProgramPage({
         </div>
       </div>
 
-      {/* Quick stats bar */}
-      <div className="bg-[#01426A] text-white">
-        <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10 py-5">
+      {/* Stats bar — cream gap-px band */}
+      <div style={{ backgroundColor: 'var(--color-cream)' }}>
+        <div className="container py-0">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px" style={{ background: 'rgba(196,133,106,0.2)' }}>
             {[
               { label: 'Duration', value: program.duration },
               { label: 'Avg. salary', value: program.salary },
               { label: 'Credential', value: program.type === 'diploma' ? 'Diploma' : 'Certificate' },
               { label: 'Funding', value: isOSAP ? 'OSAP eligible' : 'Flexible options' },
             ].map((stat) => (
-              <div key={stat.label} className="px-6 py-3 first:pl-0 last:pr-0 text-center first:text-left last:text-right md:text-left">
-                <p className="text-xs text-white/40 uppercase tracking-wider mb-1">{stat.label}</p>
-                <p className="font-display font-semibold text-lg leading-snug">{stat.value}</p>
+              <div key={stat.label} className="py-8 px-6" style={{ backgroundColor: 'var(--color-cream)' }}>
+                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#01426A]/50 mb-1">{stat.label}</p>
+                <p className="font-serif italic text-[#01426A] font-semibold leading-snug" style={{ fontSize: 'clamp(18px, 2vw, 26px)' }}>{stat.value}</p>
               </div>
             ))}
           </div>
@@ -476,7 +477,10 @@ export default async function ProgramPage({
           <div>
             {/* Overview */}
             <div className="mb-12">
-              <h2 className="font-display text-[#01426A] text-2xl font-semibold mb-4">
+              <h2
+                className="font-serif italic text-[#01426A] mb-4"
+                style={{ fontSize: 'clamp(20px, 2vw, 28px)' }}
+              >
                 About this program
               </h2>
               <p className="text-[#000000]/65 text-lg leading-relaxed">{program.overview}</p>
@@ -484,7 +488,10 @@ export default async function ProgramPage({
 
             {/* Outcomes */}
             <div className="mb-12">
-              <h2 className="font-display text-[#01426A] text-2xl font-semibold mb-6">
+              <h2
+                className="font-serif italic text-[#01426A] mb-6"
+                style={{ fontSize: 'clamp(20px, 2vw, 28px)' }}
+              >
                 What you get
               </h2>
               <div className="space-y-3">
@@ -514,22 +521,26 @@ export default async function ProgramPage({
 
             {/* Curriculum */}
             <div className="mb-12">
-              <h2 className="font-display text-[#01426A] text-2xl font-semibold mb-6">
+              <h2
+                className="font-serif italic text-[#01426A] mb-6"
+                style={{ fontSize: 'clamp(20px, 2vw, 28px)' }}
+              >
                 What you will learn
               </h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 {program.curriculum.map((mod) => (
                   <div
                     key={mod.module}
-                    className="p-6 rounded-[8px] border border-[#E9E9E9] bg-[#E9E9E9]/20"
+                    className="p-6 border"
+                    style={{ borderColor: 'var(--color-cream-deep)' }}
                   >
-                    <h3 className="font-display text-[#01426A] font-semibold text-base mb-3">
+                    <h3 className="font-serif text-[#01426A] font-semibold text-base mb-3">
                       {mod.module}
                     </h3>
                     <ul className="space-y-1.5">
                       {mod.topics.map((topic) => (
                         <li key={topic} className="text-sm text-[#000000]/60 flex items-center gap-2">
-                          <span className="w-1 h-1 rounded-full bg-[#01426A]/40 shrink-0" />
+                          <span className="w-1 h-1 bg-[#C4856A] shrink-0" />
                           {topic}
                         </li>
                       ))}
@@ -541,14 +552,18 @@ export default async function ProgramPage({
 
             {/* Careers */}
             <div>
-              <h2 className="font-display text-[#01426A] text-2xl font-semibold mb-4">
+              <h2
+                className="font-serif italic text-[#01426A] mb-4"
+                style={{ fontSize: 'clamp(20px, 2vw, 28px)' }}
+              >
                 Where graduates work
               </h2>
               <div className="flex flex-wrap gap-2">
                 {program.careers.map((career) => (
                   <span
                     key={career}
-                    className="px-4 py-2 bg-[#E9E9E9] rounded-full text-sm font-medium text-[#000000]/70"
+                    className="px-4 py-2 border text-sm font-medium text-[#000000]/70"
+                    style={{ borderColor: 'var(--color-cream-deep)' }}
                   >
                     {career}
                   </span>
@@ -559,9 +574,9 @@ export default async function ProgramPage({
 
           {/* Right column — sticky CTA card */}
           <div className="lg:sticky lg:top-24 self-start">
-            <div className="rounded-[8px] border border-[#E9E9E9] overflow-hidden">
+            <div className="border overflow-hidden" style={{ borderColor: 'var(--color-cream-deep)' }}>
               <div className="bg-[#01426A] p-6 text-white">
-                <p className="font-display font-semibold text-xl mb-1">{program.title}</p>
+                <p className="font-serif italic font-semibold text-xl mb-1">{program.title}</p>
                 <p className="text-white/60 text-sm">{program.duration} &middot; {program.type === 'diploma' ? 'Diploma' : 'Certificate'}</p>
               </div>
               <div className="p-6 space-y-4">
@@ -570,9 +585,9 @@ export default async function ProgramPage({
                   <span className="font-semibold text-[#01426A]">{program.salary}</span>
                 </div>
                 {isOSAP && (
-                  <div className="flex items-center gap-2 p-3 bg-[#E9E9E9]/50 rounded-[4px]">
+                  <div className="flex items-center gap-2 p-3" style={{ backgroundColor: 'var(--color-cream)' }}>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M2 8l4 4 8-8" stroke="#01426A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M2 8l4 4 8-8" stroke="#C4856A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     <p className="text-xs font-semibold text-[#01426A]">OSAP funding available</p>
                   </div>
@@ -602,23 +617,21 @@ export default async function ProgramPage({
         </div>
       </div>
 
-      {/* Bottom CTA strip */}
-      <div className="bg-[#E9E9E9]">
+      {/* Bottom CTA — full-bleed navy, no rounded corners */}
+      <div className="bg-[#01426A]">
         <div className="container py-16 text-center">
-          <h2
-            className="font-display text-[#01426A] font-semibold mb-3"
-            style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
-          >
+          <p className="eyebrow text-white/35 mb-5 mx-auto" style={{ textAlign: 'center' }}>Ready to begin?</p>
+          <h2 className="font-serif italic text-white mb-3" style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}>
             Ready to start?
           </h2>
-          <p className="text-[#000000]/60 mb-8 max-w-[400px] mx-auto">
+          <p className="text-white/60 mb-8 max-w-[400px] mx-auto">
             Applications take 5 minutes. An admissions advisor will reach out within 24 hours.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/apply" className="btn btn-primary">
+            <Link href="/apply" className="btn btn-white">
               Start Your Application
             </Link>
-            <Link href="/consultation" className="btn btn-secondary">
+            <Link href="/consultation" className="btn btn-outline-white">
               Book a Free Consultation
             </Link>
           </div>

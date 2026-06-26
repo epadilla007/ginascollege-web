@@ -174,38 +174,48 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 16px 32px;
-  border-radius: 4px; /* editorial — tight, not playful */
+  gap: 10px;
+  padding: 15px 38px;
+  border-radius: 0; /* sharp editorial — zero radius throughout */
   font-family: var(--font-body);
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
   transition:
-    background-color var(--duration-micro) var(--ease-luxury),
-    color var(--duration-micro) var(--ease-luxury),
-    border-color var(--duration-micro) var(--ease-luxury),
-    transform var(--duration-micro) var(--ease-luxury);
-  border: 2px solid transparent;
+    background-color 280ms var(--ease-luxury),
+    color 280ms var(--ease-luxury),
+    border-color 280ms var(--ease-luxury),
+    box-shadow 280ms var(--ease-luxury),
+    transform 200ms var(--ease-luxury);
+  border: 1.5px solid transparent;
   white-space: nowrap;
+  position: relative;
 }
 
 .btn:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .btn:active {
   transform: translateY(0);
 }
 
+/* Primary — terracotta warm fill; stands out from navy */
 .btn-primary {
-  background-color: var(--color-navy);
+  background-color: var(--color-terracotta);
   color: var(--color-white);
+  border-color: var(--color-terracotta);
 }
-.btn-primary:hover { background-color: var(--color-navy-dark); }
+.btn-primary:hover {
+  background-color: #b8705a;
+  border-color: #b8705a;
+  box-shadow: 0 10px 28px rgba(196, 133, 106, 0.32);
+}
 
+/* Secondary — navy outline */
 .btn-secondary {
   background-color: transparent;
   color: var(--color-navy);
@@ -216,20 +226,50 @@ p {
   color: var(--color-white);
 }
 
+/* Navy — solid navy fill (use where terracotta CTA would clash) */
+.btn-navy {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  border-color: var(--color-navy);
+}
+.btn-navy:hover {
+  background-color: var(--color-navy-dark);
+  border-color: var(--color-navy-dark);
+  box-shadow: 0 10px 28px rgba(1, 66, 106, 0.28);
+}
+
+/* White — for navy/dark backgrounds */
 .btn-white {
   background-color: var(--color-white);
   color: var(--color-navy);
+  border-color: var(--color-white);
 }
-.btn-white:hover { background-color: var(--color-soft-blue); }
+.btn-white:hover {
+  background-color: var(--color-cream);
+  border-color: var(--color-cream);
+  box-shadow: 0 10px 28px rgba(255, 255, 255, 0.2);
+}
 
+/* Outline white — ghost on dark backgrounds */
 .btn-outline-white {
   background-color: transparent;
   color: var(--color-white);
-  border-color: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.45);
 }
 .btn-outline-white:hover {
   border-color: var(--color-white);
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Terracotta outline — warm secondary on cream/white */
+.btn-outline-terracotta {
+  background-color: transparent;
+  color: var(--color-terracotta);
+  border-color: var(--color-terracotta);
+}
+.btn-outline-terracotta:hover {
+  background-color: var(--color-terracotta);
+  color: var(--color-white);
 }
 
 /* ─── Eyebrow / Label ────────────────────────────────────────────────────── */

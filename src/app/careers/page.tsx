@@ -26,144 +26,135 @@ const reasons = [
   },
 ]
 
+const numerals = ['01', '02', '03', '04']
+
 export default function CareersPage() {
   return (
-    <div className="min-h-screen bg-white pt-32 lg:pt-40 pb-24">
-      <div className="container max-w-[860px]">
+    <div className="min-h-screen bg-white">
 
-        {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs text-[#000000]/40 mb-10">
-          <Link href="/about" className="hover:text-[#01426A] transition-colors">About</Link>
-          <span>/</span>
-          <span>Careers</span>
-        </div>
-
-        {/* Header */}
-        <div className="mb-16">
-          <p className="eyebrow text-[#01426A] mb-4">Join the Team</p>
+      {/* Cream Hero */}
+      <div style={{ backgroundColor: 'var(--color-cream)' }} className="pt-32 lg:pt-40 pb-16 lg:pb-20">
+        <div className="container max-w-[860px]">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-xs text-[#000000]/40 mb-8">
+            <Link href="/about" className="hover:text-[#01426A] transition-colors">About</Link>
+            <span>/</span>
+            <span>Careers</span>
+          </div>
+          <p className="eyebrow text-[#01426A]/50 mb-5">Join the Team</p>
           <h1
-            className="font-display text-[#01426A] leading-[1.05] tracking-[-0.02em] mb-6"
-            style={{ fontSize: 'clamp(36px, 4.5vw, 64px)' }}
+            className="font-serif italic text-[#01426A] leading-[1.0] mb-6"
+            style={{ fontSize: 'clamp(44px, 5vw, 72px)' }}
           >
             Work at Gina&#39;s College
           </h1>
-          <p className="text-[#000000]/60 text-lg leading-relaxed max-w-[600px]">
+          <p
+            className="text-[#000000]/60 leading-relaxed max-w-[580px]"
+            style={{ fontSize: 'clamp(16px, 1.5vw, 19px)' }}
+          >
             We are always looking for passionate, experienced professionals to join our team as
             instructors, admissions advisors, and clinic staff across our three Ontario campuses.
           </p>
         </div>
+      </div>
 
-        {/* How to apply */}
-        <div className="mb-14">
-          <h2 className="font-display text-[#01426A] text-2xl font-semibold mb-5">
-            How to get in touch.
-          </h2>
-          <div className="p-6 rounded-[8px] border border-[#E9E9E9] bg-[#E9E9E9]/30">
-            <p className="text-[#000000]/65 leading-relaxed mb-4">
-              Send your resume to{' '}
-              <a
-                href="mailto:careers@ginascollege.com"
-                className="text-[#01426A] font-semibold hover:text-[#01426A]/70 transition-colors"
+      {/* How to get in touch */}
+      <div className="bg-white py-16 lg:py-20">
+        <div className="container max-w-[860px]">
+
+          <div className="mb-14">
+            <h2
+              className="font-serif text-[#01426A] mb-5"
+              style={{ fontSize: 'clamp(22px, 2.5vw, 32px)' }}
+            >
+              How to get in touch.
+            </h2>
+            <div
+              className="p-6 border"
+              style={{
+                backgroundColor: 'var(--color-cream)',
+                borderColor: 'var(--color-cream-deep)',
+              }}
+            >
+              <p className="text-[#000000]/65 leading-relaxed mb-4">
+                Send your resume to{' '}
+                <a
+                  href="mailto:careers@ginascollege.com"
+                  className="text-[#01426A] font-semibold hover:text-[#01426A]/70 transition-colors"
+                >
+                  careers@ginascollege.com
+                </a>
+                . Tell us about your experience, the role you are interested in, and which campus
+                location works for you. We review every application and respond within five business days.
+              </p>
+              <div
+                className="flex flex-col sm:flex-row gap-4 pt-4 border-t"
+                style={{ borderColor: 'var(--color-cream-deep)' }}
               >
-                careers@ginascollege.com
-              </a>
-              . Tell us about your experience, the role you are interested in, and which campus
-              location works for you. We review every application and respond within five business days.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-[#E9E9E9]">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-[#01426A]/50 mb-1">Roles we hire for</p>
-                <p className="text-sm text-[#000000]/60">Aesthetics Instructors &bull; Hairstyling Instructors &bull; Admissions Advisors &bull; Student Clinic Coordinators &bull; Administrative Staff</p>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-[#01426A]/50 mb-1">Roles we hire for</p>
+                  <p className="text-sm text-[#000000]/60">Aesthetics Instructors &bull; Hairstyling Instructors &bull; Admissions Advisors &bull; Student Clinic Coordinators &bull; Administrative Staff</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Contact card */}
-        <div className="mb-14 p-6 rounded-[8px] border border-[#B1C6D9] bg-[#B1C6D9]/10 flex items-start gap-5">
-          <div className="shrink-0 w-10 h-10 rounded-full bg-[#01426A] flex items-center justify-center mt-0.5">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path
-                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                stroke="#FFFFFF"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <polyline
-                points="22,6 12,13 2,6"
-                stroke="#FFFFFF"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <div>
-            <p className="font-semibold text-[#000000] mb-1">Send your resume</p>
-            <a
-              href="mailto:careers@ginascollege.com"
-              className="text-[#01426A] text-sm font-medium hover:text-[#01426A]/70 transition-colors"
+          {/* Why Gina's */}
+          <div className="mb-14">
+            <h2
+              className="font-serif text-[#01426A] mb-6"
+              style={{ fontSize: 'clamp(22px, 2.5vw, 32px)' }}
             >
-              careers@ginascollege.com
-            </a>
-            <p className="text-xs text-[#000000]/45 mt-1">
-              Include the role you are interested in and your preferred campus location.
-            </p>
-          </div>
-        </div>
-
-        {/* Why work here */}
-        <div className="mb-14">
-          <h2 className="font-display text-[#01426A] text-2xl font-semibold mb-6">
-            Why Gina&#39;s.
-          </h2>
-          <div className="space-y-5">
-            {reasons.map((reason, i) => (
-              <div key={i} className="flex gap-5">
-                <div className="shrink-0 w-7 h-7 rounded-full bg-[#01426A] flex items-center justify-center mt-0.5">
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path
-                      d="M2 6l2.5 2.5L8 3"
-                      stroke="#FFFFFF"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-semibold text-[#000000] mb-1">{reason.title}</p>
-                  <p className="text-[#000000]/60 leading-relaxed text-sm">{reason.body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA strip */}
-        <div className="bg-[#01426A] rounded-[8px] p-10 lg:p-14">
-          <div className="max-w-[520px]">
-            <h2 className="font-display text-white text-2xl font-semibold mb-3">
-              Join a school that has been doing this for 45 years.
+              Why Gina&#39;s.
             </h2>
-            <p className="text-white/65 text-sm leading-relaxed mb-6">
-              Send your resume and introduction to{' '}
-              <a
-                href="mailto:careers@ginascollege.com"
-                className="text-white underline hover:text-white/80 transition-colors"
+            <div className="space-y-5">
+              {reasons.map((reason, i) => (
+                <div key={i} className="flex gap-5">
+                  <span className="font-serif italic text-[#C4856A] text-4xl shrink-0 leading-none mt-0.5">
+                    {numerals[i]}
+                  </span>
+                  <div>
+                    <p className="font-semibold text-[#000000] mb-1">{reason.title}</p>
+                    <p className="text-[#000000]/60 leading-relaxed text-sm">{reason.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Navy CTA Strip */}
+      <div className="bg-[#01426A]">
+        <div className="container py-16 lg:py-20">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
+            <div className="max-w-[560px]">
+              <p className="eyebrow text-white/35 mb-5">Careers</p>
+              <h2
+                className="font-serif italic text-white leading-[1.0]"
+                style={{ fontSize: 'clamp(30px, 3.5vw, 48px)' }}
               >
-                careers@ginascollege.com
-              </a>
-              . We look forward to hearing from you.
-            </p>
-            <Link href="/about" className="btn btn-white text-sm">
-              Learn About the School
-            </Link>
+                Join a school that has been doing this for 45 years.
+              </h2>
+              <p className="text-white/60 text-sm mt-4 leading-relaxed">
+                Send your resume and introduction to{' '}
+                <a
+                  href="mailto:careers@ginascollege.com"
+                  className="text-white underline hover:text-white/80 transition-colors"
+                >
+                  careers@ginascollege.com
+                </a>
+                . We look forward to hearing from you.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+              <Link href="/about" className="btn btn-white">Learn About the School</Link>
+            </div>
           </div>
         </div>
-
       </div>
+
     </div>
   )
 }

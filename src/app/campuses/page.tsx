@@ -36,95 +36,105 @@ const campuses = [
 
 export default function CampusesPage() {
   return (
-    <div className="min-h-screen bg-white pt-32 lg:pt-40 pb-24">
-      <div className="container">
+    <div className="min-h-screen bg-white">
 
-        {/* Header */}
-        <div className="max-w-[640px] mb-16">
-          <p className="eyebrow text-[#01426A] mb-4">Campuses</p>
+      {/* Hero */}
+      <div style={{ backgroundColor: 'var(--color-cream)' }} className="pt-32 lg:pt-40 pb-16 lg:pb-20">
+        <div className="container max-w-[960px]">
+          <p className="eyebrow text-[#01426A]/50 mb-5">Campuses</p>
           <h1
-            className="font-display text-[#01426A] leading-[1.05] tracking-[-0.02em] mb-6"
-            style={{ fontSize: 'clamp(40px, 5vw, 72px)' }}
+            className="font-serif italic text-[#01426A] leading-[1.0] mb-6"
+            style={{ fontSize: 'clamp(52px, 6vw, 88px)' }}
           >
             Three campuses. One standard.
           </h1>
-          <p className="text-[#000000]/60 text-lg leading-relaxed">
+          <p className="text-[#000000]/60 leading-relaxed max-w-[580px]" style={{ fontSize: 'clamp(16px, 1.5vw, 19px)' }}>
             Every Gina's campus runs the same curriculum, the same clinical hours, and the same
             instructor standards. The programs you earn at Mississauga are identical to the ones
             you earn in Waterloo or Ottawa.
           </p>
         </div>
+      </div>
 
-        {/* Campus cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-20">
-          {campuses.map((campus) => (
-            <div
-              key={campus.href}
-              className="flex flex-col rounded-[8px] border border-[#E9E9E9] overflow-hidden hover:border-[#B1C6D9] hover:shadow-lg transition-all duration-300"
-            >
-              {/* Campus name header */}
-              <div className="bg-[#01426A] px-6 py-5">
-                <h2 className="font-display text-white text-xl font-semibold">{campus.name}</h2>
+      {/* Campus cards */}
+      <div className="bg-white py-20">
+        <div className="container max-w-[960px]">
+          <div className="grid md:grid-cols-3 gap-6 mb-20">
+            {campuses.map((campus) => (
+              <div
+                key={campus.href}
+                className="flex flex-col border hover:border-[#C4856A] transition-colors duration-200"
+                style={{ borderColor: 'var(--color-cream-deep)' }}
+              >
+                {/* Campus name header */}
+                <div className="bg-[#01426A] px-6 py-5">
+                  <h2 className="font-serif italic text-white text-xl">{campus.name}</h2>
+                </div>
+
+                {/* Contact details */}
+                <div className="p-6 flex flex-col flex-1 gap-4" style={{ backgroundColor: 'var(--color-cream)' }}>
+                  <div>
+                    <p className="text-xs font-semibold text-[#000000]/40 uppercase tracking-wider mb-1">Address</p>
+                    <p className="text-sm text-[#000000]/70 leading-snug">{campus.address}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-[#000000]/40 uppercase tracking-wider mb-1">Phone</p>
+                    <a
+                      href={campus.tel}
+                      className="text-sm text-[#01426A] hover:underline font-medium"
+                    >
+                      {campus.phone}
+                    </a>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-[#000000]/40 uppercase tracking-wider mb-1">Email</p>
+                    <a
+                      href={`mailto:${campus.email}`}
+                      className="text-sm text-[#01426A] hover:underline font-medium break-all"
+                    >
+                      {campus.email}
+                    </a>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-[#000000]/40 uppercase tracking-wider mb-1">Hours</p>
+                    <p className="text-sm text-[#000000]/70">Monday to Friday, 9am to 4:30pm</p>
+                  </div>
+
+                  <div className="mt-auto pt-4 border-t" style={{ borderColor: 'var(--color-cream-deep)' }}>
+                    <Link
+                      href={campus.href}
+                      className="text-sm font-semibold text-[#01426A] hover:underline"
+                    >
+                      View Campus Details →
+                    </Link>
+                  </div>
+                </div>
               </div>
+            ))}
+          </div>
 
-              {/* Contact details */}
-              <div className="p-6 flex flex-col flex-1 gap-4">
-                <div>
-                  <p className="text-xs font-semibold text-[#000000]/40 uppercase tracking-wider mb-1">Address</p>
-                  <p className="text-sm text-[#000000]/70 leading-snug">{campus.address}</p>
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-[#000000]/40 uppercase tracking-wider mb-1">Phone</p>
-                  <a
-                    href={campus.tel}
-                    className="text-sm text-[#01426A] hover:underline font-medium"
+          {/* Navy CTA strip */}
+          <div className="bg-[#01426A]">
+            <div className="py-16 lg:py-20 px-10 lg:px-14">
+              <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10">
+                <div className="max-w-[560px]">
+                  <p className="eyebrow text-white/35 mb-5">Visit Us</p>
+                  <h2
+                    className="font-serif italic text-white leading-[1.0]"
+                    style={{ fontSize: 'clamp(30px, 3.5vw, 48px)' }}
                   >
-                    {campus.phone}
-                  </a>
+                    Want to see a campus in person?
+                  </h2>
                 </div>
-                <div>
-                  <p className="text-xs font-semibold text-[#000000]/40 uppercase tracking-wider mb-1">Email</p>
-                  <a
-                    href={`mailto:${campus.email}`}
-                    className="text-sm text-[#01426A] hover:underline font-medium break-all"
-                  >
-                    {campus.email}
-                  </a>
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-[#000000]/40 uppercase tracking-wider mb-1">Hours</p>
-                  <p className="text-sm text-[#000000]/70">Monday to Friday, 9am to 4:30pm</p>
-                </div>
-
-                <div className="mt-auto pt-4 border-t border-[#E9E9E9]">
-                  <Link
-                    href={campus.href}
-                    className="text-sm font-semibold text-[#01426A] hover:underline"
-                  >
-                    View Campus Details →
-                  </Link>
+                <div className="flex flex-col sm:flex-row gap-4 shrink-0">
+                  <Link href="/consultation" className="btn btn-white">Book a Campus Tour</Link>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* CTA strip */}
-        <div className="bg-[#01426A] rounded-[8px] p-10 lg:p-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div>
-            <h2 className="font-display text-white text-2xl lg:text-3xl font-semibold mb-2">
-              Want to see a campus in person?
-            </h2>
-            <p className="text-white/60 text-sm">
-              Book a free tour and meet the instructors before you decide.
-            </p>
           </div>
-          <Link href="/consultation" className="btn btn-white text-sm shrink-0 whitespace-nowrap">
-            Book a Campus Tour
-          </Link>
         </div>
-
       </div>
+
     </div>
   )
 }
