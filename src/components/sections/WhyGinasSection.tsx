@@ -7,71 +7,67 @@ const reasons = [
   {
     number: '01',
     title: 'International credibility',
-    body: 'We are a select CIDESCO school — the only career college in Ontario offering CIDESCO diplomas, the world-standard qualification for beauty and aesthetics professionals.',
+    body: 'A select CIDESCO school — the only career college in Ontario offering CIDESCO diplomas. The world-standard employers and clients everywhere recognize.',
   },
   {
     number: '02',
-    title: 'Years of experience',
-    body: 'Since 1979, we have been graduating the industry\'s top beauty professionals. Over 40 years of proven results speak for themselves.',
+    title: '40+ years of proven results',
+    body: "Since 1979, graduating the industry's top beauty professionals. Over four decades of results speak louder than any ranking.",
   },
   {
     number: '03',
     title: 'Registered under Ontario Career Colleges Act',
-    body: 'Our diploma programs are registered under the Ontario Career Colleges Act 2005, giving your credentials full provincial recognition.',
+    body: 'Diploma programs registered under the OCCA 2005 — full provincial recognition that follows your career everywhere in Ontario.',
   },
   {
     number: '04',
-    title: 'Cutting-edge curriculum',
-    body: 'Our curriculum is continuously updated to reflect the latest techniques, technologies, and industry standards — so you graduate job-ready.',
+    title: 'Curriculum updated annually',
+    body: 'We track the latest techniques, technologies, and industry standards so you graduate ready for the job market — not five years behind it.',
   },
   {
     number: '05',
-    title: 'Hands-on experience',
-    body: 'Students spend 70% of their time on practical training, working on real clients in our student clinics across all three campuses.',
+    title: '70% hands-on practical training',
+    body: 'Students spend 70% of program time doing — not watching. Real clients. Real results. Real confidence when you graduate.',
   },
   {
     number: '06',
-    title: 'Expert instructors',
-    body: 'Learn from passionate, professional instructors with deep industry backgrounds — people who have worked in the field and bring real-world insight to every class.',
+    title: 'Expert instructors with working experience',
+    body: 'Learn from people who have worked in the field. Instructors bring genuine industry knowledge into every class, not just textbook theory.',
   },
   {
     number: '07',
-    title: 'Latest technologies',
-    body: 'From advanced laser systems to medical-grade equipment, you train on the tools you will actually use in your professional career.',
+    title: 'Medical-grade equipment',
+    body: 'From advanced laser systems to the same devices used in professional clinics — you train on what you will actually use in your career.',
   },
 ]
 
 export function WhyGinasSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const imageRef = useRef<HTMLDivElement>(null)
+  const imgRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const section = sectionRef.current
-    const imgEl = imageRef.current
     if (!section) return
 
     const items = section.querySelectorAll('.reason-item')
+    const imgEl = imgRef.current
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return
-          if (entry.target === section) {
-            if (imgEl) {
-              imgEl.style.opacity = '1'
-              imgEl.style.transform = 'translateX(0)'
-            }
-            Array.from(items).forEach((item, i) => {
-              setTimeout(() => {
-                (item as HTMLElement).style.opacity = '1'
-                ;(item as HTMLElement).style.transform = 'translateX(0)'
-              }, i * 70)
-            })
-          }
-          observer.unobserve(entry.target)
+      ([entry]) => {
+        if (!entry.isIntersecting) return
+        if (imgEl) {
+          imgEl.style.opacity = '1'
+          imgEl.style.transform = 'translateX(0)'
+        }
+        items.forEach((item, i) => {
+          setTimeout(() => {
+            ;(item as HTMLElement).style.opacity = '1'
+            ;(item as HTMLElement).style.transform = 'translateX(0)'
+          }, i * 65)
         })
+        observer.disconnect()
       },
-      { threshold: 0.1 }
+      { threshold: 0.08 }
     )
 
     observer.observe(section)
@@ -79,81 +75,86 @@ export function WhyGinasSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-[#01426A]" aria-label="Why choose Gina's College">
-      {/* Subtle diagonal accent */}
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden bg-[#01426A]"
+      aria-label="Why choose Gina's College"
+    >
+      {/* Subtle radial highlight */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse 70% 60% at 80% 50%, rgba(177,198,217,0.07) 0%, transparent 70%)',
-        }}
+        style={{ background: 'radial-gradient(ellipse 60% 80% at 80% 50%, rgba(177,198,217,0.06) 0%, transparent 70%)' }}
       />
 
-      <div className="container relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
+      <div className="flex flex-col lg:flex-row">
 
-          {/* Left: heading + image */}
-          <div className="lg:col-span-4 py-16 lg:py-24 lg:pr-12 flex flex-col">
-            <p className="eyebrow text-white/40 mb-5">Why Choose Us</p>
-            <h2 className="font-serif italic text-[clamp(34px,4vw,58px)] font-light text-white leading-[1.0] mb-4">
-              Why Gina&apos;s College
-            </h2>
-            <p className="text-[15px] text-white/50 leading-relaxed mb-8">
-              of Advanced Aesthetics Corporation
-            </p>
-            <div className="w-8 h-[1px] bg-[#B1C6D9]/30 mb-8" />
+        {/* Left: full-bleed campus image */}
+        <div
+          ref={imgRef}
+          className="relative w-full lg:w-[38%] flex-shrink-0"
+          style={{
+            minHeight: '360px',
+            opacity: 0,
+            transform: 'translateX(-24px)',
+            transition: 'opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1)',
+          }}
+        >
+          <Image
+            src="/images/campus/students-2.jpg"
+            alt="Gina's College students in training"
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 1024px) 100vw, 38vw"
+          />
+          {/* Right-side fade into navy */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#01426A]/10 to-[#01426A]" />
+          {/* Bottom fade */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#01426A]/40 to-transparent lg:hidden" />
+        </div>
 
-            {/* Campus photo — reveal left */}
-            <div
-              ref={imageRef}
-              className="flex-1 relative min-h-[220px] lg:min-h-[280px] rounded-[10px] overflow-hidden mt-auto"
-              style={{
-                opacity: 0,
-                transform: 'translateX(-20px)',
-                transition: 'opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1)',
-              }}
-            >
-              <Image
-                src="/images/campus/students-2.jpg"
-                alt="Gina's College students in training"
-                fill
-                className="object-cover object-top"
-                sizes="(max-width: 1024px) 100vw, 33vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#01426A]/60 to-transparent" />
-            </div>
-          </div>
+        {/* Right: content */}
+        <div
+          className="flex-1 px-8 md:px-12 lg:px-16 xl:px-20 py-16 lg:py-24"
+        >
+          {/* Heading */}
+          <p className="eyebrow text-white/35 mb-5">Why Choose Us</p>
+          <h2
+            className="font-serif italic font-light text-white leading-[0.95] mb-4"
+            style={{ fontSize: 'clamp(34px, 4vw, 60px)' }}
+          >
+            Why Gina&apos;s College<br />of Advanced Aesthetics
+          </h2>
+          <div className="w-8 h-[1px] bg-[#B08450]/50 mb-10" />
 
-          {/* Right: reasons list */}
-          <div className="lg:col-span-8 py-16 lg:py-24 lg:pl-12 lg:border-l lg:border-white/10">
-            <div className="space-y-0">
-              {reasons.map((reason, i) => (
-                <div
-                  key={reason.number}
-                  className={`reason-item relative flex gap-5 py-6 ${i < reasons.length - 1 ? 'border-b border-white/[0.07]' : ''}`}
-                  style={{
-                    opacity: 0,
-                    transform: 'translateX(20px)',
-                    transition: `opacity 0.6s cubic-bezier(0.22,1,0.36,1) ${i * 0.05}s, transform 0.6s cubic-bezier(0.22,1,0.36,1) ${i * 0.05}s`,
-                  }}
+          {/* Reasons list */}
+          <div>
+            {reasons.map((reason, i) => (
+              <div
+                key={reason.number}
+                className={`reason-item flex gap-5 py-5 ${
+                  i < reasons.length - 1 ? 'border-b border-white/[0.06]' : ''
+                }`}
+                style={{
+                  opacity: 0,
+                  transform: 'translateX(20px)',
+                  transition: `opacity 0.65s cubic-bezier(0.22,1,0.36,1) ${i * 0.05}s, transform 0.65s cubic-bezier(0.22,1,0.36,1) ${i * 0.05}s`,
+                }}
+              >
+                <span
+                  className="font-serif italic font-light text-[#B08450]/50 flex-shrink-0 leading-none mt-[3px]"
+                  style={{ fontSize: '18px', width: '28px' }}
                 >
-                  {/* Decorative large number watermark */}
-                  <span className="absolute right-0 top-1/2 -translate-y-1/2 font-serif italic text-[80px] font-light text-white/[0.04] leading-none select-none pointer-events-none">
-                    {reason.number}
-                  </span>
-                  <span className="font-serif italic text-[22px] font-light text-[#B1C6D9]/35 flex-shrink-0 mt-[2px] w-8 leading-none">
-                    {reason.number}
-                  </span>
-                  <div className="group relative z-10">
-                    <h3 className="font-serif text-[18px] font-medium text-white mb-1.5 leading-tight group-hover:text-[#B1C6D9] transition-colors duration-200">
-                      {reason.title}
-                    </h3>
-                    <p className="text-[13px] text-white/50 leading-relaxed">{reason.body}</p>
-                  </div>
+                  {reason.number}
+                </span>
+                <div>
+                  <h3 className="font-serif text-[17px] font-medium text-white mb-1.5 leading-snug">
+                    {reason.title}
+                  </h3>
+                  <p className="text-[13px] text-white/48 leading-relaxed">{reason.body}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-
         </div>
       </div>
     </section>

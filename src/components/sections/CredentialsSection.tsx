@@ -4,164 +4,161 @@ import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 
 const stats = [
-  { value: '40+', label: 'Years of Excellence' },
-  { value: '3', label: 'Campuses in Ontario' },
-  { value: '5000+', label: 'Graduates' },
-  { value: 'CIDESCO', label: 'World-Standard School' },
+  { value: '40+', label: 'Years of Excellence', sub: 'Since 1979' },
+  { value: '3', label: 'Campuses in Ontario', sub: 'Mississauga · Waterloo · Ottawa' },
+  { value: '5,000+', label: 'Graduates', sub: 'Industry professionals' },
+  { value: 'CIDESCO', label: 'World-Standard', sub: "Ontario's only career college" },
 ]
 
 const credentials = [
   {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="14" cy="14" r="13" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M8 14l4 4 8-8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    num: '01',
     title: 'CIDESCO World-Standard School',
     description:
-      'The most prestigious international qualification in aesthetics. CIDESCO is the world-standard for beauty and spa therapy. We are proud to be a select CIDESCO school and Ontario\'s only career college offering CIDESCO diplomas.',
+      "The world's most prestigious beauty qualification. We are the only career college in Ontario offering CIDESCO diplomas — the standard employers and clients worldwide recognize.",
   },
   {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="6" width="26" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M10 14h8M14 10v8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
-    title: '40+ Years of Excellence',
+    num: '02',
+    title: '40+ Years of Proven Results',
     description:
-      'Since 1979 we\'ve been graduating the industry\'s top beauty professionals. We are registered as a Career College under the Ontario Career Colleges Act 2005.',
+      "Since 1979 we've graduated the industry's top professionals. Registered under the Ontario Career Colleges Act 2005 — your credentials carry full provincial recognition.",
   },
   {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="6" width="11" height="16" rx="1.5" stroke="currentColor" strokeWidth="1.5" />
-        <rect x="15" y="6" width="11" height="16" rx="1.5" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M13 14h2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-    title: 'Online & In-Person Training',
+    num: '03',
+    title: 'Flexible Online & In-Person Training',
     description:
-      'A blend of online virtual learning and in-person practical training on real clients — with small class sizes for convenient, personalized, flexible education.',
+      'A blend of virtual learning and hands-on practical training with real clients. Small class sizes mean personal attention and scheduling that works around your life.',
   },
   {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M14 2C8 2 3 7 3 13c0 4 2.3 7.5 5.7 9.3L7 25l4.5-1.5L14 25l2.5-1.5L21 25l-1.7-2.7C22.7 20.5 25 17 25 13c0-6-5-11-11-11z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-        <circle cx="14" cy="13" r="2.5" stroke="currentColor" strokeWidth="1.2" />
-      </svg>
-    ),
+    num: '04',
     title: 'Student Beauty Clinic',
     description:
-      'Our students gain the best practical experience by working on real clients in our student clinic. Book a service with our new talent today — affordable prices, professional results.',
+      'Our students gain real-world experience on real clients in our professional student clinics. Book a service and experience the next generation of beauty talent.',
     cta: { label: 'Book a Service', href: '/clinic' },
   },
 ]
 
 export function CredentialsSection() {
-  const sectionRef = useRef<HTMLDivElement>(null)
   const statsRef = useRef<HTMLDivElement>(null)
+  const credsRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const section = sectionRef.current
     const statsEl = statsRef.current
-    if (!section || !statsEl) return
+    const credsEl = credsRef.current
+    if (!statsEl || !credsEl) return
 
-    const cards = section.querySelectorAll('.cred-card')
     const statItems = statsEl.querySelectorAll('.stat-item')
+    const credItems = credsEl.querySelectorAll('.cred-item')
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return
-          const el = entry.target as HTMLElement
-          if (el === statsEl) {
+          if (entry.target === statsEl) {
             statItems.forEach((item, i) => {
               setTimeout(() => {
-                (item as HTMLElement).style.opacity = '1'
+                ;(item as HTMLElement).style.opacity = '1'
+                ;(item as HTMLElement).style.transform = 'translateY(0)'
+              }, i * 90)
+            })
+          } else if (entry.target === credsEl) {
+            credItems.forEach((item, i) => {
+              setTimeout(() => {
+                ;(item as HTMLElement).style.opacity = '1'
                 ;(item as HTMLElement).style.transform = 'translateY(0)'
               }, i * 80)
             })
-          } else {
-            Array.from(cards).forEach((card, i) => {
-              setTimeout(() => {
-                (card as HTMLElement).style.opacity = '1'
-                ;(card as HTMLElement).style.transform = 'translateY(0)'
-              }, i * 100)
-            })
           }
-          observer.unobserve(el)
+          observer.unobserve(entry.target)
         })
       },
       { threshold: 0.1 }
     )
 
-    observer.observe(section)
     observer.observe(statsEl)
+    observer.observe(credsEl)
     return () => observer.disconnect()
   }, [])
 
   return (
     <>
-      {/* Stats bar */}
-      <div ref={statsRef} className="bg-[#01426A] py-8">
-        <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x md:divide-white/15">
-            {stats.map((stat) => (
+      {/* ── Cream editorial stats band ─────────────────────────────────── */}
+      <div ref={statsRef} style={{ backgroundColor: 'var(--color-cream)' }} className="overflow-hidden">
+        <div className="container py-16 lg:py-20">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px" style={{ background: 'rgba(196,133,106,0.15)' }}>
+            {stats.map((stat, i) => (
               <div
                 key={stat.value}
-                className="stat-item flex flex-col items-center md:items-start md:px-8 first:pl-0 last:pr-0"
+                className={`stat-item py-8 lg:py-10 px-6 lg:px-10`}
+                style={{ backgroundColor: 'var(--color-cream)' }}
                 style={{
                   opacity: 0,
-                  transform: 'translateY(16px)',
-                  transition: 'opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1)',
+                  transform: 'translateY(24px)',
+                  transition: `opacity 0.75s cubic-bezier(0.22,1,0.36,1) ${i * 0.07}s, transform 0.75s cubic-bezier(0.22,1,0.36,1) ${i * 0.07}s`,
                 }}
               >
-                <span className="font-serif italic text-[clamp(34px,4vw,52px)] font-light text-white leading-none mb-1.5">
+                <span
+                  className="stat-number block text-[#01426A]"
+                  style={{ fontSize: 'clamp(56px, 7vw, 96px)' }}
+                >
                   {stat.value}
                 </span>
-                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/45">
+                <p className="text-[12px] font-bold uppercase tracking-[0.18em] text-[#01426A]/70 mt-2 mb-1">
                   {stat.label}
-                </span>
+                </p>
+                <p className="text-[11px] text-[#01426A]/40 tracking-[0.06em]">{stat.sub}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Cards */}
-      <section ref={sectionRef} className="section bg-[#F6F8FA]" aria-label="Why Gina's College stands out">
-        <div className="container">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* ── Editorial credential blocks ────────────────────────────────── */}
+      <section ref={credsRef} className="bg-white" aria-label="Why Gina's College">
+        <div className="container py-16 lg:py-20">
+          {/* Section label */}
+          <p className="eyebrow text-[#01426A]/45 mb-10">What Sets Us Apart</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{ background: '#E9E9E9' }}>
             {credentials.map((cred, i) => (
               <div
-                key={cred.title}
-                className="cred-card bg-white rounded-[10px] p-7 border border-[#E9E9E9] flex flex-col gap-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                key={cred.num}
+                className={`cred-item flex gap-6 py-8 bg-white ${
+                  i % 2 === 0 ? 'md:pr-12' : 'md:pl-12'
+                }`}
                 style={{
                   opacity: 0,
-                  transform: 'translateY(28px)',
-                  transition: `opacity 0.7s cubic-bezier(0.22,1,0.36,1) ${i * 0.06}s, transform 0.7s cubic-bezier(0.22,1,0.36,1) ${i * 0.06}s, box-shadow 0.25s ease, translate 0.25s ease`,
+                  transform: 'translateY(20px)',
+                  transition: `opacity 0.7s cubic-bezier(0.22,1,0.36,1) ${i * 0.07}s, transform 0.7s cubic-bezier(0.22,1,0.36,1) ${i * 0.07}s`,
                 }}
               >
-                <div className="w-11 h-11 flex items-center justify-center bg-[#01426A]/8 rounded-[8px] text-[#01426A]">
-                  {cred.icon}
-                </div>
-                <div>
-                  <h3 className="font-serif text-[22px] font-medium text-[#01426A] mb-2 leading-[1.1]">
+                <span
+                  className="font-serif italic font-light text-[#01426A]/18 flex-shrink-0 leading-none select-none"
+                  style={{ fontSize: 'clamp(40px, 4vw, 56px)' }}
+                  aria-hidden
+                >
+                  {cred.num}
+                </span>
+                <div className="pt-1">
+                  <h3
+                    className="font-serif font-medium text-[#01426A] mb-3 leading-[1.05]"
+                    style={{ fontSize: 'clamp(20px, 2vw, 26px)' }}
+                  >
                     {cred.title}
                   </h3>
-                  <p className="text-[14px] text-[#555] leading-relaxed">{cred.description}</p>
+                  <p className="text-[14.5px] text-[#666] leading-relaxed">{cred.description}</p>
+                  {cred.cta && (
+                    <Link
+                      href={cred.cta.href}
+                      className="inline-flex items-center gap-2 mt-4 text-[13px] font-semibold text-[#C4856A] hover:text-[#01426A] transition-colors duration-200 group"
+                    >
+                      {cred.cta.label}
+                      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" className="group-hover:translate-x-1 transition-transform duration-200">
+                        <path d="M1 5h12M8 1l5 4-5 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </Link>
+                  )}
                 </div>
-                {cred.cta && (
-                  <Link
-                    href={cred.cta.href}
-                    className="mt-auto text-[13px] font-semibold text-[#01426A] inline-flex items-center gap-1 hover:gap-2 transition-all duration-200"
-                  >
-                    {cred.cta.label}
-                    <span aria-hidden>→</span>
-                  </Link>
-                )}
               </div>
             ))}
           </div>
