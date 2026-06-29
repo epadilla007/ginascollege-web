@@ -141,7 +141,7 @@ export function WhyGinasSection() {
                 }}
               >
                 <span
-                  className="font-serif italic font-light text-[#B08450]/50 flex-shrink-0 leading-none mt-[3px]"
+                  className="font-serif italic font-light text-[#B08450] flex-shrink-0 leading-none mt-[3px]"
                   style={{ fontSize: '18px', width: '28px' }}
                 >
                   {reason.number}
@@ -150,7 +150,7 @@ export function WhyGinasSection() {
                   <h3 className="font-serif text-[17px] font-medium text-white mb-1.5 leading-snug">
                     {reason.title}
                   </h3>
-                  <p className="text-[13px] text-white/48 leading-relaxed">{reason.body}</p>
+                  <p className="text-[13px] text-white/70 leading-relaxed">{reason.body}</p>
                 </div>
               </div>
             ))}

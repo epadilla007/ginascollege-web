@@ -78,15 +78,15 @@ export default function WhoIsGinaPage() {
       <div className="bg-white pb-20">
         <div className="container max-w-[1060px]">
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="relative overflow-hidden" style={{ height: 'clamp(240px, 28vw, 420px)' }}>
+            <div className="relative overflow-hidden" style={{ height: 'clamp(320px, 42vw, 560px)' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/wig-about-img122-1920w.png"
                 alt="Gina's College ribbon cutting ceremony"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
-            <div className="relative overflow-hidden" style={{ height: 'clamp(240px, 28vw, 420px)' }}>
+            <div className="relative overflow-hidden" style={{ height: 'clamp(320px, 42vw, 560px)' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/wig-about-img2-1920w.png"
