@@ -90,7 +90,7 @@ export function FoundationSection() {
               >
                 <p
                   className="stat-number text-[#01426A]"
-                  style={{ fontSize: 'clamp(48px, 5vw, 80px)' }}
+                  style={{ fontSize: 'clamp(30px, 3.8vw, 54px)' }}
                 >
                   70%
                 </p>
@@ -116,7 +116,7 @@ export function FoundationSection() {
               >
                 <p
                   className="stat-number text-[#01426A]"
-                  style={{ fontSize: 'clamp(48px, 5vw, 80px)' }}
+                  style={{ fontSize: 'clamp(30px, 3.8vw, 54px)' }}
                 >
                   40+
                 </p>

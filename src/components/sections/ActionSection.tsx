@@ -37,8 +37,8 @@ export function ActionSection() {
         {/* Left: editorial campus image — bleeds to left edge */}
         <div className="relative w-full lg:w-[45%] flex-shrink-0 min-h-[320px] lg:min-h-0 order-2 lg:order-1">
           <Image
-            src="https://images.pexels.com/photos/3985299/pexels-photo-3985299.jpeg?auto=compress&cs=tinysrgb&w=1200&h=900&dpr=1"
-            alt="Gina's College students"
+            src="/images/campus/students-1.jpg"
+            alt="Gina's College students in clinic"
             fill
             className="object-cover object-center"
             sizes="(max-width: 1024px) 100vw, 45vw"

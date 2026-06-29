@@ -99,7 +99,7 @@ export function CredentialsSection() {
               >
                 <span
                   className="stat-number block text-[#01426A]"
-                  style={{ fontSize: 'clamp(56px, 7vw, 96px)' }}
+                  style={{ fontSize: 'clamp(30px, 3.8vw, 54px)' }}
                 >
                   {stat.value}
                 </span>
