@@ -6,9 +6,9 @@ import Image from 'next/image'
 
 const outcomeStats = [
   {
-    number: '$55K+',
-    label: 'Starting salary',
-    detail: "Gina's graduates in medical aesthetics, Ontario average",
+    number: '95%+',
+    label: 'Graduate employment',
+    detail: 'Graduates work in some of the highest-paying roles in the aesthetics industry.',
   },
   {
     number: '4 weeks',
@@ -16,9 +16,9 @@ const outcomeStats = [
     detail: 'Based on graduate employment data across 3 campuses',
   },
   {
-    number: '95%+',
-    label: 'Graduate employment rate',
-    detail: 'In-field placement within 90 days of graduation',
+    number: '90 days',
+    label: 'Avg. time to placement',
+    detail: 'Most graduates secure industry roles within 90 days of graduation',
   },
 ]
 

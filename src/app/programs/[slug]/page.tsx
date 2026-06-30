@@ -387,7 +387,7 @@ export default async function ProgramPage({
       url: 'https://ginascollege.com',
     },
     educationalCredentialAwarded: program.type === 'diploma'
-      ? `${program.title} Diploma — OSAP-eligible`
+      ? `${program.title} Diploma — Financial aid available`
       : `${program.title} Certificate`,
     occupationalCategory: program.careers.join(', '),
     ...(program.salary && {
@@ -436,7 +436,7 @@ export default async function ProgramPage({
               </span>
               {isOSAP && (
                 <span className="px-3 py-1 bg-[#01426A] border border-white/30 text-xs font-semibold text-white uppercase tracking-wider">
-                  OSAP Eligible
+                  Financial Aid Available
                 </span>
               )}
             </div>
@@ -457,9 +457,9 @@ export default async function ProgramPage({
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px" style={{ background: 'rgba(196,133,106,0.2)' }}>
             {[
               { label: 'Duration', value: program.duration },
-              { label: 'Avg. salary', value: program.salary },
+              { label: 'Earning potential', value: 'Top-tier roles' },
               { label: 'Credential', value: program.type === 'diploma' ? 'Diploma' : 'Certificate' },
-              { label: 'Funding', value: isOSAP ? 'OSAP eligible' : 'Flexible options' },
+              { label: 'Funding', value: isOSAP ? 'Financial aid available' : 'Flexible options' },
             ].map((stat) => (
               <div key={stat.label} className="py-8 px-6" style={{ backgroundColor: 'var(--color-cream)' }}>
                 <p className="text-sm font-medium text-[#01426A]/65 mb-1">{stat.label}</p>
@@ -581,15 +581,15 @@ export default async function ProgramPage({
               </div>
               <div className="p-6 space-y-4">
                 <div className="flex justify-between text-sm">
-                  <span className="text-[#000000]/50">Avg. salary</span>
-                  <span className="font-semibold text-[#01426A]">{program.salary}</span>
+                  <span className="text-[#000000]/50">Career outlook</span>
+                  <span className="font-semibold text-[#01426A]">High-demand field</span>
                 </div>
                 {isOSAP && (
                   <div className="flex items-center gap-2 p-3" style={{ backgroundColor: 'var(--color-cream)' }}>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                       <path d="M2 8l4 4 8-8" stroke="#C4856A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                    <p className="text-xs font-semibold text-[#01426A]">OSAP funding available</p>
+                    <p className="text-xs font-semibold text-[#01426A]">Financial assistance may be available for those who qualify.</p>
                   </div>
                 )}
                 <Link href="/apply" className="btn btn-primary w-full text-sm">

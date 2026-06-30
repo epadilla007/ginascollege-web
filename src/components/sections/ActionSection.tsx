@@ -91,8 +91,8 @@ export function ActionSection() {
             style={{ opacity: 0, transform: 'translateY(20px)', transition: 'opacity 0.7s cubic-bezier(0.22,1,0.36,1) 0.28s, transform 0.7s cubic-bezier(0.22,1,0.36,1) 0.28s' }}
           >
             {[
-              { city: 'Mississauga', tel: '(905) 602-8891', addr: '7-3045 Southcreek Rd.' },
               { city: 'Waterloo', tel: '(519) 886-2998', addr: '385 Weber St. N.' },
+              { city: 'Mississauga', tel: '(905) 602-8891', addr: '7-3045 Southcreek Rd.' },
               { city: 'Ottawa', tel: '(613) 789-7875', addr: '215 Dalhousie St.' },
             ].map((campus) => (
               <div key={campus.city} className="flex items-start gap-4 py-3 border-b border-white/[0.07]">
@@ -120,7 +120,7 @@ export function ActionSection() {
             style={{ opacity: 0, transform: 'translateY(20px)', transition: 'opacity 0.7s cubic-bezier(0.22,1,0.36,1) 0.36s, transform 0.7s cubic-bezier(0.22,1,0.36,1) 0.36s' }}
           >
             <Link href="/contact" className="btn btn-white text-[14px] px-8 py-4">
-              Contact Us
+              Book a Free Info Session
             </Link>
             <Link href="/apply" className="btn btn-outline-white text-[14px] px-8 py-4">
               Request More Info

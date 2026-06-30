@@ -15,10 +15,10 @@ function isGroup(item: NavItem): item is NavGroup {
 }
 
 const diplomaPrograms: DropdownItem[] = [
-  { label: 'Medical Aesthetics', href: '/programs/medical-aesthetics', description: '12 months · CIDESCO pathway · OSAP' },
+  { label: 'Medical Aesthetics', href: '/programs/medical-aesthetics', description: '12 months · CIDESCO pathway · Aid available' },
   { label: 'Hairstyling', href: '/programs/hairstyling', description: '12 months · Waterloo only' },
-  { label: 'Advanced Aesthetics', href: '/programs/advanced-aesthetics', description: '10 months · OSAP eligible' },
-  { label: 'Electrolysis & Light Technology', href: '/programs/electrolysis-light-technology', description: '8 months · High-earning specialty' },
+  { label: 'Advanced Aesthetics', href: '/programs/advanced-aesthetics', description: '10 months · Financial aid available' },
+  { label: 'Electrolysis & Light Technology', href: '/programs/electrolysis-light-technology', description: '8 months · In-demand specialty' },
 ]
 
 const navItems: NavItem[] = [

@@ -9,8 +9,8 @@ const programs = [
 ]
 
 const campuses = [
-  { name: 'Mississauga', href: '/campuses/mississauga' },
   { name: 'Waterloo', href: '/campuses/waterloo' },
+  { name: 'Mississauga', href: '/campuses/mississauga' },
   { name: 'Ottawa', href: '/campuses/ottawa' },
 ]
 

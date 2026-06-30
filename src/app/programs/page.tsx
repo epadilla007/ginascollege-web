@@ -5,7 +5,7 @@ import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'Aesthetics Programs — Diploma & Certificate | Gina\'s College Ontario',
   description:
-    'OSAP-eligible diploma and certificate programs in medical aesthetics, hairstyling, nail technology, and more. 3 campuses across Ontario.',
+    'Diploma and certificate programs in medical aesthetics, hairstyling, nail technology, and more. Financial aid may be available. 3 campuses across Ontario.',
 }
 
 const diplomaPrograms = [
@@ -125,7 +125,7 @@ export default function ProgramsPage() {
                   </div>
                   <p className="text-sm text-[#000000]/55 leading-relaxed mb-4">{p.description}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-semibold text-[#01426A]">{p.salary} avg.</span>
+                    <span className="text-sm text-[#000000]/45">High-demand field</span>
                     <span className="text-sm font-semibold text-[#01426A] group-hover:underline">View program →</span>
                   </div>
                 </div>

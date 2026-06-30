@@ -4,8 +4,8 @@ import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 
 const stats = [
-  { value: '40+', label: 'Years of Excellence', sub: 'Since 1979' },
-  { value: '3', label: 'Campuses in Ontario', sub: 'Mississauga · Waterloo · Ottawa' },
+  { value: '45+', label: 'Years of Excellence', sub: 'Since 1979' },
+  { value: '3', label: 'Campuses in Ontario', sub: 'Waterloo · Mississauga · Ottawa' },
   { value: '5,000+', label: 'Graduates', sub: 'Industry professionals' },
   { value: 'CIDESCO', label: 'World-Standard', sub: "Ontario's only career college" },
 ]
@@ -19,7 +19,7 @@ const credentials = [
   },
   {
     num: '02',
-    title: '40+ Years of Proven Results',
+    title: '45 Years of Proven Results',
     description:
       "Since 1979 we've graduated the industry's top professionals. Registered under the Ontario Career Colleges Act 2005 — your credentials carry full provincial recognition.",
   },

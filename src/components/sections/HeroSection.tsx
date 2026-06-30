@@ -79,13 +79,13 @@ export function HeroSection() {
             style={{ fontSize: '16px' }}
           >
             Ontario&apos;s top esthetician school — with campuses in Mississauga, Waterloo, and Ottawa.
-            40+ years training beauty professionals who lead the industry.
+            45 years training beauty professionals who lead the industry.
           </p>
 
           {/* CTAs */}
           <div ref={ctaRef} className="opacity-0 flex flex-col sm:flex-row gap-3 mt-9">
             <Link href="/contact" className="btn btn-white text-[14px] px-7 py-4">
-              Book a Free Tour
+              Book a Free Info Session
             </Link>
             <Link href="/programs" className="btn btn-outline-white text-[14px] px-7 py-4">
               Browse Programs

@@ -11,7 +11,7 @@ const reasons = [
   },
   {
     number: '02',
-    title: '40+ years of proven results',
+    title: '45 years of proven results',
     body: "Since 1979, graduating the industry's top beauty professionals. Over four decades of results speak louder than any ranking.",
   },
   {

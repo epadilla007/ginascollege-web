@@ -118,7 +118,7 @@ export function FoundationSection() {
                   className="stat-number text-[#01426A]"
                   style={{ fontSize: 'clamp(30px, 3.8vw, 54px)' }}
                 >
-                  40+
+                  45+
                 </p>
                 <p className="text-[12px] font-bold uppercase tracking-[0.14em] text-[#01426A]/55 mt-1">
                   Years of experience
