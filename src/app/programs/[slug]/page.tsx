@@ -15,6 +15,14 @@ const programs: Record<string, {
   outcomes: string[]
   curriculum: { module: string; topics: string[] }[]
   careers: string[]
+  topics?: string[]
+  prerequisites?: string
+  testimonials?: { name: string; text: string }[]
+  whyChoose?: {
+    heading: string
+    intro: string
+    points: { title: string; body: string }[]
+  }
 }> = {
   'medical-aesthetics': {
     title: 'Medical Aesthetics',
@@ -52,6 +60,62 @@ const programs: Record<string, {
       },
     ],
     careers: ['Medical Spa Aesthetician', 'Laser Technician', 'Skin Care Specialist', 'Clinical Aesthetician', 'Spa Director'],
+    topics: [
+      'Medical Skincare & Aesthetics',
+      'Electrolysis',
+      'Light and Laser Therapy',
+      'Basic & Advanced Skincare',
+      'Cosmetology',
+      'Dermatology',
+      'Manicure',
+      'Pedicure',
+      'Makeup Application',
+      'Waxing',
+      'Spa Business',
+      'Anatomy & Physiology',
+      'Natural Science',
+      'Nutrition and Lifestyle',
+      'Spa Beauty Therapy',
+      'Occupational Health & Safety',
+      'Spa practical clinic',
+    ],
+    prerequisites: "Ontario Secondary School Diploma (or equivalent), or successful completion of the Gina's College Entrance Exam which has been approved by the Superintendent.",
+    testimonials: [
+      {
+        name: 'Hayley McNabb, Graduate',
+        text: "I completed the Medical Aesthetics Diploma at Gina's College of Advanced Aesthetics, and I truly couldn't be happier with my experience. My instructor, Erica, was absolutely amazing. She was always available to answer any questions we had and made sure we fully understood the material before moving forward. The class sizes were small, which made the learning environment much more personal and engaging. I actually preferred the smaller class setting because it allowed for more one-on-one support and hands-on guidance. I drove from Barrie every single day to attend classes, and although it was a commute, it was 100% worth it. Being from Barrie, I had plenty of aesthetics schools to choose from, but after reading about Gina's College and their strong reputation, I decided to enroll — and the school truly lived up to my expectations. Erica is not only incredibly knowledgeable, but she's also kind, approachable, and always had a smile on her face. You can tell she genuinely cares about her students and wants them to succeed. I learned so much during my time there and felt fully supported throughout the entire program. I also completed the CIDESCO certification, which is internationally recognized as one of the highest qualifications in aesthetics. Erica taught that course as well, and it was much more in-depth and advanced. I truly believe completing CIDESCO set me up for success entering the real world and gave me a competitive edge in the industry. I would highly recommend it to anyone serious about building a career in aesthetics. Overall, I highly recommend Gina's College of Advanced Aesthetics to anyone looking to pursue a career in medical aesthetics. The education, support, and quality of training are outstanding.",
+      },
+      {
+        name: 'Raynz Mackenzie, Graduate',
+        text: "I completed both the Medical Aesthetics program and CIDESCO International Beauty Therapy at Gina's College of Advanced Aesthetics. The training for both programs was professional, comprehensive, and thorough, with a strong balance of practical hands-on experience and in-depth theoretical learning. I felt fully supported every step of the way, including both my time at school and into the industry. Erica was the most amazing instructor I could have asked for. She's supportive, knowledgeable, and genuinely invested in every student's success. Christina was also incredibly supportive and always there to guide and encourage us. Both went above and beyond to help and support me even after I graduated. I'm so grateful for my experience here and couldn't recommend it more highly.",
+      },
+    ],
+    whyChoose: {
+      heading: "Why Choose Gina's College's Medical Aesthetics Program?",
+      intro: "Deciding where to pursue a medical aesthetics course is a big step, and Gina's College is here to make that choice easy. Here's what sets us apart.",
+      points: [
+        {
+          title: 'Respected Credentials',
+          body: "Our medical aesthetics program is highly esteemed within the beauty and skincare industry, opening doors to exciting career paths. Whether you aspire to work in leading clinics or launch your own business, our certification will set you apart from the competition. Our program aligns with the latest industry standards set by organizations like the Canadian Association of Medical Spas & Aesthetic Surgeons.",
+        },
+        {
+          title: 'In-Depth Learning',
+          body: 'Our extensive curriculum covers every essential aspect of medical aesthetics, from cutting-edge skincare techniques to the latest advancements in cosmetic technology. Gain the knowledge and confidence you need to thrive in this rapidly growing industry.',
+        },
+        {
+          title: 'Expert Instructors',
+          body: 'Learn from seasoned professionals who bring years of real-world experience and practical insights to every class. Their hands-on teaching approach ensures you thoroughly understand the theory and application of medical aesthetics.',
+        },
+        {
+          title: 'Hands-On Experience',
+          body: "Develop the essential skills you'll need through immersive practical training during your medical aesthetician course. The hands-on approach followed by our medical aesthetics experts prepares you for real-life scenarios so that you can step into your beauty career with confidence and expertise.",
+        },
+        {
+          title: 'Career Guidance',
+          body: "We provide more than just education - we're invested in your success. From personalized job placement support to business and entrepreneurial advice, we're here to help you transition smoothly from student to professional.",
+        },
+      ],
+    },
   },
   'advanced-aesthetics': {
     title: 'Advanced Aesthetics',
@@ -89,6 +153,59 @@ const programs: Record<string, {
       },
     ],
     careers: ['Spa Aesthetician', 'Facial Specialist', 'Esthetician', 'Wellness Consultant', 'Spa Supervisor'],
+    topics: [
+      'Basic & Advanced Skincare',
+      'Cosmetology',
+      'Dermatology',
+      'Manicure',
+      'Pedicure',
+      'Makeup Application',
+      'Waxing',
+      'Spa Business',
+      'Anatomy & Physiology',
+      'Natural Science',
+      'Nutrition and Lifestyle',
+      'Spa Beauty Therapy',
+      'Occupational Health & Safety',
+      'Spa practical clinic',
+    ],
+    prerequisites: "Ontario Secondary School Diploma (or equivalent), or successful completion of the Gina's College Entrance Exam which has been approved by the Superintendent.",
+    testimonials: [
+      {
+        name: 'Hayley McNabb, Graduate',
+        text: "I completed the Medical Aesthetics Diploma at Gina's College of Advanced Aesthetics, and I truly couldn't be happier with my experience. My instructor, Erica, was absolutely amazing. She was always available to answer any questions we had and made sure we fully understood the material before moving forward. The class sizes were small, which made the learning environment much more personal and engaging. I actually preferred the smaller class setting because it allowed for more one-on-one support and hands-on guidance. I drove from Barrie every single day to attend classes, and although it was a commute, it was 100% worth it. Being from Barrie, I had plenty of aesthetics schools to choose from, but after reading about Gina's College and their strong reputation, I decided to enroll — and the school truly lived up to my expectations. Erica is not only incredibly knowledgeable, but she's also kind, approachable, and always had a smile on her face. You can tell she genuinely cares about her students and wants them to succeed. I learned so much during my time there and felt fully supported throughout the entire program. I also completed the CIDESCO certification, which is internationally recognized as one of the highest qualifications in aesthetics. Erica taught that course as well, and it was much more in-depth and advanced. I truly believe completing CIDESCO set me up for success entering the real world and gave me a competitive edge in the industry. I would highly recommend it to anyone serious about building a career in aesthetics. Overall, I highly recommend Gina's College of Advanced Aesthetics to anyone looking to pursue a career in medical aesthetics. The education, support, and quality of training are outstanding.",
+      },
+      {
+        name: 'Raynz Mackenzie, Graduate',
+        text: "I completed both the Medical Aesthetics program and CIDESCO International Beauty Therapy at Gina's College of Advanced Aesthetics. The training for both programs was professional, comprehensive, and thorough, with a strong balance of practical hands-on experience and in-depth theoretical learning. I felt fully supported every step of the way, including both my time at school and into the industry. Erica was the most amazing instructor I could have asked for. She's supportive, knowledgeable, and genuinely invested in every student's success. Christina was also incredibly supportive and always there to guide and encourage us. Both went above and beyond to help and support me even after I graduated. I'm so grateful for my experience here and couldn't recommend it more highly.",
+      },
+    ],
+    whyChoose: {
+      heading: 'Elevate Your Career in Advanced Aesthetics',
+      intro: "Our Advanced Aesthetics Diploma program fully prepares you to meet today's unique market needs and qualify you to work in all aspects of the beauty and wellness spa industry.",
+      points: [
+        {
+          title: 'CIDESCO Training',
+          body: "As Ontario's only private career college offering the prestigious CIDESCO training diploma, we provide our students with a comprehensive education that aligns with the esteemed international CIDESCO standards. This commitment ensures that our students can work towards a training certification that is recognized and respected in Canada and worldwide.",
+        },
+        {
+          title: 'Comprehensive Curriculum',
+          body: 'In our Advanced Aesthetics course, you will gain a deep understanding of cutting-edge treatments and procedures. From advanced skincare techniques to manicures and pedicures, professional makeup, and waxing hair removal training, you will be well-prepared to offer a wide range of services that cater to the diverse needs of your clients.',
+        },
+        {
+          title: 'Hands-On Learning',
+          body: "At Gina's College, we believe in the power of practical experience. While theory is essential, it is the hands-on learning that genuinely sets our Advanced Aesthetics program apart. You will be able to work with real clients in our state-of-the-art facilities, gaining invaluable experience and confidence in your abilities.",
+        },
+        {
+          title: 'Experienced Instructors',
+          body: 'Our experienced instructors, who are experts in the field of advanced aesthetics, will guide you every step of the way. They bring real-world insights and expertise to the classroom to prepare you for the challenges and opportunities in your career.',
+        },
+        {
+          title: 'A Bright Future Awaits',
+          body: "As you embark on your journey with Gina's College's Advanced Aesthetics program, you are not just investing in an education; you are investing in your future. With our CIDESCO training and comprehensive curriculum in advanced aesthetics, you are positioning yourself at the forefront of this dynamic industry. You can make a meaningful impact in your clients' lives while enjoying a rewarding and fulfilling career.",
+        },
+      ],
+    },
   },
   'hairstyling': {
     title: 'Hairstyling',
@@ -126,6 +243,44 @@ const programs: Record<string, {
       },
     ],
     careers: ['Hair Stylist', 'Colourist', 'Salon Manager', 'Session Stylist', 'Bridal Stylist'],
+    topics: [
+      'Health and Safety',
+      'Color & Lighten Hair',
+      'Permanent Wave & Chemical Relax',
+      'Cut & Style Hair',
+      'Treating Hair and Scalp',
+      'Salon Functions and Business',
+      'Hair Salon floor practical clinic',
+    ],
+    prerequisites: "Ontario Secondary School Diploma (or equivalent), or successful completion of the Gina's College Entrance Exam which has been approved by the Superintendent.",
+    testimonials: [
+      {
+        name: 'Hayley McNabb, Graduate',
+        text: "I completed the Medical Aesthetics Diploma at Gina's College of Advanced Aesthetics, and I truly couldn't be happier with my experience. My instructor, Erica, was absolutely amazing. She was always available to answer any questions we had and made sure we fully understood the material before moving forward. The class sizes were small, which made the learning environment much more personal and engaging. I actually preferred the smaller class setting because it allowed for more one-on-one support and hands-on guidance. I drove from Barrie every single day to attend classes, and although it was a commute, it was 100% worth it. Being from Barrie, I had plenty of aesthetics schools to choose from, but after reading about Gina's College and their strong reputation, I decided to enroll — and the school truly lived up to my expectations. Erica is not only incredibly knowledgeable, but she's also kind, approachable, and always had a smile on her face. You can tell she genuinely cares about her students and wants them to succeed. I learned so much during my time there and felt fully supported throughout the entire program. I also completed the CIDESCO certification, which is internationally recognized as one of the highest qualifications in aesthetics. Erica taught that course as well, and it was much more in-depth and advanced. I truly believe completing CIDESCO set me up for success entering the real world and gave me a competitive edge in the industry. I would highly recommend it to anyone serious about building a career in aesthetics. Overall, I highly recommend Gina's College of Advanced Aesthetics to anyone looking to pursue a career in medical aesthetics. The education, support, and quality of training are outstanding.",
+      },
+      {
+        name: 'Raynz Mackenzie, Graduate',
+        text: "I completed both the Medical Aesthetics program and CIDESCO International Beauty Therapy at Gina's College of Advanced Aesthetics. The training for both programs was professional, comprehensive, and thorough, with a strong balance of practical hands-on experience and in-depth theoretical learning. I felt fully supported every step of the way, including both my time at school and into the industry. Erica was the most amazing instructor I could have asked for. She's supportive, knowledgeable, and genuinely invested in every student's success. Christina was also incredibly supportive and always there to guide and encourage us. Both went above and beyond to help and support me even after I graduated. I'm so grateful for my experience here and couldn't recommend it more highly.",
+      },
+    ],
+    whyChoose: {
+      heading: "Why Choose Gina's College's Hairstyling Program?",
+      intro: "Our hair design program is more than just learning hairstyling techniques and theory — it's about unlocking your creativity, building your confidence, and growing your professionalism. We're dedicated to helping every student shine by equipping you with the skills, knowledge, and tools you need to succeed.",
+      points: [
+        {
+          title: 'CIDESCO Certified School',
+          body: "Gina's is honored to be a CIDESCO-accredited institution, offering the world's most respected international qualification in aesthetics. As Ontario's only career college providing CIDESCO diplomas, we're proud to set the standard in beauty education.",
+        },
+        {
+          title: 'Flexible Learning Options',
+          body: "The program at our hairstyling school combines online and in-person training, giving you the freedom to study at your own pace while still benefiting from hands-on experience in our state-of-the-art facilities.",
+        },
+        {
+          title: 'Real-World Experience',
+          body: "Gain practical skills in our professional student beauty clinic, where you'll work with real clients under expert guidance, preparing you for a successful career in the beauty industry.",
+        },
+      ],
+    },
   },
   'electrolysis-light-technology': {
     title: 'Electrolysis & Light Technology',
@@ -163,6 +318,47 @@ const programs: Record<string, {
       },
     ],
     careers: ['Electrolysis Specialist', 'Laser Technician', 'IPL Specialist', 'Clinic Owner', 'Medical Spa Technician'],
+    topics: [
+      'Anatomy, Physiology & Trichology',
+      'Health & Safety',
+      'Currents & Electricity',
+      'Understanding Light & Laser',
+      'Electrolysis, Light & Laser Therapy Clinic',
+      'Business, Professionalism and Customer Service',
+    ],
+    prerequisites: "Ontario Secondary School Diploma (or equivalent), or successful completion of the Gina's College Entrance Exam which has been approved by the Superintendent.",
+    testimonials: [
+      {
+        name: 'Hayley McNabb, Graduate',
+        text: "I completed the Medical Aesthetics Diploma at Gina's College of Advanced Aesthetics, and I truly couldn't be happier with my experience. My instructor, Erica, was absolutely amazing. She was always available to answer any questions we had and made sure we fully understood the material before moving forward. The class sizes were small, which made the learning environment much more personal and engaging. I actually preferred the smaller class setting because it allowed for more one-on-one support and hands-on guidance. I drove from Barrie every single day to attend classes, and although it was a commute, it was 100% worth it. Being from Barrie, I had plenty of aesthetics schools to choose from, but after reading about Gina's College and their strong reputation, I decided to enroll — and the school truly lived up to my expectations. Erica is not only incredibly knowledgeable, but she's also kind, approachable, and always had a smile on her face. You can tell she genuinely cares about her students and wants them to succeed. I learned so much during my time there and felt fully supported throughout the entire program. I also completed the CIDESCO certification, which is internationally recognized as one of the highest qualifications in aesthetics. Erica taught that course as well, and it was much more in-depth and advanced. I truly believe completing CIDESCO set me up for success entering the real world and gave me a competitive edge in the industry. I would highly recommend it to anyone serious about building a career in aesthetics. Overall, I highly recommend Gina's College of Advanced Aesthetics to anyone looking to pursue a career in medical aesthetics. The education, support, and quality of training are outstanding.",
+      },
+      {
+        name: 'Raynz Mackenzie, Graduate',
+        text: "I completed both the Medical Aesthetics program and CIDESCO International Beauty Therapy at Gina's College of Advanced Aesthetics. The training for both programs was professional, comprehensive, and thorough, with a strong balance of practical hands-on experience and in-depth theoretical learning. I felt fully supported every step of the way, including both my time at school and into the industry. Erica was the most amazing instructor I could have asked for. She's supportive, knowledgeable, and genuinely invested in every student's success. Christina was also incredibly supportive and always there to guide and encourage us. Both went above and beyond to help and support me even after I graduated. I'm so grateful for my experience here and couldn't recommend it more highly.",
+      },
+    ],
+    whyChoose: {
+      heading: 'Electrolysis Training: Your Path to In-Demand Skills and Success',
+      intro: "Ready to boost your career with a high-paying, in-demand skill? Our comprehensive electrolysis course covers everything from foundational techniques to advanced light technology. You'll gain the skills to perform medically recognized, gold-standard permanent hair removal.",
+      points: [
+        {
+          title: 'Flexible Online Learning',
+          body: "We understand that flexibility is key to accommodating your busy life, so we offer unlimited access to our online electrolysis course modules. Tailor your learning experience to your own pace and convenience, all from the comfort of your home.",
+        },
+        {
+          title: 'Hands-On Excellence',
+          body: "While our online beauty courses offer valuable flexibility, aesthetics is a hands-on profession. In-person training with our experienced instructors is a vital part of our program. They bring a wealth of experience to the table, guiding you through practical exercises to help you build confidence and prepare for success in the field.",
+        },
+        {
+          title: 'Expert Guidance Guaranteed',
+          body: "Our instructors are always available to support you in your learning journey. Whether you're in the classroom or studying online, you'll benefit from their experience, expertise, and guidance. We're here to ensure you have the support and resources needed to thrive.",
+        },
+        {
+          title: 'A Rewarding, In-Demand Career',
+          body: "Electrolysis is the gold standard for permanent hair removal, and as more people seek effective solutions for challenging hair types, your expertise will be in high demand. Many spas and clinics consider electrologists among their top-earning service providers.",
+        },
+      ],
+    },
   },
   'nail-technology': {
     title: 'Nail Technology',
@@ -1175,6 +1371,33 @@ export default async function ProgramPage({
               <p className="text-[#000000]/65 text-lg leading-relaxed">{program.overview}</p>
             </div>
 
+            {/* Course Features — diploma only */}
+            {program.type === 'diploma' && (
+              <div className="mb-12">
+                <h2
+                  className="font-serif italic text-[#01426A] mb-6"
+                  style={{ fontSize: 'clamp(20px, 2vw, 28px)' }}
+                >
+                  Course Features
+                </h2>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {[
+                    { title: 'Online Access 24/7', body: 'Enjoy unlimited access to our online course modules, so you have the flexibility to learn at your own pace from the comfort of your home.' },
+                    { title: 'Hands-On Practical', body: 'Aesthetics is a hands-on trade, so in-person class training with our experienced instructors is essential to succeed! Perfect your skills under the watchful eye of our instructor.' },
+                    { title: 'Professional Supply Kit', body: 'Our expertly designed professional kits feature the best practical tools and pro products you need. Plus you can use it after you graduate to jumpstart your career!' },
+                    { title: 'Instructor Support', body: 'Our knowledgeable instructors are always available to support you in your learning. Whether in class or online, you will benefit from their experience and guidance.' },
+                    { title: 'Diploma Certification', body: "Earn a registered Diploma once you've graduated your course, to prove you have the reputable credentials to back up your new skills!" },
+                    { title: 'Payment Options', body: 'Affordable payment plans, financing and funding may be available — get in touch to see what you are eligible for!' },
+                  ].map((feature) => (
+                    <div key={feature.title} className="p-5 border" style={{ borderColor: 'var(--color-cream-deep)' }}>
+                      <h3 className="font-serif text-[#01426A] font-semibold text-sm mb-2">{feature.title}</h3>
+                      <p className="text-sm text-[#000000]/60 leading-relaxed">{feature.body}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Outcomes */}
             <div className="mb-12">
               <h2
@@ -1240,7 +1463,7 @@ export default async function ProgramPage({
             </div>
 
             {/* Careers */}
-            <div>
+            <div className="mb-12">
               <h2
                 className="font-serif italic text-[#01426A] mb-4"
                 style={{ fontSize: 'clamp(20px, 2vw, 28px)' }}
@@ -1259,6 +1482,83 @@ export default async function ProgramPage({
                 ))}
               </div>
             </div>
+
+            {/* Topics Covered */}
+            {program.topics && program.topics.length > 0 && (
+              <div className="mb-12">
+                <h2
+                  className="font-serif italic text-[#01426A] mb-4"
+                  style={{ fontSize: 'clamp(20px, 2vw, 28px)' }}
+                >
+                  Topics Covered
+                </h2>
+                <div className="flex flex-wrap gap-2">
+                  {program.topics.map((topic) => (
+                    <span
+                      key={topic}
+                      className="px-4 py-2 border text-sm text-[#000000]/70"
+                      style={{ borderColor: 'var(--color-cream-deep)' }}
+                    >
+                      {topic}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Prerequisites */}
+            {program.prerequisites && (
+              <div className="mb-12">
+                <h2
+                  className="font-serif italic text-[#01426A] mb-3"
+                  style={{ fontSize: 'clamp(20px, 2vw, 28px)' }}
+                >
+                  Prerequisites
+                </h2>
+                <p className="text-[#000000]/65 leading-relaxed">{program.prerequisites}</p>
+              </div>
+            )}
+
+            {/* Why Choose */}
+            {program.whyChoose && (
+              <div className="mb-12">
+                <h2
+                  className="font-serif italic text-[#01426A] mb-3"
+                  style={{ fontSize: 'clamp(20px, 2vw, 28px)' }}
+                >
+                  {program.whyChoose.heading}
+                </h2>
+                <p className="text-[#000000]/65 mb-8 leading-relaxed">{program.whyChoose.intro}</p>
+                <div className="space-y-6">
+                  {program.whyChoose.points.map((point) => (
+                    <div key={point.title}>
+                      <h3 className="font-serif text-[#01426A] font-semibold text-base mb-2">{point.title}</h3>
+                      <p className="text-[#000000]/65 leading-relaxed">{point.body}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Testimonials */}
+            {program.testimonials && program.testimonials.length > 0 && (
+              <div className="mb-12">
+                <h2
+                  className="font-serif italic text-[#01426A] mb-6"
+                  style={{ fontSize: 'clamp(20px, 2vw, 28px)' }}
+                >
+                  What our students say
+                </h2>
+                <div className="space-y-6">
+                  {program.testimonials.map((t) => (
+                    <div key={t.name} className="p-6 border" style={{ borderColor: 'var(--color-cream-deep)', backgroundColor: 'var(--color-cream)' }}>
+                      <p className="text-[#000000]/70 leading-relaxed mb-4 text-sm">{t.text}</p>
+                      <p className="text-[#01426A] font-semibold text-sm">{t.name}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Right column — sticky CTA card */}
