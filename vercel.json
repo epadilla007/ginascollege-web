@@ -14,7 +14,7 @@
     { "source": "/programs-overview", "destination": "/programs", "permanent": true },
     { "source": "/all-programs", "destination": "/programs", "permanent": true },
     { "source": "/certificate-program/:slug*", "destination": "/programs", "permanent": true },
-    { "source": "/cidesco-international-program", "destination": "/programs", "permanent": true },
+    { "source": "/follow-your-passion-for-beauty", "destination": "/apply", "permanent": true },
 
     { "source": "/medical-aesthetics", "destination": "/programs/medical-aesthetics", "permanent": true },
     { "source": "/medical-aesthetics-diploma", "destination": "/programs/medical-aesthetics", "permanent": true },

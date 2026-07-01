@@ -171,7 +171,7 @@ export function TensionSection() {
                 className="object-cover object-center"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-[#01426A]/30" />
+              <div className="absolute inset-0 bg-[#01426A]/15" />
               <div className="absolute bottom-4 left-4">
                 <p className="text-white font-semibold text-sm">3 campuses across Ontario</p>
                 <p className="text-white/60 text-xs">Mississauga · Waterloo · Ottawa</p>

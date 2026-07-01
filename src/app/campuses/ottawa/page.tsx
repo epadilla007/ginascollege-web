@@ -8,14 +8,18 @@ export const metadata: Metadata = {
 }
 
 const programs = [
-  { name: 'Medical Aesthetics Diploma', href: '/programs/medical-aesthetics', tag: 'Diploma' },
-  { name: 'Advanced Aesthetics Diploma', href: '/programs/advanced-aesthetics', tag: 'Diploma' },
-  { name: 'Electrolysis & Light Technology Diploma', href: '/programs/electrolysis-light-technology', tag: 'Diploma' },
+  { name: 'Skin Care Specialist', href: '/programs/skin-care-specialist', tag: 'Certificate' },
   { name: 'Nail Technology', href: '/programs/nail-technology', tag: 'Certificate' },
   { name: 'Makeup Artistry', href: '/programs/makeup-artistry', tag: 'Certificate' },
   { name: 'Waxing Specialist', href: '/programs/waxing', tag: 'Certificate' },
+  { name: 'Brazilian Waxing', href: '/programs/brazilian-waxing', tag: 'Certificate' },
   { name: 'Chemical Peels', href: '/programs/chemical-peels', tag: 'Certificate' },
   { name: 'Lash Extensions', href: '/programs/lash-extensions', tag: 'Certificate' },
+  { name: 'Bold Lash Extensions', href: '/programs/bold-lash-extensions', tag: 'Certificate' },
+  { name: 'Eyebrow Design', href: '/programs/eyebrow-design', tag: 'Certificate' },
+  { name: 'Lash Lift & Brow Lamination', href: '/programs/lash-lift-brow-lamination', tag: 'Certificate' },
+  { name: 'Hot Stone Therapy', href: '/programs/hot-stone-therapy', tag: 'Certificate' },
+  { name: 'Professional Makeup Design', href: '/programs/professional-makeup-design', tag: 'Certificate' },
 ]
 
 export default function OttawaCampusPage() {
@@ -38,7 +42,7 @@ export default function OttawaCampusPage() {
             Ottawa Campus
           </h1>
           <p className="text-[#000000]/60 leading-relaxed max-w-[560px]" style={{ fontSize: 'clamp(16px, 1.5vw, 19px)' }}>
-            Located in the Byward Market, steps from the Rideau Centre and Ottawa&#39;s historic downtown core. Medical Aesthetics, Advanced Aesthetics, Electrolysis, and certificate programs for students across the National Capital Region. Transit-accessible and OSAP-eligible.
+            Located in the Byward Market, steps from the Rideau Centre and Ottawa&#39;s historic downtown core. Skin care, nail technology, lash, brow, makeup, and specialty certificate programs for students across the National Capital Region. Transit-accessible.
           </p>
         </div>
       </div>

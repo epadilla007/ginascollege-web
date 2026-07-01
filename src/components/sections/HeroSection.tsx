@@ -42,9 +42,9 @@ export function HeroSection() {
           sizes="100vw"
         />
         {/* Left-dominant gradient — editorial split feel */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#01426A]/95 via-[#01426A]/60 to-[#01426A]/15" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#01426A]/82 via-[#01426A]/45 to-transparent" />
         {/* Bottom depth vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#01426A]/80 via-transparent to-[#01426A]/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#01426A]/50 via-transparent to-[#01426A]/10" />
       </div>
 
       {/* Gold accent stripe — left editorial rail */}

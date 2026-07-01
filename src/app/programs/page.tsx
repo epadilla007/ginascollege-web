@@ -76,7 +76,7 @@ export default function ProgramsPage() {
             className="text-[#000000]/60 leading-relaxed max-w-[580px]"
             style={{ fontSize: 'clamp(16px, 1.5vw, 19px)' }}
           >
-            Diploma programs are full credentials that qualify you for OSAP and CIDESCO tracking.
+            Diploma programs are full credentials that may qualify you for financial aid and CIDESCO tracking.
             Certificate programs are shorter specializations — ideal for professionals adding skills.
           </p>
         </div>
@@ -93,7 +93,7 @@ export default function ProgramsPage() {
               Diploma Programs
             </h2>
             <span className="text-xs font-semibold uppercase tracking-wider text-[#01426A] border border-[#01426A]/30 px-3 py-1">
-              OSAP Eligible
+              Financial Aid Available
             </span>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
