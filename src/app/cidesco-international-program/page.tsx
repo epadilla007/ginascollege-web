@@ -201,7 +201,7 @@ export default function CidescoProgramPage() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-              <Link href="/consultation" className="btn btn-white">Book a Free Info Session</Link>
+              <Link href="/consultation" className="btn btn-white">Book a free info session today</Link>
               <Link href="/programs/medical-aesthetics" className="btn btn-outline-white">Medical Aesthetics Program</Link>
             </div>
           </div>

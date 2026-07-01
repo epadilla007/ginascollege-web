@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Diploma Programs — OSAP-Eligible Beauty Diplomas | Gina\'s College',
-  description: 'Four OSAP-eligible diploma programs in Medical Aesthetics, Hairstyling, Advanced Aesthetics, and Electrolysis. Registered under the Ontario Career Colleges Act.',
+  title: "Diploma Programs — Aesthetics & Hairstyling Diplomas | Gina's College",
+  description: 'Four diploma programs in Medical Aesthetics, Hairstyling, Advanced Aesthetics, and Electrolysis. Registered under the Ontario Career Colleges Act. Financial aid may be available.',
 }
 
 const programs = [
@@ -52,7 +52,7 @@ export default function DiplomaPrograms() {
         </h1>
         <p className="text-[#000000]/60 text-lg leading-relaxed mb-12 max-w-[660px]">
           Gina&apos;s College offers four diploma programs approved under the Ontario Career Colleges
-          Act, 2005. Diploma programs are OSAP-eligible and include extensive hands-on clinic time
+          Act, 2005. Diploma programs may qualify for financial aid and include extensive hands-on clinic time
           — approximately 70% of each program is practical.
         </p>
 
@@ -92,7 +92,7 @@ export default function DiplomaPrograms() {
         <div className="p-8 rounded-[8px] border border-[#B1C6D9] bg-[#B1C6D9]/10 mb-12">
           <p className="text-[#01426A] text-base leading-relaxed">
             All diploma programs at Gina&apos;s College are registered under the Ontario Career
-            Colleges Act, 2005 and are OSAP-eligible. Speak with an admissions advisor to confirm
+            Colleges Act, 2005. Financial assistance may be available for those who qualify. Speak with an admissions advisor to confirm
             current eligibility.
           </p>
         </div>
@@ -100,7 +100,7 @@ export default function DiplomaPrograms() {
         {/* CTA */}
         <div className="flex flex-col sm:flex-row gap-4">
           <Link href="/apply" className="btn btn-primary">
-            Apply Now
+            Enroll now for September
           </Link>
           <Link href="/certificate-programs" className="btn btn-secondary">
             View Certificate Programs

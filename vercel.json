@@ -16,6 +16,9 @@
     { "source": "/certificate-program/:slug*", "destination": "/programs", "permanent": true },
     { "source": "/follow-your-passion-for-beauty", "destination": "/apply", "permanent": true },
 
+    { "source": "/course/medical-aesthetics-diploma", "destination": "/programs/medical-aesthetics", "permanent": true },
+    { "source": "/course/hairstyling-diploma", "destination": "/programs/hairstyling", "permanent": true },
+
     { "source": "/medical-aesthetics", "destination": "/programs/medical-aesthetics", "permanent": true },
     { "source": "/medical-aesthetics-diploma", "destination": "/programs/medical-aesthetics", "permanent": true },
     { "source": "/medical-aesthetics-program", "destination": "/programs/medical-aesthetics", "permanent": true },
@@ -47,6 +50,9 @@
     { "source": "/waterloo-campus", "destination": "/campuses/waterloo", "permanent": true },
     { "source": "/ottawa", "destination": "/campuses/ottawa", "permanent": true },
     { "source": "/ottawa-campus", "destination": "/campuses/ottawa", "permanent": true },
+    { "source": "/service/spa-beauty-clinic-service", "destination": "/mississauga-spa-beauty-services", "permanent": true },
+    { "source": "/service/spa-beauty-clinic-services-waterloo", "destination": "/waterloo-spa-beauty-services", "permanent": true },
+    { "source": "/service/hair-design-service", "destination": "/waterloo-hair-design-services", "permanent": true },
     { "source": "/service/ottawa-beauty-spa-and-service", "destination": "/ottawa-spa-beauty-services", "permanent": true },
     { "source": "/ginas-campus-tour", "destination": "/campuses", "permanent": true },
 
@@ -80,6 +86,9 @@
 
     { "source": "/gallery", "destination": "/about#gallery", "permanent": true },
     { "source": "/photo-gallery", "destination": "/about#gallery", "permanent": true },
+
+    { "source": "/history", "destination": "/building-a-foundation-for-success", "permanent": true },
+    { "source": "/privacy-policy", "destination": "/privacy", "permanent": true },
 
     { "source": "/news", "destination": "/blog", "permanent": true },
     { "source": "/blog-post/:slug", "destination": "/blog/:slug", "permanent": true },

@@ -52,9 +52,9 @@ const navItems: NavItem[] = [
     label: 'Beauty Clinic',
     items: [
       { label: 'Beauty Clinic', href: '/beauty-clinic' },
-      { label: 'Mississauga Spa Services', href: '/mississauga-spa-beauty-services' },
       { label: 'Waterloo Spa Services', href: '/waterloo-spa-beauty-services' },
       { label: 'Waterloo Hair Design', href: '/waterloo-hair-design-services' },
+      { label: 'Mississauga Spa Services', href: '/mississauga-spa-beauty-services' },
       { label: 'Ottawa Spa Services', href: '/ottawa-spa-beauty-services' },
     ],
   },

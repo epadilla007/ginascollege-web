@@ -22,9 +22,9 @@ const differentiators = [
   },
   {
     number: '03',
-    title: 'OSAP-eligible.',
+    title: 'Financial aid may be available.',
     body:
-      "Government-backed financial support. Your full diploma program qualifies for OSAP funding. Gina's is a registered private career college — most aesthetics schools in Ontario are not.",
+      "Financial assistance may be available for those who qualify. Gina's is a registered private career college under the Ontario Career Colleges Act — most aesthetics schools in Ontario are not.",
     image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80',
     imageAlt: 'Student reviewing financial aid options at a desk',
   },

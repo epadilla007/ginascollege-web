@@ -435,7 +435,7 @@ At the CIDESCO level, the program goes beyond technique. You learn why treatment
 
 Why Gina's College Is Ontario's Only CIDESCO School
 
-Gina's College of Advanced Aesthetics has trained aesthetics professionals since 1979. That's over 40 years of operation under CIDESCO standards. Earning and maintaining accreditation isn't a one-time achievement. CIDESCO conducts regular audits, so every graduating class comes from a program that has been reviewed and certified to international standards, not just at the time of initial application.
+Gina's College of Advanced Aesthetics has trained aesthetics professionals since 1979. That's 45 years of operation under CIDESCO standards. Earning and maintaining accreditation isn't a one-time achievement. CIDESCO conducts regular audits, so every graduating class comes from a program that has been reviewed and certified to international standards, not just at the time of initial application.
 
 The school operates three campuses in Ontario: Mississauga, Waterloo, and Ottawa. All three deliver the same CIDESCO-accredited curriculum. Students at any campus graduate with the same internationally recognized credential. If you're in the Waterloo region, Ottawa, or the Greater Toronto Area, you have a campus option within reach.
 
@@ -515,7 +515,7 @@ Hands-on training ratio: Ask how much of the program is practical vs. classroom.
 
 OSAP eligibility: If you need financial assistance, confirm that the program qualifies for OSAP. Gina's College is registered under the Ontario Career Colleges Act, 2005, which means most qualifying students can access OSAP funding.
 
-Reputation and graduate outcomes: Look at where graduates end up working. Ask about employment rates and what types of employers hire from the program. A school that has placed graduates into medical spas, resorts, and clinical settings for over 40 years has a track record you can assess.
+Reputation and graduate outcomes: Look at where graduates end up working. Ask about employment rates and what types of employers hire from the program. A school that has placed graduates into medical spas, resorts, and clinical settings for 45 years has a track record you can assess.
 
 Gina's College Ottawa Campus
 

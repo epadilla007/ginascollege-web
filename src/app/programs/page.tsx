@@ -12,7 +12,7 @@ const diplomaPrograms = [
   {
     title: 'Medical Aesthetics',
     duration: '12 months',
-    salary: '$55,000–$90,000+',
+    salary: '',
     href: '/programs/medical-aesthetics',
     image: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/medical-skin-care-face-with-multiple-tools-without-needle-scaled-619w.jpg',
     description: 'Laser, chemical peels, microneedling. Full medical aesthetics curriculum, all included.',
@@ -20,7 +20,7 @@ const diplomaPrograms = [
   {
     title: 'Advanced Aesthetics',
     duration: '10 months',
-    salary: '$40,000–$65,000',
+    salary: '',
     href: '/programs/advanced-aesthetics',
     image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80',
     description: 'The full foundation diploma. Everything the industry expects from a certified aesthetician.',
@@ -28,7 +28,7 @@ const diplomaPrograms = [
   {
     title: 'Hairstyling',
     duration: '12 months',
-    salary: '$35,000–$70,000+',
+    salary: '',
     href: '/programs/hairstyling',
     image: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/9-21-619w.jpg',
     description: 'Cut, colour, texture, and styling in a professional salon environment.',
@@ -36,7 +36,7 @@ const diplomaPrograms = [
   {
     title: 'Electrolysis & Light Technology',
     duration: '8 months',
-    salary: '$50,000–$80,000',
+    salary: '',
     href: '/programs/electrolysis-light-technology',
     image: 'https://lirp.cdn-website.com/ae4ce602/dms3rep/multi/opt/laserlight-619w.jpg',
     description: 'Permanent hair removal via electrolysis, laser, and IPL. A high-earning specialization.',
@@ -202,7 +202,7 @@ export default function ProgramsPage() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-              <Link href="/consultation" className="btn btn-white">Book a Free Consultation</Link>
+              <Link href="/consultation" className="btn btn-white">Book a free info session today</Link>
             </div>
           </div>
         </div>

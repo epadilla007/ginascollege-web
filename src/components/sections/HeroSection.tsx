@@ -85,7 +85,7 @@ export function HeroSection() {
           {/* CTAs */}
           <div ref={ctaRef} className="opacity-0 flex flex-col sm:flex-row gap-3 mt-9">
             <Link href="/contact" className="btn btn-white text-[14px] px-7 py-4">
-              Book a Free Info Session
+              Book a free info session today
             </Link>
             <Link href="/programs" className="btn btn-outline-white text-[14px] px-7 py-4">
               Browse Programs
